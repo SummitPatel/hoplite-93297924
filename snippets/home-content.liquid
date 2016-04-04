@@ -1,0 +1,18 @@
+{% if settings.home_page_content != empty %}
+  {% unless settings.home_page_full_width %}
+  <div class="grid">
+    <div class="grid__item post-large--two-thirds push--post-large--one-sixth">
+  {% endunless %}
+      {% if settings.home_show_headings and settings.home_page_show_heading %}
+      <div class="section-header section-header--small">
+        <h2 class="section-header__title">{{ pages[settings.home_page_content].title }}</h2>
+      </div>
+      {% endif %}
+      <div class="rte">
+        {{ pages[settings.home_page_content].content }}
+      </div>
+  {% unless settings.home_page_full_width %}
+    </div>
+  </div>
+  {% endunless %}
+{% endif %}
