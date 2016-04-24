@@ -317,5 +317,56 @@
     {% endif %}
   {% endif %}
 
+  <!-- SWATCHES SCRIPT -->
+  <script>
+    jQuery(function() {
+      jQuery('.swatch :radio').change(function() {
+        var optionIndex = jQuery(this).closest('.swatch').attr('data-option-index');
+        var optionValue = jQuery(this).val();
+        jQuery(this)
+          .closest('form')
+          .find('.single-option-selector')
+          .eq(optionIndex)
+          .val(optionValue)
+          .trigger('change');
+      });
+    });
+    </script>
+    
+    <!-- LINE-ITEM FORM VALIDATION SCRIPT -->
+    {% if template contains 'product' %}
+      <script>
+      jQuery(function($) {
+        $('form[action="/cart/add"]').submit(function() {
+          var formIsValid = true;
+          var message = "Please fill this out and you will be able to add the item to your cart.";
+          $(this).find('[name^="properties"]').filter('.required, [required="required"]').each(function() {
+            $(this).removeClass('error');
+            if (formIsValid && $(this).val() == '') {
+              formIsValid = false;
+              message = $(this).attr('data-error') || message;
+              $(this).addClass('error');
+            }
+          });
+          if (formIsValid){
+            return true;
+          }
+          else {
+            alert(message);
+            return false;
+          }
+        }).find('input, select, textarea').focus(function() {
+          $(this).removeClass('error');
+        });
+      });
+      </script>
+      {% endif %}
+
+      <style>
+      input.error, select.error, textarea.error {
+        border-color: red;
+      }
+      </style>
+
 </body>
 </html>
