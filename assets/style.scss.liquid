@@ -55,33 +55,56 @@
   Product Page
 ==============================================================================*/
 
+
+.product-single {
+  padding: 5rem 0;
+}
+
 .product-details {
   text-align: left;
 }
 
-.selector-wrapper {
+.line-item-property__field {
   width: 50%;
   float: left;
 
   &:last-of-type {
     height: 5rem;
     margin-top: 1.7rem;
+    width: 100%;
 
     &:after {
       content: "";
       display: table;
       clear: both;
     }
+
+    input {
+      margin: 0 1rem 0 1px;
+    }
+
+    span {
+      margin-right: 20%;
+    }
+
+  }
+
+  p {
+    margin-top: 30px;
+    margin-left: 15px;
   }
 
   label {
     width: 6rem;
   }
+
+  select {
+    width: 90%;
+  }
 }
 
 #AddToCart {
-  float: left;
-  margin-top: 1.7rem;
+  width: 10rem;
 }
 
 #AddToCartForm {
@@ -94,8 +117,8 @@
    Swatches Styles
 */
 
-{% assign width = '50px' %}
-{% assign height = '35px' %}
+{% assign width = '38px' %}
+{% assign height = '41px' %}
 .swatch { 
   margin:1em 0; 
 }
@@ -111,7 +134,7 @@
   /* Rounded corners */
   -webkit-border-radius:2px;
   -moz-border-radius:2px;
-  border-radius:2px;
+  //border-radius:2px;
   /* To give width and height */
   float:left;
   /* Color swatches contain no text so they need to have a width. */
@@ -120,7 +143,7 @@
   /* No extra spacing between them */
   margin:0;
   /* The border when the button is not selected */
-  border:#ccc 1px solid;
+  //border:#ccc 1px solid;
   /* Background color */
   background-color:#ddd;
   /* Styling text */
@@ -129,16 +152,15 @@
   line-height:{{ height }};
   white-space:nowrap;
   text-transform:uppercase;
+  background: no-repeat;
 }
 .swatch-element label { padding:0 10px; }
 .color.swatch-element label { padding:0; }
 /* Styling selected swatch */
 /* Slightly raised */
 .swatch input:checked + label {
-  -webkit-box-shadow:0px 1px 2px rgba(0,0,0,0.8);
-  -moz-box-shadow:0px 1px 2px rgba(0,0,0,0.8);
-  box-shadow:0px 1px 2px rgba(0,0,0,0.8);
-  border-color:transparent;
+  background: url("color-swatch-border.png");
+  border-color: transparent;
 } 
 .swatch .swatch-element {
   float:left;

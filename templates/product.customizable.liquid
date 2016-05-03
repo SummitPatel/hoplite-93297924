@@ -45,7 +45,7 @@
       <div class="grid__item padded">
         <div class="product-single">
           <div class="grid product-single__hero">
-            <div class="grid__item post-large--one-half">
+            <div class="grid__item post-large--one-half push--large--one-tenth">
 
               {% if settings.product_thumbnails_position == 'below' or product.images.size < 2 %}
 
@@ -104,7 +104,7 @@
               {% endif %}
 
             </div>
-            <div class="grid__item post-large--one-half product-details">
+            <div class="grid__item post-large--one-third push--large--one-tenth product-details">
               <!-- {% if settings.product_vendor_enable %}
                 <h3 itemprop="brand">{{ product.vendor }}</h3>
               {% endif %} -->
@@ -150,37 +150,42 @@
                     {% endfor %}
                   </select>
 
+                  <hr>
+
                   <!-- Custom Line-item properties -->
-                  <p class="line-item-property__field">
-                    <label>Foot size</label><br>
+                  <div class="line-item-property__field">
+                    <label>Foot size</label>
                     <select required class="required" id="foot-size" name="properties[Foot size]" data-error="Please select a foot size">
                       <option value="Small">Small</option>
                       <option value="Medium">Medium</option>
                       <option value="Large">Large</option>
                     </select>
-                  </p>
+                  </div>
 
-                  <p class="line-item-property__field">
-                    <label>Ankle Size</label><br>
+                  <div class="line-item-property__field">
+                    <label>Ankle Size</label>
                     <select required class="required" id="ankle-size" name="properties[Ankle size]" data-error="Please select an ankle size">
                       <option value="Small">Small</option>
                       <option value="Medium">Medium</option>
                       <option value="Large">Large</option>
                     </select>
-                  </p>
+                  </div>
 
-                  <p class="line-item-property__field">
-                    <label>Calf size</label><br>
+                  <div class="line-item-property__field">
+                    <label>Calf size</label>
                     <select required class="required" id="calf-size" name="properties[Calf size]" data-error="Please select a calf size">
                       <option value="Small">Small</option>
                       <option value="Medium">Medium</option>
                       <option value="Large">Large</option>
                     </select>
-                  </p>
+                  </div>
 
+                  <div class="line-item-property__field">
+                    <p><a href="#">How do I measure?</a></p>
+                  </div>
+
+                  <hr>
                   <p class="line-item-property__field">
-                    <hr>
-                    <label></label><br>
                     <input required class="required" type="radio" name="properties[Material]" value="Ultra-light"> <span>Ultra-light</span>
                     <input required class="required" type="radio" name="properties[Material]" value="Cushioned"> <span>Cushioned</span>
                   </p>
@@ -191,9 +196,6 @@
                     <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
                   </div>
 
-                  <div class="selector-wrapper">
-                    <a href="#">How do I measure?</a>
-                  </div>
 
                   <button type="submit" name="add" id="AddToCart" class="btn">
                     <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
