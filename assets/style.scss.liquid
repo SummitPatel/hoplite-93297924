@@ -2,6 +2,10 @@
   Homepage
 ==============================================================================*/
 
+body {
+  font-family: Roboto;
+}
+
 .frontpage-wrapper {
   margin: 0 auto;
   padding: 0;
@@ -55,9 +59,29 @@
   Product Page
 ==============================================================================*/
 
+.tile-wrapper {
+  position: relative;
+
+  .text-wrapper {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+}
 
 .product-single {
   padding: 5rem 0;
+  background: #333;
 }
 
 .product-details {
@@ -67,6 +91,7 @@
 .line-item-property__field {
   width: 50%;
   float: left;
+  color: #fff;
 
   &:last-of-type {
     height: 5rem;
@@ -100,17 +125,28 @@
 
   select {
     width: 90%;
+    background-color: #333;
+    background-image: url('dropdown-arrow.png');
+    border-color: #999;
+    color: #fff;
   }
 }
 
 #AddToCart {
   width: 10rem;
+  background-color: #fff;
+  color: #000;
+  border-radius: 0px;
 }
 
 #AddToCartForm {
   overflow: auto;
 }
 
+.workout-tile {
+  height: 5rem;
+  line-height: 4.5;
+}
 
 
 /* 
@@ -159,7 +195,7 @@
 /* Styling selected swatch */
 /* Slightly raised */
 .swatch input:checked + label {
-  background: url("color-swatch-border.png");
+  background: url('color-swatch-border.png');
   border-color: transparent;
 } 
 .swatch .swatch-element {
