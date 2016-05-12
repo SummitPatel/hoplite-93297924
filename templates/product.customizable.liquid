@@ -9,7 +9,7 @@
 
   <div class="grid">
     <div class="grid__item hero">
-      <img src="//placehold.it/1600x750" />
+      {{ pages.hero-knee-high-socks.content }}
     </div>
 
     <div class="grid grid__item centered-padded">
@@ -23,8 +23,20 @@
       <div class="grid__item padded">
         {{ pages.busted-gear.content }}
       </div>
+
       <div class="grid__item padded">
-        <img src="//placehold.it/1600x400" />
+        <div>
+          <ul class="tabs">
+            <li><a href="#tab-1">Compression</a></li>
+            <li><a href="#tab-2">Fit</a></li>
+          </ul>
+          <div id="tab-1">
+          {{ pages.medical-grade-compression.content }}
+          </div>
+          <div id="tab-2">
+          {{ pages.medical-grade-fit.content }}
+          </div>
+        </div>
       </div>
 
       <div class="grid__item padded">
@@ -281,4 +293,27 @@
       $('.selector-wrapper').hide();
     {% endif %}
   });
+
+  //TABBED CONTENT
+  $(document).ready(function() {
+    $('ul.tabs').each(function(){
+      var active, content, links = $(this).find('a');
+      active = links.first().addClass('active');
+      content = $(active.attr('href'));
+      links.not(':first').each(function () {
+        $($(this).attr('href')).hide();
+      });
+      $(this).find('a').click(function(e){
+        active.removeClass('active');
+        content.hide();
+        active = $(this);
+        content = $($(this).attr('href'));
+        active.addClass('active');
+        content.show();
+        return false;
+      });
+    });
+  });
+
+  //END TABBED CONTENT
 </script>
