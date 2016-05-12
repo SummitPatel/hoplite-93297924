@@ -25,7 +25,7 @@
       </div>
 
       <div class="grid__item padded">
-        <div>
+        <div class="tile-wrapper">
           <ul class="tabs">
             <li><a href="#tab-1">Compression</a></li>
             <li><a href="#tab-2">Fit</a></li>
@@ -299,16 +299,19 @@
     $('ul.tabs').each(function(){
       var active, content, links = $(this).find('a');
       active = links.first().addClass('active');
+      active.parents('li').addClass('active');
       content = $(active.attr('href'));
       links.not(':first').each(function () {
         $($(this).attr('href')).hide();
       });
       $(this).find('a').click(function(e){
         active.removeClass('active');
+        active.parents('li').removeClass('active');
         content.hide();
         active = $(this);
         content = $($(this).attr('href'));
         active.addClass('active');
+        active.parents('li').addClass('active');
         content.show();
         return false;
       });
