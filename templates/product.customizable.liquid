@@ -50,23 +50,43 @@
         {{ pages.buy-give.content }}
       </div>
 
-      <div class="grid__item padded">
-        <div class="product-single">
-          <div class="grid product-single__hero">
-            <div class="grid__item post-large--one-half push--large--one-tenth">
+    </div>
+  </div>
 
-              {% if settings.product_thumbnails_position == 'below' or product.images.size < 2 %}
+  <div class="grid">
+    <div class="grid__item">
+      <div class="product-single">
+        <div class="grid product-single__hero">
+          <div class="grid__item post-large--one-half push--large--one-tenth">
 
-                <div class="product-single__photos" id="ProductPhoto">
-                  {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
-                  <img src="{{ featured_image | img_url: '1024x1024' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg"{% if settings.product_image_zoom_type == 'zoom-in' %} data-zoom="{{ featured_image | img_url: '1024x1024' }}"{% endif %} data-image-id="{{ featured_image.id }}">
-                </div>
+            {% if settings.product_thumbnails_position == 'below' or product.images.size < 2 %}
 
-                {% if product.images.size > 1 %}
+              <div class="product-single__photos" id="ProductPhoto">
+                {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
+                <img src="{{ featured_image | img_url: '1024x1024' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg"{% if settings.product_image_zoom_type == 'zoom-in' %} data-zoom="{{ featured_image | img_url: '1024x1024' }}"{% endif %} data-image-id="{{ featured_image.id }}">
+              </div>
 
-                  <ul class="product-single__thumbnails grid-uniform" id="ProductThumbs">
+              {% if product.images.size > 1 %}
+
+                <ul class="product-single__thumbnails grid-uniform" id="ProductThumbs">
+                  {% for image in product.images %}
+                    <li class="grid__item wide--one-quarter large--one-third medium-down--one-third">
+                      <a data-image-id="{{ image.id }}" href="{{ image.src | img_url: '1024x1024' }}" class="product-single__thumbnail">
+                        <img src="{{ image.src | img_url: 'grande' }}" alt="{{ image.alt | escape }}">
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+
+              {% endif %}
+
+            {% else %}
+
+              <div class="grid">
+                <div class="grid__item one-fifth">
+                  <ul class="grid product-single__thumbnails" id="ProductThumbs">
                     {% for image in product.images %}
-                      <li class="grid__item wide--one-quarter large--one-third medium-down--one-third">
+                      <li class="grid__item">
                         <a data-image-id="{{ image.id }}" href="{{ image.src | img_url: '1024x1024' }}" class="product-single__thumbnail">
                           <img src="{{ image.src | img_url: 'grande' }}" alt="{{ image.alt | escape }}">
                         </a>
@@ -74,170 +94,156 @@
                     {% endfor %}
                   </ul>
 
-                {% endif %}
-
-              {% else %}
-
-                <div class="grid">
-                  <div class="grid__item one-fifth">
-                    <ul class="grid product-single__thumbnails" id="ProductThumbs">
-                      {% for image in product.images %}
-                        <li class="grid__item">
-                          <a data-image-id="{{ image.id }}" href="{{ image.src | img_url: '1024x1024' }}" class="product-single__thumbnail">
-                            <img src="{{ image.src | img_url: 'grande' }}" alt="{{ image.alt | escape }}">
-                          </a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-
-                  </div>
-
-                  <div class="grid__item four-fifths product-single__photos" id="ProductPhoto">
-                    {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
-                    <img src="{{ featured_image | img_url: '1024x1024' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg"{% if settings.product_image_zoom_type == 'zoom-in' %} data-zoom="{{ featured_image | img_url: '1024x1024' }}"{% endif %} data-image-id="{{ featured_image.id }}">
-                  </div>
-
                 </div>
 
-              {% endif %}
-
-              {% if settings.product_image_zoom_type == 'lightbox' %}
-              <ul class="gallery" class="hidden">
-                {% for image in product.images %}
-                <li data-image-id="{{ image.id }}" class="gallery__item" data-mfp-src="{{ image | img_url: '1024x1024' }}"></li>
-                {% endfor %}
-              </ul>
-              {% endif %}
-
-            </div>
-            <div class="grid__item post-large--one-third push--large--one-tenth product-details">
-              <!-- {% if settings.product_vendor_enable %}
-                <h3 itemprop="brand">{{ product.vendor }}</h3>
-              {% endif %} -->
-              <h1 itemprop="name">{{ product.title }}</h1>
-
-              <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                {% assign variant = product.selected_or_first_available_variant %}
-
-                <meta itemprop="priceCurrency" content="{{ shop.currency }}">
-                <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
-
-                <div class="product-single__prices">
-                  <span id="ProductPrice" class="product-single__price" itemprop="price">
-                    {{ product.price | money }}
-                  </span>
-
-                  {% if product.compare_at_price > product.price %}
-                    <s id="ComparePrice" class="product-single__sale-price">
-                      {{ product.compare_at_price_max | money }}
-                    </s>
-                  {% endif %}
+                <div class="grid__item four-fifths product-single__photos" id="ProductPhoto">
+                  {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
+                  <img src="{{ featured_image | img_url: '1024x1024' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg"{% if settings.product_image_zoom_type == 'zoom-in' %} data-zoom="{{ featured_image | img_url: '1024x1024' }}"{% endif %} data-image-id="{{ featured_image.id }}">
                 </div>
 
-                <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+              </div>
 
-                  <!-- COLOR SWATCH -->
-                  {% if product.available and product.variants.size > 1 %}
-                    {% include 'swatch' with 'Color' %}
-                  {% endif %}
+            {% endif %}
 
-                  <!-- Original that pulls Options from Shopify -->
-                  <select name="id" id="productSelect" class="product-single__variants">
-                    {% for variant in product.variants %}
-                      {% if variant.available %}
+            {% if settings.product_image_zoom_type == 'lightbox' %}
+            <ul class="gallery" class="hidden">
+              {% for image in product.images %}
+              <li data-image-id="{{ image.id }}" class="gallery__item" data-mfp-src="{{ image | img_url: '1024x1024' }}"></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
 
-                        <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+          </div>
+          <div class="grid__item post-large--one-third push--large--one-tenth product-details">
+            <!-- {% if settings.product_vendor_enable %}
+              <h3 itemprop="brand">{{ product.vendor }}</h3>
+            {% endif %} -->
+            <h1 itemprop="name">{{ product.title }}</h1>
 
-                      {% else %}
-                        <option disabled="disabled">
-                          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-                        </option>
-                      {% endif %}
-                    {% endfor %}
-                  </select>
+            <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+              {% assign variant = product.selected_or_first_available_variant %}
 
-                  <hr>
+              <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+              <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
 
-                  <!-- Custom Line-item properties -->
-                  <div class="line-item-property__field">
-                    <label>Foot size</label>
-                    <select required class="required" id="foot-size" name="properties[Foot size]" data-error="Please select a foot size">
-                      <option value="Small">Small</option>
-                      <option value="Medium">Medium</option>
-                      <option value="Large">Large</option>
-                    </select>
-                  </div>
+              <div class="product-single__prices">
+                <span id="ProductPrice" class="product-single__price" itemprop="price">
+                  {{ product.price | money }}
+                </span>
 
-                  <div class="line-item-property__field">
-                    <label>Ankle Size</label>
-                    <select required class="required" id="ankle-size" name="properties[Ankle size]" data-error="Please select an ankle size">
-                      <option value="Small">Small</option>
-                      <option value="Medium">Medium</option>
-                      <option value="Large">Large</option>
-                    </select>
-                  </div>
-
-                  <div class="line-item-property__field">
-                    <label>Calf size</label>
-                    <select required class="required" id="calf-size" name="properties[Calf size]" data-error="Please select a calf size">
-                      <option value="Small">Small</option>
-                      <option value="Medium">Medium</option>
-                      <option value="Large">Large</option>
-                    </select>
-                  </div>
-
-                  <div class="line-item-property__field">
-                    <p><a href="#">How do I measure?</a></p>
-                  </div>
-
-                  <hr>
-                  <p class="line-item-property__field">
-                    <input required class="required" type="radio" name="properties[Material]" value="Ultra-light"> <span>Ultra-light</span>
-                    <input required class="required" type="radio" name="properties[Material]" value="Cushioned"> <span>Cushioned</span>
-                  </p>
-
-
-                  <div class="product-single__quantity{% unless settings.product_quantity_enable %} is-hidden{% endunless %}">
-                    <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
-                    <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
-                  </div>
-
-
-                  <button type="submit" name="add" id="AddToCart" class="btn">
-                    <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
-                  </button>
-                </form>
-
-                <div class="product-description rte" itemprop="description">
-                  {{ product.description }}
-                </div>
-
-                {% if settings.social_sharing_products %}
-                  <hr class="hr--clear hr--small">
-                  <h4>{{ 'products.general.share_title' | t }}</h4>
-                  {% include 'social-sharing' %}
+                {% if product.compare_at_price > product.price %}
+                  <s id="ComparePrice" class="product-single__sale-price">
+                    {{ product.compare_at_price_max | money }}
+                  </s>
                 {% endif %}
               </div>
 
+              <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+
+                <!-- COLOR SWATCH -->
+                {% if product.available and product.variants.size > 1 %}
+                  {% include 'swatch' with 'Color' %}
+                {% endif %}
+
+                <!-- Original that pulls Options from Shopify -->
+                <select name="id" id="productSelect" class="product-single__variants">
+                  {% for variant in product.variants %}
+                    {% if variant.available %}
+
+                      <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+
+                    {% else %}
+                      <option disabled="disabled">
+                        {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                      </option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+
+                <hr>
+
+                <!-- Custom Line-item properties -->
+                <div class="line-item-property__field">
+                  <label>Foot size</label>
+                  <select required class="required" id="foot-size" name="properties[Foot size]" data-error="Please select a foot size">
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                  </select>
+                </div>
+
+                <div class="line-item-property__field">
+                  <label>Ankle Size</label>
+                  <select required class="required" id="ankle-size" name="properties[Ankle size]" data-error="Please select an ankle size">
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                  </select>
+                </div>
+
+                <div class="line-item-property__field">
+                  <label>Calf size</label>
+                  <select required class="required" id="calf-size" name="properties[Calf size]" data-error="Please select a calf size">
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                  </select>
+                </div>
+
+                <div class="line-item-property__field">
+                  <p><a href="#">How do I measure?</a></p>
+                </div>
+
+                <hr>
+                <p class="line-item-property__field">
+                  <input required class="required" type="radio" name="properties[Material]" value="Ultra-light"> <span>Ultra-light</span>
+                  <input required class="required" type="radio" name="properties[Material]" value="Cushioned"> <span>Cushioned</span>
+                </p>
+
+
+                <div class="product-single__quantity{% unless settings.product_quantity_enable %} is-hidden{% endunless %}">
+                  <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+                  <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+                </div>
+
+
+                <button type="submit" name="add" id="AddToCart" class="btn">
+                  <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
+                </button>
+              </form>
+
+              <div class="product-description rte" itemprop="description">
+                {{ product.description }}
+              </div>
+
+              {% if settings.social_sharing_products %}
+                <hr class="hr--clear hr--small">
+                <h4>{{ 'products.general.share_title' | t }}</h4>
+                {% include 'social-sharing' %}
+              {% endif %}
             </div>
+
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div class="grid__item padded workout-tile">
-        Your workout could also use:
-      </div>
+  <div class="grid">
+    <div class="grid__item padded workout-tile">
+      Your workout could also use:
+    </div>
 
-      <div class="grid__item large--one-half padded padded-half-first">
-        {{ pages.no-show-socks.content }}
-      </div>
-      <div class="grid__item large--one-half padded padded-half-second">
-        {{ pages.leg-sleeves.content }}
-      </div>
-
+    <div class="grid__item large--one-half padded padded-half-first">
+      {{ pages.no-show-socks.content }}
+    </div>
+    <div class="grid__item large--one-half padded padded-half-second">
+      {{ pages.leg-sleeves.content }}
     </div>
 
   </div>
+
+</div>
 
 
 
