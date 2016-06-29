@@ -8,13 +8,13 @@
         <h2 class="section-header__title">{{ pages[settings.home_page_content].title }}</h2>
       </div>
       {% endif %}
-      <div class="rte custom-test-class">
+      <div class="rte">
         <!-- Old include statement to pull in content from Shopify-->
         <!-- {{ pages[settings.home_page_content].content }} -->
-        
+
         <div class="grid">
           <div class="grid__item hero">
-            <img src="//placehold.it/1600x750" />
+            {{ pages.hero-homepage.content }}
           </div>
 
           <div class="grid grid__item centered-padded">

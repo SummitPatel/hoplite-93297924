@@ -38,6 +38,20 @@
   {{ 'style.scss.css' | asset_url | stylesheet_tag}}
 
   {% include 'google-fonts' %}
+  
+  <!-- myfont trial script for 30 days -->
+  <script type="text/javascript">
+    (function() {
+      var path = '//easy.myfonts.net/v2/js?sid=173743(font-family=PF+DIN+Text+Pro+Regular)&sid=173744(font-family=PF+DIN+Text+Pro+Medium)&sid=173780(font-family=PF+DIN+Text+Pro+Light)&sid=173807(font-family=PF+DIN+Text+Pro+Bold)&key=Pmpymdtk51',
+          protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
+          trial = document.createElement('script');
+      trial.type = 'text/javascript';
+      trial.async = true;
+      trial.src = protocol + path;
+      var head = document.getElementsByTagName("head")[0];
+      head.appendChild(trial);
+    })();
+  </script>
 
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
