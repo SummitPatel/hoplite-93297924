@@ -23,12 +23,21 @@ body {
 
 .centered {
   text-align: center;
+  margin: 0 auto;
 }
 
 .centered-padded {
   text-align: center;
   margin: 0 auto;
   width: 99%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.no-padding {
+  padding: 0;
 }
 
 .hero-homepage {
@@ -60,10 +69,58 @@ body {
     h6 {
       font-size: 1rem;
     }
+  }
+}
+
+.tile-wrapper {
+  position: relative;
+
+  .text-wrapper {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
 
     a {
       color: #fff;
       text-decoration: underline;
+    }
+  }
+}
+
+.worlds-toughest-workouts-tile {
+  .text-wrapper {
+    top: 25%;
+    color: #333;
+
+    h2, h6 {
+      margin: 0;
+      font-family: 'PF DIN Text Pro REgular';
+    }
+
+    h2 {
+      font-size: 4rem;
+    }
+
+    h6 {
+      font-size: 1.2rem;
+    }
+  }
+
+  .icons-wrapper {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 80%;
+
+    img {
+      margin: 0 2rem;
     }
   }
 }
@@ -97,16 +154,13 @@ body {
   }
 }
 
-.hero {
-  margin-bottom: 2rem;
-}
-
 /*============================================================================
   Product Page
 ==============================================================================*/
 
 .hero-knee-high-socks {
   position: relative;
+  margin-bottom: 2rem;
 
   .text-wrapper {
     position: absolute;
@@ -120,26 +174,6 @@ body {
     h6 {
       font-size: .6rem;
     }
-
-    a {
-      color: #fff;
-      text-decoration: underline;
-    }
-  }
-}
-
-.tile-wrapper {
-  position: relative;
-
-  .text-wrapper {
-    position: absolute;
-    top: 40%;
-    left: 0;
-    right: 0;
-    margin: auto;
-    color: #fff;
-    font-size: 1.5rem;
-    text-transform: uppercase;
 
     a {
       color: #fff;
