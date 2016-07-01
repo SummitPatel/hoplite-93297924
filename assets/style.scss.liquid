@@ -42,6 +42,7 @@ body {
 
 .hero-homepage {
   position: relative;
+  line-height: 0;
 
   .text-wrapper {
     position: absolute;
@@ -74,6 +75,7 @@ body {
 
 .tile-wrapper {
   position: relative;
+  line-height: 0;
 
   .text-wrapper {
     position: absolute;
@@ -161,7 +163,7 @@ body {
 @media screen and (max-width: 480px) {
   .padded {
     padding-right: 1%;
-    padding-bottom: .1%;
+    padding-bottom: 1%;
     padding-left: 2%;
   }
 }
@@ -171,18 +173,20 @@ body {
 
   .padded {
     padding-right: 1%;
-    padding-bottom: .1%;
+    padding-bottom: 1%;
     /* padding-left is inherited from the Timber framework*/
   }
 
   .padded-half-first {
+    padding-top: 1%;
     padding-right: 0;
-    padding-bottom: 0;
+    padding-bottom: 1%;
   }
 
   .padded-half-second {
+    padding-top: 1%;
     padding-left: 1%;
-    padding-bottom: 0;
+    padding-bottom: 1%
   }
 }
 
