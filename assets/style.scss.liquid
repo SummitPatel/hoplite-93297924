@@ -7,6 +7,38 @@
 // font-family: 'PF DIN Text Pro Light'
 // font-family: 'PF DIN Text Pro Bold'
 
+
+/*============================================================================
+  Site Nav & Header
+==============================================================================*/
+
+// hides the old header bar with the cart
+.header-bar {
+  padding: 0;
+}
+
+.site-header {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+}
+
+.site-nav__link {
+  color: #fff;
+  font-family: 'PF DIN Text Pro Bold';
+  text-transform: uppercase;
+  font-size: .7rem;
+
+  &:active, &:hover, &:focus {
+    color: #fff;
+  }
+}
+
+.icon-cart {
+  color: #fff;
+}
+
 /*============================================================================
   Homepage
 ==============================================================================*/
@@ -363,6 +395,23 @@ body {
   line-height: 4.5;
 }
 
+
+/*============================================================================
+  Cart.liquid
+==============================================================================*/
+
+.empty-cart-content {
+  margin: 10rem 0;
+}
+
+
+/*============================================================================
+  Collection.liquid
+==============================================================================*/
+
+.section-header.section-header--breadcrumb {
+  margin-top: 10rem;
+}
 
 /*============================================================================
   Tabbed Content
