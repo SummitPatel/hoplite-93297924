@@ -7,6 +7,41 @@
 // font-family: 'PF DIN Text Pro Light'
 // font-family: 'PF DIN Text Pro Bold'
 
+/*============================================================================
+  Timber Overrides and Helper Classes
+==============================================================================*/
+
+.rte > div {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .padded {
+    padding-right: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+  }
+}
+
+@media screen and (min-width: 481px) {
+
+  .padded {
+    padding-right: 1%;
+    /* padding-left is inherited from the Timber framework*/
+  }
+
+  .padded-half-first {
+    padding-top: 1%;
+    padding-right: 0;
+    padding-bottom: 1%;
+  }
+
+  .padded-half-second {
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-bottom: 1%
+  }
+}
 
 /*============================================================================
   Site Nav & Header
@@ -67,6 +102,7 @@ body {
   text-align: center;
   margin: 0 auto;
   width: 99%;
+  margin-bottom: 1%;
 }
 
 .full-width {
@@ -84,7 +120,6 @@ body {
   .hero-img-wrapper {
     max-height: 100vh;
     max-width: 100vw;
-    margin-top: -5vh;
   }
 
   .hero-img-triangle-icon {
@@ -282,37 +317,6 @@ body {
 .shop-now-tile {
   .text-wrapper {
     top: 35%;
-  }
-}
-
-
-@media screen and (max-width: 480px) {
-  .padded {
-    padding-right: 1%;
-    padding-bottom: 1%;
-    padding-left: 2%;
-  }
-}
-
-
-@media screen and (min-width: 481px) {
-
-  .padded {
-    padding-right: 1%;
-    padding-bottom: 1%;
-    /* padding-left is inherited from the Timber framework*/
-  }
-
-  .padded-half-first {
-    padding-top: 1%;
-    padding-right: 0;
-    padding-bottom: 1%;
-  }
-
-  .padded-half-second {
-    padding-top: 1%;
-    padding-left: 1%;
-    padding-bottom: 1%
   }
 }
 
