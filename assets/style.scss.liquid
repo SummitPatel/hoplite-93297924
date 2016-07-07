@@ -8,6 +8,42 @@
 // font-family: 'PF DIN Text Pro Bold'
 
 /*============================================================================
+  Dependency-free breakpoint mixin
+    - http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
+==============================================================================*/
+
+$small: 640px;
+$medium: 1099px;
+$large: 1100px;
+{% if settings.enable_wide_layout %}
+$wide: 1250px;
+{% endif %}
+
+$viewportIncrement: 1px;
+$postSmall: $small + $viewportIncrement;
+$preMedium: $medium - $viewportIncrement;
+$preLarge: $large - $viewportIncrement;
+
+$min: min-width;
+$max: max-width;
+@mixin at-query ($constraint, $viewport1, $viewport2:null) {
+  @if $constraint == $min {
+    @media screen and ($min: $viewport1) {
+      @content;
+    }
+  } @else if $constraint == $max {
+    @media screen and ($max: $viewport1) {
+      @content;
+    }
+  } @else {
+    @media screen and ($min: $viewport1) and ($max: $viewport2) {
+      @content;
+    }
+  }
+}
+
+
+/*============================================================================
   Timber Overrides and Helper Classes
 ==============================================================================*/
 
@@ -117,20 +153,29 @@ body {
   position: relative;
   line-height: 0;
 
-  .hero-img-wrapper {
-    max-height: 100vh;
+  .hero-img-container {
+    height: 100vh;
     max-width: 100vw;
+    background-size: cover;
+    background-image: url( {{'hero-homepage-large.png' | asset_url}} );
+    @include at-query(null, $postSmall, $large) {
+      background-image: url( {{'hero-homepage-medium.png' | asset_url}} );
+    }
   }
 
   .hero-img-triangle-icon {
     position: absolute;
     top: 95%;
+    @include at-query(null, $postSmall, $large) {
+      top: 93%;
+    }
     left: 0;
     right: 0;
     margin: 0 auto;
     width: 8vw;
     color: #fff;
     cursor: pointer;
+
 
     p {
       margin-bottom: 2vh;
@@ -162,7 +207,6 @@ body {
     right: 0;
     margin: 0 auto;
     color: #fff;
-    font-size: 1.5rem;
     text-transform: uppercase;
     text-align: center;
 
@@ -172,18 +216,16 @@ body {
     }
 
     h2 {
-      font-size: 5rem;
+      font-size: 6vw;
       font-family: 'PF DIN Text Pro Light';
-      letter-spacing: .3rem;
-      line-height: 1.2;
     }
 
     h4 {
-      font-size: 1.5rem;
+      font-size: 2vw;
     }
 
     h6 {
-      font-size: 1rem;
+      font-size: 2vh;
     }
   }
 }
@@ -222,13 +264,23 @@ body {
 }
 
 .worlds-toughest-workouts-tile {
+  .img-bg {
+    height: 66vh;
+    max-width: 100vw;
+    background-size: cover;
+    background-image: url( {{'worlds-toughest-workouts-large.png' | asset_url}} );
+    @include at-query(null, $postSmall, $large) {
+      background-image: url( {{'worlds-toughest-workouts-medium.png' | asset_url}} );
+    }
+  }
+
   .text-wrapper {
-    top: 25%;
+    top: 20%;
     color: #333;
 
     h2, h6 {
       margin: 0;
-      font-family: 'PF DIN Text Pro REgular';
+      font-family: 'PF DIN Text Pro Regular';
     }
 
     h2 {
@@ -242,7 +294,7 @@ body {
 
   .icons-wrapper {
     position: absolute;
-    top: 60%;
+    top: 55%;
     left: 0;
     right: 0;
     margin: auto;
@@ -250,6 +302,25 @@ body {
 
     img {
       margin: 0 2rem;
+    }
+
+    p {
+      margin: 7vh 0;
+      font-family: 'PF DIN Text Pro Regular';
+      text-transform: uppercase;
+      font-size: 2vw;
+    }
+  }
+}
+
+.insane-abrasion-protection-tile {
+  .img-bg {
+    height: 66vh;
+    max-width: 100vw;
+    background-size: cover;
+    background-image: url( {{'insane-abrasion-protection-large.png' | asset_url}} );
+    @include at-query(null, $postSmall, $large) {
+      background-image: url( {{'insane-abrasion-protection-medium.png' | asset_url}} );
     }
   }
 }
