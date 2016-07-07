@@ -378,6 +378,18 @@ body {
   }
 }
 
+.eerily-cold-tile {
+  .img-bg {
+    height: 66vh;
+    max-width: 100vw;
+    background-size: cover;
+    background-image: url( {{'eerily-cold-large.png' | asset_url}} );
+    @include at-query(null, $postSmall, $large) {
+      background-image: url( {{'eerily-cold-medium.png' | asset_url}} );
+    }
+  }
+}
+
 .product-tile {
   .text-wrapper {
     top: 20%;
