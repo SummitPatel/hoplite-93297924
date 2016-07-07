@@ -457,6 +457,17 @@ body {
   }
 }
 
+.knee-high-socks-homepage-tile {
+  .img-bg {
+    height: 48vh;
+    background-size: cover;
+    background-image: url( {{'knee-high-socks-large.png' | asset_url}} );
+    @include at-query(null, $postSmall, $large) {
+      background-image: url( {{'knee-high-socks-medium.png' | asset_url}} );
+    }
+  }
+}
+
 .shop-now-tile {
   .text-wrapper {
     top: 35%;
