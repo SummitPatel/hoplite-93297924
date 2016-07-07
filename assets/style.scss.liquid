@@ -53,29 +53,29 @@ $max: max-width;
 
 @media screen and (max-width: 480px) {
   .padded {
-    padding-right: 1%;
-    padding-bottom: 1%;
-    padding-left: 2%;
+    padding-right: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 2vw;
   }
 }
 
 @media screen and (min-width: 481px) {
 
   .padded {
-    padding-right: 1%;
+    padding-right: 1vw;
     /* padding-left is inherited from the Timber framework*/
   }
 
   .padded-half-first {
-    padding-top: 1%;
+    padding-top: 1vw;
     padding-right: 0;
-    padding-bottom: 1%;
+    padding-bottom: 1vw;
   }
 
   .padded-half-second {
-    padding-top: 1%;
-    padding-left: 1%;
-    padding-bottom: 1%
+    padding-top: 1vw;
+    padding-left: 1vw;
+    padding-bottom: 1vw
   }
 }
 
@@ -464,6 +464,28 @@ body {
     background-image: url( {{'knee-high-socks-large.png' | asset_url}} );
     @include at-query(null, $postSmall, $large) {
       background-image: url( {{'knee-high-socks-medium.png' | asset_url}} );
+    }
+  }
+}
+
+.arm-sleeves-tile {
+  .img-bg {
+    height: 48vh;
+    background-size: cover;
+    background-image: url( {{'arm-sleeves-large.png' | asset_url}} );
+    @include at-query(null, $postSmall, $large) {
+      background-image: url( {{'arm-sleeves-medium.png' | asset_url}} );
+    }
+  }
+}
+
+.leg-sleeves-homepage-tile {
+  .img-bg {
+    height: 48vh;
+    background-size: cover;
+    background-image: url( {{'leg-sleeves-large.png' | asset_url}} );
+    @include at-query(null, $postSmall, $large) {
+      background-image: url( {{'leg-sleeves-medium.png' | asset_url}} );
     }
   }
 }
