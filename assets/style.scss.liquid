@@ -435,6 +435,17 @@ body {
   }
 }
 
+.designed-and-knit-tile {
+  .img-bg {
+    height: 48vh;
+    background-size: cover;
+    background-image: url( {{'product-tile-grey-bg-large.png' | asset_url}} );
+    @include at-query(null, $postSmall, $large) {
+      background-image: url( {{'product-tile-grey-bg-medium.png' | asset_url}} );
+    }
+  }
+}
+
 .shop-now-tile {
   .text-wrapper {
     top: 35%;
