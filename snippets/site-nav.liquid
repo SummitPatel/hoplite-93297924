@@ -4,7 +4,7 @@
   More info on linklists:
     - http://docs.shopify.com/themes/liquid-variables/linklists
 {% endcomment %}
-<ul class="site-nav{% unless settings.nav_below_logo %} post-large--text-right{% endunless %}" id="AccessibleNav">
+<ul class="site-nav{% unless settings.nav_below_logo %} large--text-right medium--text-right{% endunless %}" id="AccessibleNav">
   {% for link in linklists.main-menu.links %}
     {% comment %}
       Create a dropdown menu by naming a linklist the same as a link in the parent nav
@@ -36,12 +36,14 @@
     {% endif %}
   {% endfor %}
 
-  <!-- Cart from header-bar.liquid -->
-  <div class="header-bar__module">
-    <span class="header-bar__sep" aria-hidden="true"></span>
-    <a href="/cart" class="cart-page-link">
-      <span class="icon icon-cart header-bar__cart-icon" aria-hidden="true"></span>
-    </a>
-  </div>
+  <li>
+    <!-- Cart from header-bar.liquid -->
+    <div class="header-bar__module">
+      <span class="header-bar__sep" aria-hidden="true"></span>
+      <a href="/cart" class="cart-page-link">
+        <span class="icon icon-cart header-bar__cart-icon" aria-hidden="true"></span>
+      </a>
+    </div>
+  </li>
   
 </ul>
