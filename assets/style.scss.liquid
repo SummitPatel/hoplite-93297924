@@ -390,6 +390,18 @@ body {
   }
 }
 
+.perfectly-balanced-compression-tile {
+  .img-bg {
+    height: 66vh;
+    max-width: 100vw;
+    background-size: cover;
+    background-image: url( {{'perfectly-balanced-compression-large.png' | asset_url}} );
+    @include at-query(null, $postSmall, $large) {
+      background-image: url( {{'perfectly-balanced-compression-medium.png' | asset_url}} );
+    }
+  }
+}
+
 .product-tile {
   .text-wrapper {
     top: 20%;
