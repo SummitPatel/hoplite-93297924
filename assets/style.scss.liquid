@@ -289,7 +289,11 @@ body {
   }
 
   .text-wrapper {
-    top: 18%;
+    top: 20%;
+    @include at-query($max, $small) {
+     top: 18%;
+    }
+
     color: #333;
 
     h2, h6 {
@@ -309,13 +313,21 @@ body {
       @include at-query($max, $large) {
         font-size: 1rem;
       }
-      font-family: 'PF DIN Text Pro Bold';
+      @include at-query($min, $postSmall) {
+        font-family: 'PF DIN Text Pro Bold';
+      }
     }
   }
 
   .icons-wrapper {
     position: absolute;
-    top: 65%;
+    top: 55%;
+    @include at-query(null, $postSmall, $large) {
+      top: 60%;
+    }
+    @include at-query($max, $small) {
+      top: 65%;
+    }
     left: 0;
     right: 0;
     margin: auto;
@@ -332,7 +344,13 @@ body {
     }
 
     p {
-      margin: 7vh 0;
+      margin-top: 7vh;
+      @include at-query(null, $postSmall, $large) {
+        margin-top: 5vh;
+      }
+      @include at-query($max, $small) {
+        margin-top: 3vh;
+      }
       font-family: 'PF DIN Text Pro Regular';
       text-transform: uppercase;
       font-size: 2vw;
@@ -354,18 +372,27 @@ body {
 
     h2 {
       font-size: 3vw;
+      @include at-query($max, $large) {
+        font-size: 3rem;
+      }
       font-family: 'PF DIN Text Pro Bold';
       letter-spacing: .4vw;
     }
 
     h4 {
       font-size: 1.2vw;
+      @include at-query($max, $large) {
+        font-size: 1rem;
+      }
       font-family: 'PF DIN Text Pro Bold';
       letter-spacing: .2vw;
     }
 
     h5 {
       font-size: 1.5vw;
+      @include at-query($max, $large) {
+        font-size: 1.5rem;
+      }
       text-transform: none;
     }
 
@@ -392,6 +419,9 @@ body {
     background-image: url( {{'insane-abrasion-protection-large.png' | asset_url}} );
     @include at-query(null, $postSmall, $large) {
       background-image: url( {{'insane-abrasion-protection-medium.png' | asset_url}} );
+    }
+    @include at-query($max, $small) {
+      background-image: url( {{'insane-abrasion-protection-small.png' | asset_url}} );
     }
   }
 }
