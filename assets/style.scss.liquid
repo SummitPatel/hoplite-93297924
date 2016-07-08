@@ -3,8 +3,8 @@
 ==============================================================================*/
 
 // font-family: 'PF DIN Text Pro Regular'
-// font-family: 'PF DIN Text Pro Medium'
 // font-family: 'PF DIN Text Pro Light'
+// font-family: 'PF DIN Text Comp Pro Light'
 // font-family: 'PF DIN Text Pro Bold'
 
 /*============================================================================
@@ -218,10 +218,11 @@ body {
 
     h2 {
       font-size: 6vw;
+      font-family: 'PF DIN Text Comp Pro Light';
+      letter-spacing: 1rem;
       @include at-query($max, $large) {
         font-size: 4rem;
       }
-      font-family: 'PF DIN Text Pro Light';
     }
 
     h4 {
@@ -288,16 +289,16 @@ body {
 
     h2 {
       font-size: 5vw;
+      font-family: 'PF DIN Text Comp Pro Light';
+      letter-spacing: 1rem;
       @include at-query($max, $large) {
         font-size: 4rem;
       }
     }
 
     h6 {
-      font-size: 2vw;
-      @include at-query($max, $large) {
-        font-size: 1rem;
-      }
+      font-size: 1rem;
+      letter-spacing: .1rem;
       @include at-query($min, $postSmall) {
         font-family: 'PF DIN Text Pro Bold';
       }
