@@ -92,11 +92,11 @@ $max: max-width;
   z-index: 1;
   left: 0;
   right: 0;
-  padding: 3vh 0;
+  padding: 0;
 
   .wrapper {
     max-width: 1600px;
-    padding: 0 3rem;
+    padding: 3vh 3rem;
   }
 }
 
@@ -123,6 +123,19 @@ $max: max-width;
 
 .mobile-nav {
   text-align: center;
+  height: 100vh;
+  background: #000;
+  opacity: .6;
+  position: fixed;
+  width: 100vw;
+
+  li {
+    height: 10vh;
+
+    a {
+      height: 10vh;
+    }
+  }
 }
 
 /*============================================================================
