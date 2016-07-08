@@ -435,6 +435,9 @@ body {
     @include at-query(null, $postSmall, $large) {
       background-image: url( {{'rip-and-tear-proof-medium.png' | asset_url}} );
     }
+    @include at-query($max, $small) {
+      background-image: url( {{'rip-and-tear-proof-small.png' | asset_url}} );
+    }
   }
 }
 
@@ -447,6 +450,9 @@ body {
     @include at-query(null, $postSmall, $large) {
       background-image: url( {{'eerily-cold-medium.png' | asset_url}} );
     }
+    @include at-query($max, $small) {
+      background-image: url( {{'eerily-cold-small.png' | asset_url}} );
+    }
   }
 }
 
@@ -458,6 +464,9 @@ body {
     background-image: url( {{'perfectly-balanced-compression-large.png' | asset_url}} );
     @include at-query(null, $postSmall, $large) {
       background-image: url( {{'perfectly-balanced-compression-medium.png' | asset_url}} );
+    }
+    @include at-query($max, $small) {
+      background-image: url( {{'perfectly-balanced-compression-small.png' | asset_url}} );
     }
   }
 }
