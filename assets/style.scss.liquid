@@ -265,15 +265,17 @@ body {
 
 .worlds-toughest-workouts-tile {
   .img-bg {
-    height: 66vh;
+    height: 82vh;
     max-width: 100vw;
     background-size: cover;
     background-image: url( {{'worlds-toughest-workouts-large.png' | asset_url}} );
     @include at-query(null, $postSmall, $large) {
       background-image: url( {{'worlds-toughest-workouts-medium.png' | asset_url}} );
+      height: 66vh;
     }
     @include at-query($max, $small) {
       background-image: url( {{'worlds-toughest-workouts-small.png' | asset_url}} );
+      height: 80vh;
     }
   }
 
@@ -353,6 +355,7 @@ body {
 .dyneema-tile { 
   .img-bg {
     background-size: cover;
+    height: 82vh;
     @include at-query(null, $postSmall, $large) {
       height: 66vh;
     }
