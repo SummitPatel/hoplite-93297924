@@ -127,7 +127,7 @@ body {
 .frontpage-wrapper {
   margin: 0 auto;
   padding: 0;
-  max-width: 1600px;
+  max-width: 100vw;
 }
 
 .centered {
@@ -162,6 +162,9 @@ body {
     @include at-query(null, $postSmall, $large) {
       background-image: url( {{'hero-homepage-medium.png' | asset_url}} );
     }
+    @include at-query($max, $small) {
+      background-image: url( {{'hero-homepage-small.png' | asset_url}} );
+    }
   }
 
   .hero-img-triangle-icon {
@@ -180,7 +183,8 @@ body {
 
     p {
       margin-bottom: 2vh;
-      font-size: 1vw;
+      font-family: 'PF DIN Text Pro Bold';
+      font-size: 1rem;
       text-transform: uppercase;
       text-align: center;
     }
@@ -218,6 +222,9 @@ body {
 
     h2 {
       font-size: 6vw;
+      @include at-query($max, $large) {
+        font-size: 4rem;
+      }
       font-family: 'PF DIN Text Pro Light';
     }
 
@@ -276,10 +283,13 @@ body {
     @include at-query(null, $postSmall, $large) {
       background-image: url( {{'worlds-toughest-workouts-medium.png' | asset_url}} );
     }
+    @include at-query($max, $small) {
+      background-image: url( {{'worlds-toughest-workouts-small.png' | asset_url}} );
+    }
   }
 
   .text-wrapper {
-    top: 20%;
+    top: 18%;
     color: #333;
 
     h2, h6 {
@@ -289,17 +299,23 @@ body {
 
     h2 {
       font-size: 5vw;
+      @include at-query($max, $large) {
+        font-size: 4rem;
+      }
     }
 
     h6 {
       font-size: 2vw;
+      @include at-query($max, $large) {
+        font-size: 1rem;
+      }
       font-family: 'PF DIN Text Pro Bold';
     }
   }
 
   .icons-wrapper {
     position: absolute;
-    top: 55%;
+    top: 65%;
     left: 0;
     right: 0;
     margin: auto;
@@ -307,6 +323,12 @@ body {
 
     img {
       margin: 0 2rem;
+      @include at-query ($min, $postSmall) {
+        min-height: 74px;
+      }
+      @include at-query($max, $small) {
+        max-height: 55px;
+      }
     }
 
     p {
@@ -314,6 +336,9 @@ body {
       font-family: 'PF DIN Text Pro Regular';
       text-transform: uppercase;
       font-size: 2vw;
+      @include at-query($max, $large) {
+        font-size: 1rem;
+      }
     }
   }
 }

@@ -114,11 +114,11 @@
       {% else %}
 
       <div class="grid--full post-large--display-table medium--display-table">
-        <div class="grid__item post-large--one-third medium--one-third post-large--display-table-cell">
+        <div class="grid__item post-large--one-third medium--one-third small--one-third post-large--display-table-cell">
           {% if template == 'index' %}
-            <h1 class="site-header__logo post-large--left medium--left" itemscope itemtype="http://schema.org/Organization">
+            <h1 class="site-header__logo post-large--left medium--left small--left" itemscope itemtype="http://schema.org/Organization">
           {% else %}
-            <div class="h1 site-header__logo post-large--left medium--left" itemscope itemtype="http://schema.org/Organization">
+            <div class="h1 site-header__logo post-large--left medium--left small--left" itemscope itemtype="http://schema.org/Organization">
           {% endif %}
             {% if settings.logo_use_image %}
               <a href="/" itemprop="url">
@@ -141,6 +141,13 @@
         <div class="grid__item post-large--two-thirds medium--two-thirds post-large--display-table-cell small--hide">
           {% include 'site-nav' %}
         </div>
+        <!-- Brought from header-bar.liquid-->
+        <div class="large--hide medium--hide small--right">
+          <button type="button" class="mobile-nav-trigger" id="MobileNavTrigger">
+            <span class="icon icon-hamburger" aria-hidden="true"></span>
+          </button>
+        </div>
+        {% include 'mobile-nav' %}
       </div>
 
       {% endif %}
