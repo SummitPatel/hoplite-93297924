@@ -125,15 +125,30 @@ $max: max-width;
   text-align: center;
   height: 100vh;
   background: #000;
-  opacity: .6;
+  opacity: .8;
   position: fixed;
-  width: 100vw;
+  width: 100%;
+
+  .x-btn {
+    float: right;
+    margin: 3vh 6.5vh;
+    opacity: 1;
+  }
 
   li {
-    height: 10vh;
+    height: 12vh;
+    border: none;
+
+    &:first-of-type {
+      margin-top: 20vh;
+    }
 
     a {
-      height: 10vh;
+      height: 12vh;
+      color: #fff;
+      opacity: 1;
+      font-family: 'PF DIN Text Pro Bold';
+      font-size: 2rem;
     }
   }
 }

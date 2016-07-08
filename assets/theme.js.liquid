@@ -13,7 +13,7 @@ theme.cacheSelectors = function () {
     $body: $('body'),
 
     // Mobile Nav
-    $mobileNavTrigger: $('#MobileNavTrigger'),
+    $mobileNavTrigger: $('.mobile-nav-trigger'),
     $mobileNav: $('#MobileNav'),
     $mobileSublistTrigger: $('.mobile-nav__sublist-trigger'),
 
@@ -56,6 +56,7 @@ theme.init = function () {
 theme.mobileNav = function () {
   theme.cache.$mobileNavTrigger.on('click', function() {
     theme.cache.$mobileNav.slideToggle(220);
+    $('#MobileNavTrigger').toggleClass('small--hide');
   });
 
   theme.cache.$mobileSublistTrigger.on('click', function(evt) {
