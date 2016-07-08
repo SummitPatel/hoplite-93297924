@@ -22,6 +22,12 @@
     {% endif %}
   </li>
   {% endfor %}
+  
+  <li class="mobile-nav__link" aria-haspopup="true">
+    <a href="/cart" class="mobile-nav">
+      {{ 'layout.cart.title' | t }} <span class="cart-count{% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
+    </a>
+  </li>
 
   {% if shop.customer_accounts_enabled %}
     {% if customer %}
