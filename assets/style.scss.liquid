@@ -89,13 +89,37 @@ $max: max-width;
 
 .site-header {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   right: 0;
   padding: 0;
 
   &.fixed-header {
     position: fixed;
+    background-color: #fff;
+
+    .site-nav__link {
+      color: #000;
+    }
+
+    .icon-cart {
+      color: #000;
+    }
+
+    // hides normal icon and keeps the new icon clickable
+    .site-header__logo {
+      background-image: url({{'hoplite-logo-inverse.png' | asset_url }});
+      width: 51px;
+      height: 53px;
+
+      a {
+        height: 53px;
+
+        img {
+          display: none;
+        }
+      }
+    }
   }
 
   .wrapper {
