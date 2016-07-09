@@ -30,7 +30,8 @@ theme.cacheSelectors = function () {
     cartNote: '.cart__note',
 
     //Navigation
-    $hasDropdownItem: $('.site-nav--has-dropdown')
+    $hasDropdownItem: $('.site-nav--has-dropdown'),
+    $siteHeader: $('.site-header')
   }
 };
 
@@ -47,16 +48,27 @@ theme.init = function () {
   theme.equalHeights();
   theme.cartPage();
   theme.toggleMenu();
+  theme.fixedHeader();
 
   {% if settings.product_image_zoom_type == 'lightbox' %}
     theme.productImageGallery();
   {% endif %}
 };
 
+theme.fixedHeader = function () {
+  theme.cache.$w.scroll(function() {
+    if(theme.cache.$w.scrollTop() >= 100) {
+      theme.cache.$siteHeader.addClass('fixed-header').slideDown(1000);
+    } else {
+      theme.cache.$siteHeader.removeClass('fixed-header');
+    }
+  });
+};
+
 theme.mobileNav = function () {
   theme.cache.$mobileNavTrigger.on('click', function() {
     theme.cache.$mobileNav.slideToggle(220);
-    $('#MobileNavTrigger').toggleClass('small--hide');
+    $('#MobileNavTriggerHamburgerIcon').toggleClass('small--hide');
   });
 
   theme.cache.$mobileSublistTrigger.on('click', function(evt) {
