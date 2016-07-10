@@ -88,7 +88,7 @@ $max: max-width;
 }
 
 .site-header {
-  position: fixed;
+  position: absolute;
   z-index: 2;
   left: 0;
   right: 0;
@@ -97,8 +97,10 @@ $max: max-width;
   transition: all 1s ease;
 
   &.fixed-header {
-    // position: fixed;
-    background-color: #000;
+    @include at-query($min, $postSmall) {
+      position: fixed;
+      background-color: #000;
+    }
 
     // .site-nav__link {
     //   color: #000;
