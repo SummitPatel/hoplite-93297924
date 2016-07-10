@@ -88,38 +88,40 @@ $max: max-width;
 }
 
 .site-header {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   left: 0;
   right: 0;
   padding: 0;
 
+  transition: all 1s ease;
+
   &.fixed-header {
-    position: fixed;
-    background-color: #fff;
+    // position: fixed;
+    background-color: #000;
 
-    .site-nav__link {
-      color: #000;
-    }
+    // .site-nav__link {
+    //   color: #000;
+    // }
 
-    .icon-cart {
-      color: #000;
-    }
+    // .icon-cart {
+    //   color: #000;
+    // }
 
-    // hides normal icon and keeps the new icon clickable
-    .site-header__logo {
-      background-image: url({{'hoplite-logo-inverse.png' | asset_url }});
-      width: 51px;
-      height: 53px;
+    // // hides normal icon and keeps the new icon clickable
+    // .site-header__logo {
+    //   background-image: url({{'hoplite-logo-inverse.png' | asset_url }});
+    //   width: 51px;
+    //   height: 53px;
 
-      a {
-        height: 53px;
+    //   a {
+    //     height: 53px;
 
-        img {
-          display: none;
-        }
-      }
-    }
+    //     img {
+    //       display: none;
+    //     }
+    //   }
+    // }
   }
 
   .wrapper {

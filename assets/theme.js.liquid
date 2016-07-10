@@ -57,8 +57,7 @@ theme.init = function () {
 
 theme.fixedHeader = function () {
   // check if the user is already scrolled down on page refresh
-  // 656 is height of hero image
-  if(theme.cache.$w.scrollTop() >= 656) {
+  if(theme.cache.$w.scrollTop() >= 100) {
     theme.cache.$siteHeader.addClass('fixed-header');
   } else {
     theme.cache.$siteHeader.removeClass('fixed-header');
@@ -66,7 +65,7 @@ theme.fixedHeader = function () {
   
   // call on scroll
   theme.cache.$w.scroll(function() {
-    if(theme.cache.$w.scrollTop() >= 656) {
+    if(theme.cache.$w.scrollTop() >= 100) {
       theme.cache.$siteHeader.addClass('fixed-header');
     } else {
       theme.cache.$siteHeader.removeClass('fixed-header');
