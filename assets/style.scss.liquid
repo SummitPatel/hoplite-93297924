@@ -103,7 +103,7 @@ $max: max-width;
 
       .wrapper {
         height: 60px;
-        padding: 0 3rem;
+        padding: 0 8vw;
 
         .grid--full.display-table {
           height: 60px;
@@ -118,7 +118,8 @@ $max: max-width;
   }
 
   .wrapper {
-    padding: 3vh 3rem;
+    padding: 3vh 8vw;
+    max-width: 100%;
   }
 
   .cart-page-link {
@@ -160,7 +161,7 @@ $max: max-width;
 
   .x-btn {
     float: right;
-    margin: 3vh 6.5vh;
+    margin: 1rem 3rem;
     opacity: 1;
   }
 
@@ -242,7 +243,9 @@ body {
     width: 8vw;
     color: #fff;
     cursor: pointer;
-
+    @include at-query($max, $small) {
+      width: 9vw;
+    }
 
     p {
       margin-bottom: 2vh;
@@ -250,6 +253,9 @@ body {
       font-size: 1rem;
       text-transform: uppercase;
       text-align: center;
+      @include at-query($max, $small) {
+        font-size: .8rem;
+      }
     }
   }
 
@@ -291,6 +297,10 @@ body {
         font-size: 4rem;
         letter-spacing: .7rem;
       }
+      @include at-query($max, $small) {
+        font-size: 12vw;
+        letter-spacing: .2rem;
+      }
     }
 
     h4 {
@@ -301,6 +311,9 @@ body {
       font-size: 1rem;
       font-family: 'PF DIN Text Pro Bold';
       letter-spacing: .1rem;
+      @include at-query($max, $small) {
+        font-size: 3.5vw;
+      }
     }
   }
 }
@@ -338,7 +351,7 @@ body {
     }
     @include at-query($max, $small) {
       background-image: url( {{'worlds-toughest-workouts-small.png' | asset_url}} );
-      height: 80vh;
+      height: 66vh;
     }
   }
 
@@ -363,6 +376,10 @@ body {
         font-size: 4rem;
         letter-spacing: .7rem;
       }
+      @include at-query($max, $small) {
+        font-size: 12vw;
+        letter-spacing: .2rem;
+      }
     }
 
     h6 {
@@ -370,6 +387,9 @@ body {
       letter-spacing: .1rem;
       @include at-query($min, $postSmall) {
         font-family: 'PF DIN Text Pro Bold';
+      }
+      @include at-query($max, $small) {
+        font-size: 3vw;
       }
     }
   }
@@ -388,13 +408,16 @@ body {
     margin: auto;
     max-width: 80%;
 
+    .icon {
+      padding: 0;
+    }
+
     img {
-      margin: 0 2rem;
       @include at-query ($min, $postSmall) {
         min-height: 74px;
       }
       @include at-query($max, $small) {
-        max-height: 55px;
+        max-height: 10vw;
       }
     }
 
@@ -411,6 +434,9 @@ body {
       font-size: 2vw;
       @include at-query($max, $large) {
         font-size: 1rem;
+      }
+      @include at-query($max, $small) {
+        font-size: 3vw;
       }
     }
   }
