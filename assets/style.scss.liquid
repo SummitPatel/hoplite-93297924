@@ -100,35 +100,31 @@ $max: max-width;
     @include at-query($min, $postSmall) {
       position: fixed;
       background-color: #000;
+
+      .wrapper {
+        height: 60px;
+        padding: 0 3rem;
+
+        .grid--full.display-table {
+          height: 60px;
+        }
+
+        .site-header__logo img {
+          height: 35px;
+        }
+
+      }
     }
-
-    // .site-nav__link {
-    //   color: #000;
-    // }
-
-    // .icon-cart {
-    //   color: #000;
-    // }
-
-    // // hides normal icon and keeps the new icon clickable
-    // .site-header__logo {
-    //   background-image: url({{'hoplite-logo-inverse.png' | asset_url }});
-    //   width: 51px;
-    //   height: 53px;
-
-    //   a {
-    //     height: 53px;
-
-    //     img {
-    //       display: none;
-    //     }
-    //   }
-    // }
   }
 
   .wrapper {
-    max-width: 1600px;
     padding: 3vh 3rem;
+  }
+
+  .cart-page-link {
+    font-size: 1rem;
+    padding-top: 8px;
+    padding-bottom: 0;
   }
 }
 
@@ -141,6 +137,7 @@ $max: max-width;
   &:active, &:hover, &:focus {
     color: #fff;
   }
+
 }
 
 .icon-cart {
