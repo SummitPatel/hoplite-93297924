@@ -117,6 +117,12 @@ $max: max-width;
     }
   }
 
+  img {
+    @include at-query($max, $small) {
+      max-height: 10vw;
+    }
+  }
+
   .wrapper {
     padding: 3vh 8vw;
     max-width: 100%;
@@ -148,6 +154,7 @@ $max: max-width;
 .mobile-nav-trigger {
   .icon {
     color: #fff;
+    font-size: 7vw;
   }
 }
 
@@ -161,7 +168,7 @@ $max: max-width;
 
   .x-btn {
     float: right;
-    margin: 1rem 3rem;
+    margin: 5vw 8vw;
     opacity: 1;
   }
 
@@ -178,7 +185,7 @@ $max: max-width;
       color: #fff;
       opacity: 1;
       font-family: 'PF DIN Text Pro Bold';
-      font-size: 2rem;
+      font-size: 7vw;
     }
   }
 }
@@ -305,6 +312,9 @@ body {
 
     h4 {
       font-size: 2vw;
+      img {
+        max-height: 5vw;
+      }
     }
 
     h6 {
@@ -450,7 +460,7 @@ body {
       height: 66vh;
     }
     @include at-query($max, $small) {
-      height: 80vh;
+      height: 66vh;
     }
   }
 
@@ -513,6 +523,7 @@ body {
       background-image: url( {{'dyneema-link-arrow.png' | asset_url}} );
       background-position: 90% 45%;
       @include at-query($max, $small) {
+        font-size: .9rem;
         padding: .5vw 3vw;
         margin-top: 2vw;
         background-position: 100% 24%;
@@ -573,10 +584,13 @@ body {
 .product-tile {
   .text-wrapper {
     top: 20%;
+    max-width: 90vw;
+    margin: 0 auto;
   }
 
   .icon {
     margin-bottom: 2rem;
+    max-height: 15vw;
   }
 
   h2, h4, h6 {
@@ -591,24 +605,18 @@ body {
 
   h4 {
     font-size: 2vw;
-    @include at-query($max, $postSmall) {
-      font-size: 1.5rem;
-    }
     font-family: 'PF DIN Text Pro Bold';
     letter-spacing: .3rem;
-
-    br {
-      display: none;
-      @include at-query(null, $postSmall, $large) {
-        display: block;
-      }
+    @include at-query($max, $small) {
+      font-size: 4.5vw;
+      letter-spacing: .1rem;
     }
   }
 
   h6 {
     font-size: 1vw;
-    @include at-query($max, $postSmall) {
-      font-size: 1rem;
+    @include at-query($max, $small) {
+      font-size: 4vw;
     }
 
   }
@@ -630,8 +638,8 @@ body {
     line-height: 1;
     padding: 2vh 3vw;
     border-radius: 0;
-    @include at-query($max, $postSmall) {
-      font-size: 1.3rem;
+    @include at-query($max, $small) {
+      font-size: 4vw;
       padding: 4vh 10vw;
     }
   }
