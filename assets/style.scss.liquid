@@ -500,13 +500,20 @@ body {
 
     h5 {
       font-size: 1.5vw;
+      text-transform: none;
       @include at-query($max, $large) {
         font-size: 1.5rem;
       }
       @include at-query($max, $small) {
         font-size: 4vw;
       }
-      text-transform: none;
+
+      .forced-line-break {
+        display: none;
+        @include at-query($max, $small) {
+          display: block;
+        }
+      }
     }
 
     .dyneema-link {
