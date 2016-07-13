@@ -661,6 +661,9 @@ body {
     @include at-query(null, $postSmall, $large) {
       background-image: url( {{'product-tile-grey-bg-medium.png' | asset_url}} );
     }
+    @include at-query($max, $small) {
+      background-image: url( {{'product-tile-grey-bg-small.png' | asset_url}} );
+    }
   }
 }
 
@@ -671,6 +674,9 @@ body {
     background-image: url( {{'product-tile-grey-bg-large.png' | asset_url}} );
     @include at-query(null, $postSmall, $large) {
       background-image: url( {{'product-tile-grey-bg-medium.png' | asset_url}} );
+    }
+    @include at-query($max, $small) {
+      background-image: url( {{'product-tile-grey-bg-small.png' | asset_url}} );
     }
   }
 }
@@ -683,6 +689,9 @@ body {
     @include at-query(null, $postSmall, $large) {
       background-image: url( {{'knee-high-socks-medium.png' | asset_url}} );
     }
+    @include at-query($max, $small) {
+      background-image: url( {{'knee-high-socks-small.png' | asset_url}} );
+    }
   }
 }
 
@@ -694,6 +703,9 @@ body {
     @include at-query(null, $postSmall, $large) {
       background-image: url( {{'arm-sleeves-medium.png' | asset_url}} );
     }
+    @include at-query($max, $small) {
+      background-image: url( {{'arm-sleeves-small.png' | asset_url}} );
+    }
   }
 }
 
@@ -704,6 +716,9 @@ body {
     background-image: url( {{'leg-sleeves-large.png' | asset_url}} );
     @include at-query(null, $postSmall, $large) {
       background-image: url( {{'leg-sleeves-medium.png' | asset_url}} );
+    }
+    @include at-query($max, $small) {
+      background-image: url( {{'leg-sleeves-small.png' | asset_url}} );
     }
   }
 }
