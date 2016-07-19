@@ -469,7 +469,8 @@ body {
   }
 
   .text-wrapper {
-    top: 35%;
+    top: 50%;
+    transform: translateY(-50%);
     max-width: 90vw;
     margin: 0 auto;
 
@@ -594,9 +595,12 @@ body {
 
 .product-tile {
   .text-wrapper {
-    top: 20%;
-    max-width: 90vw;
+    top: 50%;
+    transform: translateY(-50%);
     margin: 0 auto;
+    @include at-query($min, $postSmall) {
+      width: 33vw;
+    }
   }
 
   .icon {
@@ -629,16 +633,16 @@ body {
     text-transform: none;
     @include at-query($max, $small) {
       font-size: 4vw;
+
+      br {
+        display: none;
+      }
     }
 
   }
 }
 
 .shop-now-tile {
-  .text-wrapper {
-    top: 35%;
-  }
-
   .shop-now-btn {
     margin-top: 1rem;
     background: transparent no-repeat;
@@ -658,6 +662,12 @@ body {
 }
 
 .designed-and-knit-tile {
+  .text-wrapper {
+    @include at-query($min, $postSmall) {
+      margin-right: 10%;
+    }
+  }
+
   .img-bg {
     height: 48vh;
     background-size: cover;
@@ -672,6 +682,12 @@ body {
 }
 
 .buy-give-tile {
+  .text-wrapper {
+    @include at-query($min, $postSmall) {
+      margin-left: 10%;
+    }
+  }
+
   .img-bg {
     height: 48vh;
     background-size: cover;
