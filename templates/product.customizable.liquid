@@ -14,6 +14,21 @@
 
     <div class="grid grid__item centered-padded">
 
+    <div class="grid__item padded">
+      <div class="tab-container">
+        <ul class="tabs">
+          <li><a href="#tab-1">Compression</a></li>
+          <li><a href="#tab-2">Fit</a></li>
+        </ul>
+        <div id="tab-1">
+          {{ pages.medical-grade-compression.content }}
+        </div>
+        <div id="tab-2">
+          {{ pages.medical-grade-fit.content }}
+        </div>
+      </div>
+    </div>
+
       <div class="grid__item padded">
         {{ pages.indestructible-compression.content }}
       </div>
@@ -24,20 +39,7 @@
         {{ pages.busted-gear.content }}
       </div>
 
-      <div class="grid__item padded">
-        <div class="tile-wrapper">
-          <ul class="tabs">
-            <li><a href="#tab-1">Compression</a></li>
-            <li><a href="#tab-2">Fit</a></li>
-          </ul>
-          <div id="tab-1">
-          {{ pages.medical-grade-compression.content }}
-          </div>
-          <div id="tab-2">
-          {{ pages.medical-grade-fit.content }}
-          </div>
-        </div>
-      </div>
+      
 
       <div class="grid__item padded">
         {{ pages.tailored-sizing.content }}
@@ -310,7 +312,7 @@
       links.not(':first').each(function () {
         $($(this).attr('href')).hide();
       });
-      $(this).find('a').click(function(e){
+      $(this).find('a').bind('click touchstart', function(e){
         active.removeClass('active');
         active.parents('li').removeClass('active');
         content.hide();

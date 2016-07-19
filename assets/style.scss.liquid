@@ -915,6 +915,30 @@ body {
   Tabbed Content
 ==============================================================================*/
 
+
+.tab-container {
+  padding-top: 15vw;
+
+  .tabs {
+    margin: 0 auto;
+    padding: 0;
+    width: 80vw;
+
+    li {
+      display: block;
+      float: left;
+      height: 2rem;
+      margin: 0 auto;
+      padding: 0;
+      width: 40vw;
+
+      &.active {
+        border-bottom: 1px solid red;
+      }
+    }
+  }
+}
+
 .tabbed-content-text-wrapper {
   min-height: 40rem;
   position: relative;
@@ -939,24 +963,6 @@ body {
   }
 }
 
-ul.tabs {
-  display: block;
-  margin: 0 auto 1rem;
-  padding: 0;
-  width: 22rem;
-}
-ul.tabs li {
-  display: block;
-  float: left;
-  height: 2rem;
-  margin: 0 1rem;
-  padding: 0;
-  min-width: 9rem;
-
-  &.active {
-    border-bottom: 1px solid red;
-  }
-}
 ul.tabs li a {
   display: block;
   font-size: 13px;
