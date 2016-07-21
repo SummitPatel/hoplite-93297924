@@ -1050,13 +1050,29 @@ ul.tabs:after {
 
 .compression-sweet-spot-tile {
   background: #e9e9e9;
-  height: 63vh;
+  height: 31vh;
 
   .text-wrapper {
     color: #333;
 
     a {
       color: #333;
+    }
+  }
+}
+
+.better-than-jeans-protection-tile {
+  height: 53vh;
+
+  br {
+    display: none;
+  }
+
+  @include at-query($max, $small) {
+    background-image: url( {{'better-than-jeans-protection-small.png' | asset_url}} );
+
+    br {
+      display: block;
     }
   }
 }
