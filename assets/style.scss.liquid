@@ -622,6 +622,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     margin: 0 auto;
+    max-width: 80vw;
     @include at-query($min, $postSmall) {
       width: 33vw;
     }
@@ -1097,7 +1098,17 @@ ul.tabs:after {
   height: 31vh;
   background: #333;
 
-  .break-it-icon {
+  .icon {
+    height: 15vw;
+    margin-bottom: 5vw;
+  }
+}
+
+.buy-give-tile {
+  height: 31vh;
+  background: #333;
+
+  .icon {
     height: 15vw;
     margin-bottom: 5vw;
   }
