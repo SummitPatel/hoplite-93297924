@@ -1077,6 +1077,22 @@ ul.tabs:after {
   }
 }
 
+.wont-wear-out-tile {
+  height: 53vh;
+
+  br {
+    display: none;
+  }
+
+  @include at-query($max, $small) {
+    background-image: url( {{'wont-wear-out-small.png' | asset_url}} );
+
+    br {
+      display: block;
+    }
+  }
+}
+
 /*============================================================================
   Color Swatches
 ==============================================================================*/
