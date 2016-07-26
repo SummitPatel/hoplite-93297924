@@ -827,12 +827,14 @@ body {
 
 .measurements-tile {
   height: 100vh;
-  padding: 10vw 5vw;
+  padding: 0 5vw;
 
   .text-wrapper {
     position: relative;
     color: #333;
     top: 0;
+    padding: 5vw 0 0 0;
+    border-top: 1px solid #e9e9e9;
 
     h2 {
       font-family: 'PF DIN Text Pro Bold';
@@ -841,24 +843,65 @@ body {
       margin-bottom: 1vw;
     }
 
+    h4 {
+      font-family: 'PF DIN Text Pro Regular';
+      font-size: 5vw;
+      letter-spacing: .1rem;
+      margin: 0;
+    }
+
     h6 {
       font-family: 'PF DIN Text Pro Regular';
       font-size: 3.7vw;
       text-transform: none;
+      margin: 0;
     }
   }
 
   .icons-wrapper {
+    font-family: 'PF DIN Text Pro Regular';
+    margin: 5vw 0;
+
     .icon {
-      height: 35vh;
-      width: 35vh;
+      height: 25vh;
+      width: 25vh;
       font-family: 'PF DIN Text Pro Bold';
+      font-size: 12vh;
       color: #989898;
-      line-height: 35vh;
+      line-height: 25vh;
       border: 2px solid #999;
       border-radius: 18vh;
       margin: 0 auto;
-      font-size: 15vh;
+    }
+
+    .text {
+      margin: 4vw 0 0 0;
+    }
+
+    h4 {
+      text-transform: uppercase;
+      font-family: 'PF DIN Text Pro Regular';
+      letter-spacing: .1rem;
+      color: #363636;
+      margin: 0 0 2vw 0;
+    }
+
+    p {
+      font-size: 3.8vw;
+      text-transform: uppercase;
+      margin: 0 0 4vw 0;
+    }
+  }
+
+  .text-and-icons-wrapper {
+
+    .icon {
+      width: 10vw;
+      vertical-align: middle;
+    }
+
+    p {
+      font-size: 4vw;
     }
   }
 }
