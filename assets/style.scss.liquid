@@ -324,7 +324,7 @@ body {
 
 .tile-wrapper {
   position: relative;
-  line-height: 0;
+  line-height: 1;
 
   .text-wrapper {
     position: absolute;
@@ -874,6 +874,12 @@ body {
       margin: 0 auto;
     }
 
+    .link-arrow {
+      position: absolute;
+      top: 10vh;
+      right: 5vw;
+    }
+
     .text {
       margin: 4vw 0 0 0;
     }
@@ -894,15 +900,44 @@ body {
   }
 
   .text-and-icons-wrapper {
+    margin: 0 auto;
+    font-family: 'PF DIN Text Pro Regular';
+    text-transform: uppercase;
 
-    .icon {
-      width: 10vw;
-      vertical-align: middle;
+    .clearfix {
+      margin: 5vw 0 0 0;
+
+      .icon-wrapper {
+        float: left;
+        height: 10vh;
+      }
+
+      .icon {
+        width: 10vw;
+        vertical-align: middle;
+        float: left;
+        margin: 0 3vw 0 0;
+      }
+
+      h6 {
+        font-family: 'PF DIN Text Pro Bold';
+        font-size: 3vw;
+        text-align: left;
+        overflow: hidden;
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      p {
+        font-size: 3.3vw;
+        text-align: left;
+        margin: 0;
+        padding: 0 12vw 0 0;
+        overflow: hidden;
+        line-height: 1.4;
+      }
     }
 
-    p {
-      font-size: 4vw;
-    }
   }
 }
 
@@ -1064,7 +1099,6 @@ body {
 
     .dyneema-link-black {
       display: inline-block;
-      background: transparent no-repeat;
       font-size: 4vw;
       font-family: 'PF DIN Text Pro Bold';
       color: #333;
@@ -1073,6 +1107,7 @@ body {
       line-height: 1;
       text-decoration: none;
       padding: 3vw 6vw;
+      background: transparent no-repeat;
       background-image: url( {{'dyneema-link-arrow-black.png' | asset_url}} );
       background-position: 100% 45%;
     }
