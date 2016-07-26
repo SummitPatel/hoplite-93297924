@@ -316,6 +316,8 @@
     {% endif %}
   {% endfor %}
 
+  <!-- Force flexslider on all pages -->
+  {% assign slider_home_enable = true %}
   {% if slider_home_enable %}
     {{ 'jquery.flexslider.min.js' | asset_url | script_tag }}
     {{ 'slider.js' | asset_url | script_tag }}

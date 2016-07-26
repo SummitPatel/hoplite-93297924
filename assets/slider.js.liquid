@@ -16,12 +16,16 @@ timberSlider.sliders = function () {
   var $slider = timberSlider.cache.$slider,
       sliderArgs = {
         animation: '{{ settings.slider_home_transition }}',
+        animationLoop: false,
         animationSpeed: 500,
         pauseOnHover: true,
         keyboard: false,
-        slideshow: {{ settings.slider_home_auto }},
+        // slideshow: {{ settings.slider_home_auto }},
+        slideshow: false,
         slideshowSpeed: {{ settings.slider_home_rate }},
-        controlNav: {{ settings.slider_home_show_dots }},
+        // controlNav: {{ settings.slider_home_show_dots }},
+        controlNav: false,
+        directionNav: false,
         smoothHeight: true
       };
 
