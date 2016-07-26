@@ -755,29 +755,7 @@ body {
   }
 }
 
-.no-show-socks-tile {
-  height: 48vh;
-  background-size: cover;
-  background-image: url( {{'leg-sleeves-large.png' | asset_url}} );
-  @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'leg-sleeves-medium.png' | asset_url}} );
-  }
-  @include at-query($max, $small) {
-    background-image: url( {{'no-show-socks-small.png' | asset_url}} );
-  }
-}
 
-.leg-sleeves-tile {
-  height: 48vh;
-  background-size: cover;
-  background-image: url( {{'leg-sleeves-large.png' | asset_url}} );
-  @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'leg-sleeves-medium.png' | asset_url}} );
-  }
-  @include at-query($max, $small) {
-    background-image: url( {{'leg-sleeves-small.png' | asset_url}} );
-  }
-}
 
 
 
@@ -987,8 +965,26 @@ body {
 }
 
 .product-single {
-  padding: 5rem 0;
+  padding: 5vh 0;
   background: #333;
+}
+
+#ProductPhoto {
+  width: 50vw;
+  margin: 0 auto;
+  float: none;
+  text-align: center;
+  padding: 0;
+}
+
+.product-single__hero {
+  h1, .product-single__price {
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'PF DIN Text Pro Bold';
+    font-size: 6vw;
+  }
 }
 
 .product-details {
@@ -1053,6 +1049,30 @@ body {
 .workout-tile {
   height: 5rem;
   line-height: 4.5;
+}
+
+.no-show-socks-tile {
+  height: 48vh;
+  background-size: cover;
+  background-image: url( {{'leg-sleeves-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'leg-sleeves-medium.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'no-show-socks-small.png' | asset_url}} );
+  }
+}
+
+.leg-sleeves-tile {
+  height: 48vh;
+  background-size: cover;
+  background-image: url( {{'leg-sleeves-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'leg-sleeves-medium.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'leg-sleeves-small.png' | asset_url}} );
+  }
 }
 
 
