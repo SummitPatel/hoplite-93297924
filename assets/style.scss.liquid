@@ -995,11 +995,13 @@ body {
   width: 50%;
   float: left;
   color: #fff;
+  font-size: 4vw;
+  text-transform: uppercase;
 
   &:last-of-type {
-    height: 5rem;
-    margin-top: 1.7rem;
-    width: 100%;
+    margin: 0 0 4vh 0;
+    width: 90vw;
+    text-align: center;
 
     &:after {
       content: "";
@@ -1008,11 +1010,13 @@ body {
     }
 
     input {
-      margin: 0 1rem 0 1px;
+      margin: 0 3vw 0 0;
     }
 
     span {
-      margin-right: 20%;
+      margin-right: 4vw;
+      text-transform: uppercase;
+      font-family: 'PF DIN Text Pro Bold';
     }
 
   }
@@ -1032,18 +1036,29 @@ body {
     background-image: url('dropdown-arrow.png');
     border-color: #999;
     color: #fff;
+    font-size: 4vw;
+    text-transform: uppercase;
   }
 }
 
 #AddToCart {
-  width: 10rem;
+  width: 90vw;
   background-color: #fff;
-  color: #000;
+  color: #4d4d4d;
   border-radius: 0px;
+  text-transform: uppercase;
+  font-family: 'PF DIN Text Pro Bold';
 }
 
 #AddToCartForm {
   overflow: auto;
+  padding: 0 5vw;
+
+  hr {
+    width: 90vw;
+    margin: 5vh auto;
+    border-color: #5c5c5c;
+  }
 }
 
 .workout-tile {
@@ -1308,6 +1323,12 @@ ul.tabs:after {
 .swatch .header {
   margin: 0.5em 0;
 }
+
+.swatches-container {
+  display: table;
+  margin: 0 auto;
+}
+
 /* Hide radio buttons.*/
 .swatch input { 
   display:none;
