@@ -628,7 +628,7 @@ body {
     max-height: 67px;
   }
 
-  h2, h3, h4, h6 {
+  h2, h3, h4, h5,  h6 {
     font-family: 'PF DIN Text Pro Regular';
     margin: 0;
   }
@@ -639,9 +639,13 @@ body {
   }
 
   h3 {
-    font-size: 8vw;
     font-family: 'PF DIN Text Pro Bold';
     letter-spacing: .1rem;
+    font-size: 3vw;
+    @include at-query($max, $small) {
+      font-size: 6vw;
+      letter-spacing: .1rem;
+    }
   }
 
   h4 {
@@ -651,6 +655,15 @@ body {
     @include at-query($max, $small) {
       font-size: 3.5vw;
       letter-spacing: .1rem;
+    }
+  }
+
+  h5 {
+    font-family: 'PF DIN Text Pro Bold';
+    letter-spacing: .1rem;
+    font-size: 1vw;
+    @include at-query($max, $small) {
+      font-size: 3vw;
     }
   }
 
@@ -1051,30 +1064,6 @@ body {
   line-height: 4.5;
 }
 
-.no-show-socks-tile {
-  height: 48vh;
-  background-size: cover;
-  background-image: url( {{'leg-sleeves-large.png' | asset_url}} );
-  @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'leg-sleeves-medium.png' | asset_url}} );
-  }
-  @include at-query($max, $small) {
-    background-image: url( {{'no-show-socks-small.png' | asset_url}} );
-  }
-}
-
-.leg-sleeves-tile {
-  height: 48vh;
-  background-size: cover;
-  background-image: url( {{'leg-sleeves-large.png' | asset_url}} );
-  @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'leg-sleeves-medium.png' | asset_url}} );
-  }
-  @include at-query($max, $small) {
-    background-image: url( {{'leg-sleeves-small.png' | asset_url}} );
-  }
-}
-
 
 /*============================================================================
   Cart.liquid
@@ -1353,6 +1342,31 @@ body {
     @include at-query($max, $small) {
       height: 12vh;
     }
+  }
+}
+
+.no-show-socks-tile, .leg-sleeves-tile {
+  height: 48vh;
+  background-size: cover;
+}
+
+.no-show-socks-tile {
+  background-image: url( {{'leg-sleeves-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'no-show-socks-medium.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'no-show-socks-small.png' | asset_url}} );
+  }
+}
+
+.leg-sleeves-tile {
+  background-image: url( {{'leg-sleeves-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'leg-sleeves-medium.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'leg-sleeves-small.png' | asset_url}} );
   }
 }
 
