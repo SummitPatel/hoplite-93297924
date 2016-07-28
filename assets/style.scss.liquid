@@ -1340,15 +1340,18 @@ body {
   }
   
   .text-wrapper {
-    width: 35vw;
-    top: 40%;
+    @include at-query(null, $postSmall, $large) {
+      width: 35vw;
+      top: 40%;
+    }
   }
 
   .icon {
+
     max-height: none;
     margin-bottom: 2vw;
     @include at-query($max, $small) {
-      margin-bottom: 5vw;
+      height: 12vh;
     }
   }
 }
