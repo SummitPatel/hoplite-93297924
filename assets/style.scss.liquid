@@ -669,41 +669,25 @@ body {
 }
 
 .designed-and-knit-tile {
+  height: 48vh;
+  background-size: cover;
+  background: #333;
+
   .text-wrapper {
     @include at-query($min, $postSmall) {
       margin-right: 10%;
     }
   }
-
-  .img-bg {
-    height: 48vh;
-    background-size: cover;
-    background-image: url( {{'product-tile-grey-bg-large.png' | asset_url}} );
-    @include at-query(null, $postSmall, $large) {
-      background-image: url( {{'product-tile-grey-bg-medium.png' | asset_url}} );
-    }
-    @include at-query($max, $small) {
-      background-image: url( {{'product-tile-grey-bg-small.png' | asset_url}} );
-    }
-  }
 }
 
-.buy-give-tile {
+.buy-give-homepage-tile {
+  height: 48vh;
+  background-size: cover;
+  background: #333;
+
   .text-wrapper {
     @include at-query($min, $postSmall) {
       margin-left: 10%;
-    }
-  }
-
-  .img-bg {
-    height: 48vh;
-    background-size: cover;
-    background-image: url( {{'product-tile-grey-bg-large.png' | asset_url}} );
-    @include at-query(null, $postSmall, $large) {
-      background-image: url( {{'product-tile-grey-bg-medium.png' | asset_url}} );
-    }
-    @include at-query($max, $small) {
-      background-image: url( {{'product-tile-grey-bg-small.png' | asset_url}} );
     }
   }
 }
@@ -1115,12 +1099,16 @@ body {
 ==============================================================================*/
 
 .tab-container {
-  padding-top: 15vw;
+  padding-top: 10vh;
 
   .tabs {
     margin: 0 auto;
     padding: 0;
-    width: 80vw;
+    width: 20vw;
+    @include at-query($max, $small) {
+      width: 80vw;
+    }
+    
 
     li {
       display: block;
@@ -1128,10 +1116,17 @@ body {
       height: 2rem;
       margin: 0 auto;
       padding: 0;
-      width: 40vw;
+      width: 10vw;
+      @include at-query($max, $small) {
+        width: 40vw;
+      }
 
       &.active {
         border-bottom: 1px solid red;
+      }
+
+      a {
+        padding: 0;
       }
     }
   }
@@ -1140,9 +1135,14 @@ body {
     height: 90vh;
   }
 
+  .medical-grade-compression-tile {
+    overflow: auto;
+    padding: 0 10vw;
+  }
+
   .img-container {
     padding: 0;
-    margin: 10vw auto 0;
+    margin: 8vh 0;
 
     img {
       width: 50vw;
@@ -1152,10 +1152,12 @@ body {
   .tabbed-content-text-wrapper {
     position: relative;
     padding: 0;
+    @include at-query(null, $postSmall, $large) {
+      margin: 30vh 0;
+    }
 
     ul {
       text-align: left;
-      width: 85vw;
       margin: 0 auto;
 
       li:last-child {
@@ -1169,6 +1171,9 @@ body {
     h5 {
       font-family: 'PF DIN Text Pro Bold';
       font-size: 4vw;
+      @include at-query(null, $postSmall, $large) {
+        font-size: 2vw;
+      }
       line-height: 1;
       margin: 0;
       letter-spacing: .1rem;
@@ -1176,7 +1181,10 @@ body {
     }
 
     p {
-      font-size: .7rem;
+      font-size: 4vw;
+      @include at-query(null, $postSmall, $large) {
+        font-size:1.8vw;
+      }
       font-family: 'PF DIN Text Pro Regular';
       letter-spacing: .05rem;
     }
