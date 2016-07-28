@@ -1099,7 +1099,9 @@ body {
 ==============================================================================*/
 
 .tab-container {
-  padding-top: 10vh;
+  position: relative;
+  padding-top: 5vh;
+  height: 90vh;
 
   .tabs {
     margin: 0 auto;
@@ -1141,11 +1143,13 @@ body {
   }
 
   .img-container {
-    padding: 0;
-    margin: 8vh 0;
+    padding: 5vh 0;
 
     img {
       width: 50vw;
+      @include at-query(null, $postSmall, $large) {
+        width: 33vw;
+      }
     }
   }
 
@@ -1153,60 +1157,66 @@ body {
     position: relative;
     padding: 0;
     @include at-query(null, $postSmall, $large) {
-      margin: 30vh 0;
+      margin: 30vh 0 0 0;
+      padding: 0 0 0 10vw;
     }
 
     ul {
       text-align: left;
       margin: 0 auto;
 
+      h5 {
+        font-family: 'PF DIN Text Pro Bold';
+        font-size: 4vw;
+        @include at-query(null, $postSmall, $large) {
+          font-size: 1.7vw;
+        }
+        line-height: 1;
+        margin: 0;
+        letter-spacing: .1rem;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 4vw;
+        @include at-query(null, $postSmall, $large) {
+          font-size:1.4vw;
+        }
+        font-family: 'PF DIN Text Pro Regular';
+        letter-spacing: .05rem;
+      }
+
+
       li:last-child {
-        text-align: center;
         @include at-query($max, $small) {
           display: none;
         }
       }
-    }
 
-    h5 {
-      font-family: 'PF DIN Text Pro Bold';
-      font-size: 4vw;
-      @include at-query(null, $postSmall, $large) {
-        font-size: 2vw;
+      .dyneema-link-black {
+        display: inline-block;
+        font-size: 1.4vw;
+        font-family: 'PF DIN Text Pro Bold';
+        color: #333;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        line-height: 1;
+        text-decoration: none;
+        padding: 1vw 2vw 1vw 0;
+        background: transparent no-repeat;
+        background-image: url( {{'dyneema-link-arrow-black.png' | asset_url}} );
+        background-position: 100% 45%;
       }
-      line-height: 1;
-      margin: 0;
-      letter-spacing: .1rem;
-      text-transform: uppercase;
-    }
-
-    p {
-      font-size: 4vw;
-      @include at-query(null, $postSmall, $large) {
-        font-size:1.8vw;
-      }
-      font-family: 'PF DIN Text Pro Regular';
-      letter-spacing: .05rem;
-    }
-
-    .dyneema-link-black {
-      display: inline-block;
-      font-size: 4vw;
-      font-family: 'PF DIN Text Pro Bold';
-      color: #333;
-      text-transform: uppercase;
-      letter-spacing: .1rem;
-      line-height: 1;
-      text-decoration: none;
-      padding: 3vw 6vw;
-      background: transparent no-repeat;
-      background-image: url( {{'dyneema-link-arrow-black.png' | asset_url}} );
-      background-position: 100% 45%;
     }
   }
 
   .tabbed-content-chevron {
-      margin-top: 5vw;
+      margin: 0 auto;
+      position: absolute;
+      top: 93%;
+      left: 0;
+      right: 0;
+
       @include at-query($max, $small) {
         display: none;
       }
