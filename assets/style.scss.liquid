@@ -1307,7 +1307,7 @@ body {
 
       h2 { font-size: 7vw;}
 
-      h5 { font-size: 4vw;}
+      h5 { display: none; }
     }
   }
 }
@@ -1325,30 +1325,31 @@ body {
     .text-wrapper {
       width: 85vw;
 
-      h2 { font-size: 7vw;}
+      h2 { font-size: 7vw; }
 
-      h5 { font-size: 4vw;}
+      h5 { display: none; }
     }
   }
 }
 
-.break-it-tile {
-  height: 31vh;
+.break-it-tile, .buy-give-tile {
   background: #333;
-
-  .icon {
-    height: 15vw;
-    margin-bottom: 5vw;
+  height: 55vh;
+  @include at-query($max, $small) {
+    height: 31vh;
   }
-}
-
-.buy-give-tile {
-  height: 31vh;
-  background: #333;
+  
+  .text-wrapper {
+    width: 35vw;
+    top: 40%;
+  }
 
   .icon {
-    height: 15vw;
-    margin-bottom: 5vw;
+    max-height: none;
+    margin-bottom: 2vw;
+    @include at-query($max, $small) {
+      margin-bottom: 5vw;
+    }
   }
 }
 
