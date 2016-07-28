@@ -232,12 +232,9 @@ body {
 .hero-tile {
   position: relative;
   line-height: 0;
-
-  .hero-img-container {
-    height: 90vh;
-    max-width: 100vw;
-    background-size: cover;
-  }
+  height: 90vh;
+  max-width: 100vw;
+  background-size: cover;
 
   .hero-img-triangle-icon {
     position: absolute;
@@ -366,14 +363,12 @@ body {
 ==============================================================================*/
 
 .hero-tile.hero-homepage {
-  .hero-img-container {
-    background-image: url( {{'hero-homepage-large.png' | asset_url}} );
-    @include at-query(null, $postSmall, $large) {
-      background-image: url( {{'hero-homepage-medium.png' | asset_url}} );
-    }
-    @include at-query($max, $small) {
-      background-image: url( {{'hero-homepage-small.png' | asset_url}} );
-    }
+  background-image: url( {{'hero-homepage-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'hero-homepage-medium.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'hero-homepage-small.png' | asset_url}} );
   }
 }
 
@@ -764,33 +759,36 @@ body {
 ==============================================================================*/
 
 .hero-tile.hero-knee-high-socks {
-  .hero-img-container {
-    @include at-query($max, $small) {
-      background-image: url( {{'hero-knee-high-socks-small.png' | asset_url}} );
-    }
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'hero-knee-high-socks-medium.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'hero-knee-high-socks-small.png' | asset_url}} );
   }
   
   .text-wrapper {
     position: absolute;
-    top: 35%;
+    top: 33vh;
     color: #fff;
-    font-size: 1.5rem;
     text-transform: uppercase;
 
     br { display: none; }
 
     @include at-query($min, $postSmall) {
-      left: 65%;
+      left: 65vw;
       text-align: left;
 
       br { display: block; }
     }
 
-    h2 {
-      line-height: 1;
-    }
+    h2 { line-height: 1; }
 
-    h6 { font-size: 3vw; }
+    h6 {
+      font-size: 1.3vw;
+      @include at-query($max, $small) {
+        font-size: 3vw;
+      }
+    }
 
     a {
       color: #fff;
@@ -800,7 +798,10 @@ body {
 
   .hero-img-triangle-icon {
     p {
-      font-size: 4vw;
+      font-size: 1.5vw;
+      @include at-query($max, $small) {
+        font-size: 4vw;
+      }
     }
   }
 }
