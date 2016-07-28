@@ -1101,7 +1101,7 @@ body {
 .tab-container {
   position: relative;
   padding-top: 5vh;
-  height: 90vh;
+  height: 100vh;
 
   .tabs {
     margin: 0 auto;
@@ -1110,7 +1110,16 @@ body {
     @include at-query($max, $small) {
       width: 80vw;
     }
-    
+
+    &:before, &:after {
+      content: " ";
+      display: block;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      clear: both;
+    }
 
     li {
       display: block;
@@ -1128,7 +1137,29 @@ body {
       }
 
       a {
+        display: block;
+        font-size: 13px;
+        height: 29px;
+        line-height: 30px;
+        margin: 0;
         padding: 0;
+        text-transform: uppercase;
+        width: auto;
+        color: #303030;
+        border-bottom: none !important;
+
+        &:active {
+          background: none repeat scroll 0 0 #FFFFFF;
+          border-left-width: 1px;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+          color: red;
+          height: 30px;
+          margin: 0 0 0 -1px;
+          padding-top: 4px;
+          position: relative;
+          top: -4px;
+        }
       }
     }
   }
@@ -1211,68 +1242,44 @@ body {
   }
 
   .tabbed-content-chevron {
-      margin: 0 auto;
-      position: absolute;
-      top: 93%;
-      left: 0;
-      right: 0;
+    margin: 0 auto;
+    position: absolute;
+    top: 95%;
+    left: 0;
+    right: 0;
 
-      @include at-query($max, $small) {
-        display: none;
-      }
+    @include at-query($max, $small) {
+      display: none;
     }
+  }
 }
 
+.compression-sweet-spot-tile, .better-than-jeans-protection-tile, .wont-wear-out-tile {
+  .text-wrapper {
+    h2 {
+      font-size: 3vw;
+    }
 
-ul.tabs li a {
-  display: block;
-  font-size: 13px;
-  height: 29px;
-  line-height: 30px;
-  margin: 0;
-  padding: 0 20px;
-  text-transform: uppercase;
-  width: auto;
-  color: #303030;
-  border-bottom: none !important;
-}
-ul.tabs li a.active {
-  background: none repeat scroll 0 0 #FFFFFF;
-  border-left-width: 1px;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  color: red;
-  height: 30px;
-  margin: 0 0 0 -1px;
-  padding-top: 4px;
-  position: relative;
-  top: -4px;
-}
-ul.tabs li:first-child a.active {
-  margin-left: 0;
-}
-ul.tabs li:first-child a {
-  border-top-left-radius: 2px;
-  border-width: 1px 1px 0;
-}
-ul.tabs li:last-child a {
-  border-top-right-radius: 2px;
-}
-ul.tabs:before, ul.tabs:after {
-  content: " ";
-  display: block;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  width: 0;
-}
-ul.tabs:after {
-  clear: both;
+    h5 {
+      font-size: 1.5vw;
+    }
+  }
 }
 
 .compression-sweet-spot-tile {
-  height: 31vh;
   background: #e9e9e9;
+  height: 41vh;
+  @include at-query($max, $small) {
+    height: 31vh;
+
+    .text-wrapper {
+      br { display: none; }
+
+      h2 { font-size: 7vw;}
+
+      h5 { font-size: 4vw;}
+    }
+  }
 
   .text-wrapper {
     color: #333;
@@ -1284,33 +1291,43 @@ ul.tabs:after {
 }
 
 .better-than-jeans-protection-tile {
-  height: 53vh;
+  height: 82vh;
 
-  br {
-    display: none;
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'better-than-jeans-protection-medium.png' | asset_url}} );
   }
-
   @include at-query($max, $small) {
+    height: 53vh;
     background-image: url( {{'better-than-jeans-protection-small.png' | asset_url}} );
 
-    br {
-      display: block;
+    .text-wrapper {
+      width: 85vw;
+
+      br { display: none; }
+
+      h2 { font-size: 7vw;}
+
+      h5 { font-size: 4vw;}
     }
   }
 }
 
 .wont-wear-out-tile {
-  height: 53vh;
+  height: 82vh;
 
-  br {
-    display: none;
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'wont-wear-out-medium.png' | asset_url}} );
   }
-
   @include at-query($max, $small) {
+    height: 53vh;
     background-image: url( {{'wont-wear-out-small.png' | asset_url}} );
 
-    br {
-      display: block;
+    .text-wrapper {
+      width: 85vw;
+
+      h2 { font-size: 7vw;}
+
+      h5 { font-size: 4vw;}
     }
   }
 }
