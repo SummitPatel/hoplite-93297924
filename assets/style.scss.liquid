@@ -994,6 +994,7 @@ body {
 
 .product-details {
   text-align: left;
+  padding: 0 5vw;
 }
 
 .line-item-property__field {
@@ -1071,9 +1072,11 @@ body {
   }
 
   hr {
-    width: 90%;
     margin: 5vh auto;
     border-color: #5c5c5c;
+    @include at-query($max, $small) {
+      width: 90%;
+    }
   }
 }
 
