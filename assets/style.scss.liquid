@@ -840,7 +840,10 @@ body {
     color: #333;
     top: 0;
     padding: 5vw 0 0 0;
-    border-top: 1px solid #e9e9e9;
+    @include at-query(null, $postSmall, $large) {
+      margin: 30vh 0 0 0;
+      padding: 0 0 0 10vw;
+    }
 
     h2 {
       font-family: 'PF DIN Text Pro Bold';
@@ -868,7 +871,67 @@ body {
       text-transform: none;
       margin: 0;
       @include at-query($max, $small) {
-        font-size: 3.7vw;
+        display: none;
+      }
+    }
+
+    ul {
+      text-align: left;
+      margin: 0 auto;
+
+      h5 {
+        font-family: 'PF DIN Text Pro Bold';
+        font-size: 4vw;
+        line-height: 1;
+        margin: 0;
+        letter-spacing: .1rem;
+        text-transform: uppercase;
+        @include at-query(null, $postSmall, $large) {
+          font-size: 1.7vw;
+        }
+      }
+
+      p {
+        font-size: 4vw;
+        font-family: 'PF DIN Text Pro Regular';
+        letter-spacing: .05rem;
+        text-transform: none;
+        @include at-query(null, $postSmall, $large) {
+          font-size:1.4vw;
+        }
+      }
+
+
+      li:last-child {
+        @include at-query($max, $small) {
+          display: none;
+        }
+      }
+
+      .dyneema-link-black {
+        display: inline-block;
+        font-size: 1.4vw;
+        font-family: 'PF DIN Text Pro Bold';
+        color: #333;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        line-height: 1;
+        text-decoration: none;
+        padding: 1vw 2vw 1vw 0;
+        background: transparent no-repeat;
+        background-image: url( {{'dyneema-link-arrow-black.png' | asset_url}} );
+        background-position: 100% 45%;
+      }
+    }
+  }
+
+  .img-container {
+    padding: 5vh 0;
+
+    img {
+      width: 50vw;
+      @include at-query(null, $postSmall, $large) {
+        width: 33vw;
       }
     }
   }
