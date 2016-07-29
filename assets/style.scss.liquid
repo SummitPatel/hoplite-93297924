@@ -754,6 +754,7 @@ body {
 ==============================================================================*/
 
 .hero-tile.hero-knee-high-socks {
+  background-image: url( {{'hero-knee-high-socks-large.png' | asset_url}} );
   @include at-query(null, $postSmall, $large) {
     background-image: url( {{'hero-knee-high-socks-medium.png' | asset_url}} );
   }
@@ -871,6 +872,7 @@ body {
   }
 
   .text-container {
+    height: 90vh;
     @include at-query(null, $postSmall, $large) {
       margin: 30vh 0 0 0;
       padding: 0 0 0 10vw;
@@ -880,10 +882,13 @@ body {
   ul {
     text-align: left;
     margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 
     h5 {
       font-family: 'PF DIN Text Pro Bold';
-      font-size: 4vw;
+      font-size: 1.3vw;
       line-height: 1;
       margin: 0;
       letter-spacing: .1rem;
@@ -891,15 +896,21 @@ body {
       @include at-query(null, $postSmall, $large) {
         font-size: 1.7vw;
       }
+      @include at-query($max, $small) {
+        font-size: 4vw;
+      }
     }
 
     p {
-      font-size: 4vw;
+      font-size: 1.3vw;
       font-family: 'PF DIN Text Pro Regular';
       letter-spacing: .05rem;
       text-transform: none;
       @include at-query(null, $postSmall, $large) {
         font-size:1.4vw;
+      }
+      @include at-query($max, $small) {
+        font-size: 4vw;
       }
     }
 
@@ -929,9 +940,12 @@ body {
     padding: 5vh 0;
 
     img {
-      width: 50vw;
+      width: 25vw;
       @include at-query(null, $postSmall, $large) {
         width: 33vw;
+      }
+      @include at-query($max, $small) {
+        width: 50vw;
       }
     }
   }
@@ -1120,10 +1134,32 @@ body {
   width: 50%;
   float: left;
   color: #fff;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   text-transform: uppercase;
   @include at-query($max, $small) {
     font-size: 4vw;
+  }
+
+  p {
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+
+  label {
+    width: 6rem;
+  }
+
+  select {
+    width: 90%;
+    background-color: #333;
+    background-image: url('dropdown-arrow.png');
+    border-color: #999;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.3vw;
+    @include at-query($max, $small) {
+      font-size: 4vw;
+    }
   }
 
   &:last-of-type {
@@ -1145,29 +1181,6 @@ body {
       margin-right: 4vw;
       text-transform: uppercase;
       font-family: 'PF DIN Text Pro Bold';
-    }
-
-  }
-
-  p {
-    margin-top: 30px;
-    margin-left: 15px;
-  }
-
-  label {
-    width: 6rem;
-  }
-
-  select {
-    width: 90%;
-    background-color: #333;
-    background-image: url('dropdown-arrow.png');
-    border-color: #999;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 1.5vw;
-    @include at-query($max, $small) {
-      font-size: 4vw;
     }
   }
 }
@@ -1293,15 +1306,18 @@ body {
 
   .medical-grade-compression-tile {
     overflow: auto;
-    padding: 0 10vw;
+    padding: 0 8vw;
   }
 
   .img-container {
     padding: 5vh 0;
 
     img {
-      width: 50vw;
+      width: 25vw;
       @include at-query(null, $postSmall, $large) {
+        width: 33vw;
+      }
+      @include at-query($max, $small) {
         width: 33vw;
       }
     }
@@ -1310,34 +1326,54 @@ body {
   .tabbed-content-text-wrapper {
     position: relative;
     padding: 0;
+    height: 90vh;
     @include at-query(null, $postSmall, $large) {
       margin: 30vh 0 0 0;
       padding: 0 0 0 10vw;
     }
 
+    h1 {
+      font-family: 'PF DIN Text Pro Bold';
+      font-size: 3vw;
+      color: #c1c1c2;
+      text-transform: uppercase;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
     ul {
       text-align: left;
       margin: 0 auto;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
 
       h5 {
         font-family: 'PF DIN Text Pro Bold';
-        font-size: 4vw;
-        @include at-query(null, $postSmall, $large) {
-          font-size: 1.7vw;
-        }
+        font-size: 1.3vw;
         line-height: 1;
         margin: 0;
         letter-spacing: .1rem;
         text-transform: uppercase;
+        @include at-query(null, $postSmall, $large) {
+          font-size: 1.7vw;
+        }
+        @include at-query($max, $small) {
+          font-size: 4vw;
+        }
       }
 
       p {
-        font-size: 4vw;
+        font-size: 1.3vw;
+        font-family: 'PF DIN Text Pro Regular';
+        letter-spacing: .05rem;
         @include at-query(null, $postSmall, $large) {
           font-size:1.4vw;
         }
-        font-family: 'PF DIN Text Pro Regular';
-        letter-spacing: .05rem;
+        @include at-query($max, $small) {
+          font-size: 4vw;
+        }
       }
 
 
@@ -1370,7 +1406,6 @@ body {
     top: 95%;
     left: 0;
     right: 0;
-
     @include at-query($max, $small) {
       display: none;
     }
@@ -1415,7 +1450,7 @@ body {
 
 .better-than-jeans-protection-tile {
   height: 82vh;
-
+  background-image: url( {{'better-than-jeans-protection-large.png' | asset_url}} );
   @include at-query(null, $postSmall, $large) {
     background-image: url( {{'better-than-jeans-protection-medium.png' | asset_url}} );
   }
@@ -1437,7 +1472,7 @@ body {
 
 .wont-wear-out-tile {
   height: 82vh;
-
+  background-image: url( {{'wont-wear-out-large.png' | asset_url}} );
   @include at-query(null, $postSmall, $large) {
     background-image: url( {{'wont-wear-out-medium.png' | asset_url}} );
   }
@@ -1470,7 +1505,6 @@ body {
   }
 
   .icon {
-
     max-height: none;
     margin-bottom: 2vw;
     @include at-query($max, $small) {
