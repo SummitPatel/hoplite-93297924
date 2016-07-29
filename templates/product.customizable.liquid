@@ -58,7 +58,7 @@
     <div class="grid__item padded">
       <div class="product-single">
         <div class="grid product-single__hero">
-          <div class="grid__item post-large--one-half push--large--one-tenth">
+          <div class="grid__item post-large--one-half push--large--one-tenth medium--one-half">
 
             {% if settings.product_thumbnails_position == 'below' or product.images.size < 2 %}
 
@@ -97,7 +97,7 @@
 
                 </div>
 
-                <div class="grid__item large--four-fifths medium--four-fifths product-single__photos" id="ProductPhoto">
+                <div class="grid__item large--two-fifths medium--two-fifths product-single__photos" id="ProductPhoto">
                   {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
                   <img src="{{ featured_image | img_url: '1024x1024' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg"{% if settings.product_image_zoom_type == 'zoom-in' %} data-zoom="{{ featured_image | img_url: '1024x1024' }}"{% endif %} data-image-id="{{ featured_image.id }}">
                 </div>
@@ -115,7 +115,7 @@
             {% endif %}
 
           </div>
-          <div class="grid__item post-large--one-third push--large--one-tenth product-details">
+          <div class="grid__item post-large--one-third push--large--one-tenth medium--one-half product-details">
             <!-- {% if settings.product_vendor_enable %}
               <h3 itemprop="brand">{{ product.vendor }}</h3>
             {% endif %} -->

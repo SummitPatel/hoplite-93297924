@@ -977,11 +977,18 @@ body {
 
 .product-single__hero {
   h1, .product-single__price {
-    text-align: center;
     text-transform: uppercase;
     color: #fff;
     font-family: 'PF DIN Text Pro Bold';
-    font-size: 6vw;
+    font-size: 2vw;
+    @include at-query($max, $small) {
+      font-size: 6vw;
+      text-align: center;
+    }
+  }
+
+  .product-single__price {
+    
   }
 }
 
@@ -993,12 +1000,15 @@ body {
   width: 50%;
   float: left;
   color: #fff;
-  font-size: 4vw;
+  font-size: 1.5vw;
   text-transform: uppercase;
+  @include at-query($max, $small) {
+    font-size: 4vw;
+  }
 
   &:last-of-type {
     margin: 0 0 4vh 0;
-    width: 90vw;
+    width: 90%;
     text-align: center;
 
     &:after {
@@ -1034,26 +1044,34 @@ body {
     background-image: url('dropdown-arrow.png');
     border-color: #999;
     color: #fff;
-    font-size: 4vw;
     text-transform: uppercase;
+    font-size: 1.5vw;
+    @include at-query($max, $small) {
+      font-size: 4vw;
+    }
   }
 }
 
 #AddToCart {
-  width: 90vw;
   background-color: #fff;
   color: #4d4d4d;
   border-radius: 0px;
   text-transform: uppercase;
   font-family: 'PF DIN Text Pro Bold';
+  width: 60%;
+  @include at-query($max, $small) {
+    width: 90%;
+  }
 }
 
 #AddToCartForm {
   overflow: auto;
-  padding: 0 5vw;
+  @include at-query($max, $small) {
+    padding: 0 5vw;
+  }
 
   hr {
-    width: 90vw;
+    width: 90%;
     margin: 5vh auto;
     border-color: #5c5c5c;
   }
@@ -1386,7 +1404,11 @@ body {
 
 .swatches-container {
   display: table;
-  margin: 0 auto;
+  margin: 0;
+
+  @include at-query($max, $small) {
+    margin: 0 auto;
+  }
 }
 
 /* Hide radio buttons.*/
