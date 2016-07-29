@@ -986,10 +986,6 @@ body {
     color: #333;
     top: 0;
     padding: 5vw 0 0 0;
-    @include at-query(null, $postSmall, $large) {
-      margin: 30vh 0 0 0;
-      padding: 0 0 0 10vw;
-    }
 
     h4 {
       font-family: 'PF DIN Text Pro Regular';
@@ -1014,39 +1010,58 @@ body {
 
   .text-and-icons-wrapper {
     margin: 3vh auto 0;
+    padding-bottom: 10vh;
     font-family: 'PF DIN Text Pro Regular';
     text-transform: uppercase;
     color: #333;
 
     .icon-wrapper {
-      float: left;
       height: 10vh;
+      @include at-query($max, $small) {
+        float: left;
+      }
     }
 
     .icon {
-      width: 10vw;
+      width: 5vw;
       vertical-align: middle;
-      float: left;
       margin: 0 3vw 0 0;
+      @include at-query($max, $small) {
+        float: left;
+        width: 10vw;
+      }
     }
 
-    h6 {
-      font-family: 'PF DIN Text Pro Bold';
-      font-size: 3vw;
-      text-align: left;
-      overflow: hidden;
-      margin: 0;
-      line-height: 1.4;
+    .text {
+      margin: 0 auto;
+      width: 52%;
+
+      h6 {
+        font-family: 'PF DIN Text Pro Bold';
+        font-size: 2vw;
+        overflow: hidden;
+        margin: 0;
+        line-height: 1.4;
+        @include at-query($max, $small) {
+          font-size: 3vw;
+          text-align: left;
+        }
+      }
+
+      p {
+        font-size: 1.5vw;
+        margin: 0;
+        overflow: hidden;
+        line-height: 1.4;
+        @include at-query($max, $small) {
+          font-size: 3.3vw;
+          text-align: left;
+          padding: 0 12vw 0 0;
+        }
+      }
     }
 
-    p {
-      font-size: 3.3vw;
-      text-align: left;
-      margin: 0;
-      padding: 0 12vw 0 0;
-      overflow: hidden;
-      line-height: 1.4;
-    }
+    
   }
 
   .hero-triangle {
