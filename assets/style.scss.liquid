@@ -679,11 +679,13 @@ body {
   }
 }
 
-.designed-and-knit-tile {
+.designed-and-knit-tile, .buy-give-homepage-tile {
   height: 48vh;
   background-size: cover;
   background: #333;
+}
 
+.designed-and-knit-tile {
   .text-wrapper {
     @include at-query($min, $postSmall) {
       margin-right: 10%;
@@ -692,10 +694,6 @@ body {
 }
 
 .buy-give-homepage-tile {
-  height: 48vh;
-  background-size: cover;
-  background: #333;
-
   .text-wrapper {
     @include at-query($min, $postSmall) {
       margin-left: 10%;
@@ -852,7 +850,7 @@ body {
 }
 
 .measurements-tile {
-  height: 97vh;
+  height: 100vh;
   padding: 0 5vw;
 
   .text-wrapper {
@@ -893,8 +891,8 @@ body {
   }
 
   .text-container {
-    height: 90vh;
-    @include at-query(null, $postSmall, $large) {
+    height: 70vh;
+    @include at-query($min, $postSmall) {
       padding: 0 0 0 10vw;
     }
     @include at-query($max, $small) {
@@ -936,21 +934,18 @@ body {
         font-size: 4vw;
       }
     }
-
-    li:last-child {
-      @include at-query($max, $small) {
-        display: none;
-      }
-    }
   }
 
   .img-container {
-    padding: 5vh 0;
+    padding: 5vh 10vw 0 0;
+    @include at-query($max, $small) {
+      padding: 5vh 0 0 0;
+    }
 
     img {
-      width: 25vw;
+      width: 18vw;
       @include at-query(null, $postSmall, $large) {
-        width: 33vw;
+        width: 25vw;
       }
       @include at-query($max, $small) {
         width: 50vw;
@@ -996,6 +991,17 @@ body {
       font-size: 3.8vw;
       text-transform: uppercase;
       margin: 0 0 4vw 0;
+    }
+  }
+
+  .tabbed-content-chevron {
+    margin: 0 auto;
+    position: absolute;
+    top: 95%;
+    left: 0;
+    right: 0;
+    @include at-query($max, $small) {
+      display: none;
     }
   }
 }
@@ -1525,15 +1531,12 @@ body {
 
 .break-it-tile, .buy-give-tile {
   background: #333;
-  height: 55vh;
-  @include at-query($max, $small) {
-    height: 31vh;
-  }
-  
+  background-size: cover;
+  height: 48vh;
+
   .text-wrapper {
     @include at-query(null, $postSmall, $large) {
       width: 35vw;
-      top: 40%;
     }
   }
 
@@ -1542,6 +1545,23 @@ body {
     margin-bottom: 2vw;
     @include at-query($max, $small) {
       height: 12vh;
+      margin-bottom: 8vw;
+    }
+  }
+}
+
+.break-it-tile {
+  .text-wrapper {
+    @include at-query($min, $postSmall) {
+      margin-right: 10%;
+    }
+  }
+}
+
+.buy-give-tile {
+  .text-wrapper {
+    @include at-query($min, $postSmall) {
+      margin-left: 10%;
     }
   }
 }
