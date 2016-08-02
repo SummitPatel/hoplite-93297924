@@ -24,6 +24,7 @@ theme.cacheSelectors = function () {
     // Product page
     $productImage: $('#ProductPhotoImg'),
     $productImageGallery: $('.gallery__item'),
+    $noMeasuringTapeCover: $('.no-measuring-tape-cover'),
 
     // Cart Page
     cartNoteAdd: '.cart__note-add',
@@ -49,10 +50,19 @@ theme.init = function () {
   theme.cartPage();
   theme.toggleMenu();
   theme.fixedHeader();
+  theme.slideCover();
 
   {% if settings.product_image_zoom_type == 'lightbox' %}
     theme.productImageGallery();
   {% endif %}
+};
+
+theme.slideCover = function () {
+  $('.no-measuring-tape-cover-btn').click(function (e) {
+    e.preventDefault();
+    theme.cache.$noMeasuringTapeCover.animate({
+      left: parseInt(theme.cache.$noMeasuringTapeCover.css('left'), 10) === 0 ? -2*theme.cache.$noMeasuringTapeCover.outerWidth() : 0}, 800);
+  });
 };
 
 theme.fixedHeader = function () {
