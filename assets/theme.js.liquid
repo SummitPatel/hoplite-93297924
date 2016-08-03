@@ -60,8 +60,14 @@ theme.init = function () {
 theme.slideCover = function () {
   $('.no-measuring-tape-cover-btn').click(function (e) {
     e.preventDefault();
-    theme.cache.$noMeasuringTapeCover.animate({
-      left: parseInt(theme.cache.$noMeasuringTapeCover.css('left'), 10) === 0 ? -2*theme.cache.$noMeasuringTapeCover.outerWidth() : 0}, 800);
+    theme.cache.$noMeasuringTapeCover.animate({ 
+      left: -2*theme.cache.$noMeasuringTapeCover.outerWidth()
+    }, 800);
+  });
+
+  $('.back-arrow').click(function (e) {
+    e.preventDefault();
+    theme.cache.$noMeasuringTapeCover.animate({ left: 0 }, 600);
   });
 };
 

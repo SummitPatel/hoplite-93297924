@@ -1011,6 +1011,18 @@ body {
   height: 63vh;
   overflow: hidden;
 
+  .back-arrow {
+    color: #333;
+    font-size: 4vw;
+    position: absolute;
+    left: 5vw;
+    top: 10%;
+    @include at-query($max, $small) {
+      font-size: 6vw;
+      top: 5%;
+    }
+  }
+
   .text-wrapper {
     position: relative;
     color: #333;
@@ -1355,7 +1367,7 @@ body {
 
   }
 
-  .medical-grade-compression-tile {
+  .medical-grade-compression-tile, .medical-grade-fit-tile {
     overflow: auto;
     padding: 0 8vw;
   }
