@@ -14,20 +14,22 @@ timberSlider.init = function () {
 
 timberSlider.sliders = function () {
   var $slider = timberSlider.cache.$slider,
-      sliderArgs = {
-        animation: '{{ settings.slider_home_transition }}',
-        animationLoop: false,
-        animationSpeed: 500,
-        pauseOnHover: true,
-        keyboard: false,
-        // slideshow: {{ settings.slider_home_auto }},
-        slideshow: false,
-        slideshowSpeed: {{ settings.slider_home_rate }},
-        // controlNav: {{ settings.slider_home_show_dots }},
-        controlNav: false,
-        directionNav: false,
-        smoothHeight: true
-      };
+    sliderArgs = {
+      selector: '.slides > div',
+      animation: '{{ settings.slider_home_transition }}',
+      animationLoop: false,
+      animationSpeed: 500,
+      pauseOnHover: true,
+      keyboard: false,
+      // slideshow: {{ settings.slider_home_auto }},
+      slideshow: false,
+      slideshowSpeed: {{ settings.slider_home_rate }},
+      // controlNav: {{ settings.slider_home_show_dots }},
+      controlNav: true,
+      manualControls: '.tabs li',
+      directionNav: false,
+      smoothHeight: true
+    };
 
   if ($slider.length) {
 
@@ -36,7 +38,7 @@ timberSlider.sliders = function () {
       sliderArgs.slideshowSpeed = 0;
       sliderArgs.controlNav = false;
       sliderArgs.directionNav = false;
-      sliderArgs.touch = false;
+      sliderArgs.touch = true;
     }
 
     $slider.flexslider(sliderArgs);

@@ -14,20 +14,23 @@
 
     <div class="grid grid__item centered-padded">
 
-    <div class="grid__item padded">
-      <div class="tab-container">
-        <ul class="tabs">
-          <li><a href="#tab-1">Compression</a></li>
-          <li><a href="#tab-2">Fit</a></li>
-        </ul>
-        <div id="tab-1">
-          {{ pages.medical-grade-compression.content }}
+    <div class="grid__item padded tab-container">
+      <ul class="tabs">
+        <li><a href="#tab-1">Compression</a></li>
+        <li><a href="#tab-2">Fit</a></li>
+      </ul>
+      <div class="flexslider">
+        <div class="tab-content slides">
+          <div id="tab-1">
+            {{ pages.medical-grade-compression.content }}
+          </div>
+          <div id="tab-2">
+            {{ pages.medical-grade-fit.content }}
+          </div>
         </div>
-        <div id="tab-2">
-          {{ pages.medical-grade-fit.content }}
-        </div>
-        <img src="//cdn.shopify.com/s/files/1/0691/8459/files/chevron-grey.png?16493101915201450837" alt="" class="tabbed-content-chevron" />
       </div>
+      
+      <img src="//cdn.shopify.com/s/files/1/0691/8459/files/chevron-grey.png?16493101915201450837" alt="" class="dropdown-chevron" />
     </div>
 
       <div class="grid__item padded">
@@ -310,29 +313,4 @@
     {% endif %}
   });
 
-  //TABBED CONTENT
-  $(document).ready(function() {
-    $('ul.tabs').each(function(){
-      var active, content, links = $(this).find('a');
-      active = links.first().addClass('active');
-      active.parents('li').addClass('active');
-      content = $(active.attr('href'));
-      links.not(':first').each(function () {
-        $($(this).attr('href')).hide();
-      });
-      $(this).find('a').bind('click touchstart', function(e){
-        active.removeClass('active');
-        active.parents('li').removeClass('active');
-        content.hide();
-        active = $(this);
-        content = $($(this).attr('href'));
-        active.addClass('active');
-        active.parents('li').addClass('active');
-        content.show();
-        return false;
-      });
-    });
-  });
-
-  //END TABBED CONTENT
 </script>
