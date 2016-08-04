@@ -25,6 +25,8 @@ theme.cacheSelectors = function () {
     $productImage: $('#ProductPhotoImg'),
     $productImageGallery: $('.gallery__item'),
     $noMeasuringTapeCover: $('.no-measuring-tape-cover'),
+    $heroDropDownIcon: $('.hero-img-triangle-icon img'),
+    $ShopNowSocksBtn: $('#shop-now-socks'),
 
     // Cart Page
     cartNoteAdd: '.cart__note-add',
@@ -51,10 +53,25 @@ theme.init = function () {
   theme.toggleMenu();
   theme.fixedHeader();
   theme.slideCover();
+  theme.heroScroll();
 
   {% if settings.product_image_zoom_type == 'lightbox' %}
     theme.productImageGallery();
   {% endif %}
+};
+
+theme.heroScroll = function () {
+  theme.cache.$heroDropDownIcon.on('click', function () {
+    theme.cache.$body.animate({
+      scrollTop: $('.tab-container').offset().top
+    }, 2000);
+  });
+
+  theme.cache.$ShopNowSocksBtn.on('click', function () {
+    theme.cache.$body.animate({
+      scrollTop: $('.product-single').offset().top
+    }, 2000);
+  });
 };
 
 theme.slideCover = function () {
