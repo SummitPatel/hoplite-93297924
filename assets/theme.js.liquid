@@ -58,14 +58,14 @@ theme.init = function () {
 };
 
 theme.slideCover = function () {
-  $('.no-measuring-tape-cover-btn').click(function (e) {
+  $('.no-measuring-tape-cover-btn').on('click', function (e) {
     e.preventDefault();
     theme.cache.$noMeasuringTapeCover.animate({ 
       left: -2*theme.cache.$noMeasuringTapeCover.outerWidth()
     }, 800);
   });
 
-  $('.back-arrow').click(function (e) {
+  $('.back-arrow').on('click', function (e) {
     e.preventDefault();
     theme.cache.$noMeasuringTapeCover.animate({ left: 0 }, 600);
   });
