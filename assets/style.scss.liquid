@@ -679,13 +679,13 @@ body {
   }
 }
 
-.designed-and-knit-tile, .buy-give-homepage-tile {
+.designed-and-knit-tile, .buy-give-homepage-tile, .break-it-tile, .buy-give-tile {
   height: 48vh;
   background-size: cover;
   background: #333;
 }
 
-.designed-and-knit-tile {
+.designed-and-knit-tile, .break-it-tile {
   .text-wrapper {
     @include at-query($min, $postSmall) {
       margin-right: 10%;
@@ -693,7 +693,7 @@ body {
   }
 }
 
-.buy-give-homepage-tile {
+.buy-give-homepage-tile, .buy-give-tile {
   .text-wrapper {
     @include at-query($min, $postSmall) {
       margin-left: 10%;
@@ -742,9 +742,6 @@ body {
     }
   }
 }
-
-
-
 
 
 /*============================================================================
@@ -1579,43 +1576,6 @@ body {
   }
 }
 
-.break-it-tile, .buy-give-tile {
-  background: #333;
-  background-size: cover;
-  height: 48vh;
-
-  .text-wrapper {
-    @include at-query(null, $postSmall, $large) {
-      width: 35vw;
-    }
-  }
-
-  .icon {
-    max-height: none;
-    margin-bottom: 2vw;
-    @include at-query($max, $small) {
-      height: 12vh;
-      margin-bottom: 8vw;
-    }
-  }
-}
-
-.break-it-tile {
-  .text-wrapper {
-    @include at-query($min, $postSmall) {
-      margin-right: 10%;
-    }
-  }
-}
-
-.buy-give-tile {
-  .text-wrapper {
-    @include at-query($min, $postSmall) {
-      margin-left: 10%;
-    }
-  }
-}
-
 .no-show-socks-tile, .leg-sleeves-tile {
   height: 48vh;
   background-size: cover;
@@ -1777,3 +1737,15 @@ body {
   font-family:monospace;
 }
 
+/*============================================================================
+  Product Landing Page (Collections Page)
+==============================================================================*/
+.hero-tile.hero-product-landing-page {
+  background-image: url( {{'hero-product-landing-page.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'hero-product-landing-page.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'hero-product-landing-page.png' | asset_url}} );
+  }
+}
