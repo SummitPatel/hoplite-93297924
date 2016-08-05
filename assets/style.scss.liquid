@@ -1662,6 +1662,21 @@ body {
   @include at-query($max, $small) {
     margin: 0 auto;
   }
+
+  .swatch-element {
+    display: inline-block;
+    -webkit-transform:translateZ(0); /* webkit flicker fix */
+    -webkit-font-smoothing:antialiased; /* webkit text rendering fix */
+    /* Spacing between buttons */
+    margin:0px 10px 10px 0;
+    /* To position the sold out graphic and tooltip */
+    position:relative;
+  }
+
+  .selected-swatch-color {
+    color: #fff;
+    text-transform: uppercase;
+  }
 }
 
 /* Hide radio buttons.*/
@@ -1700,15 +1715,6 @@ body {
   background: url('color-swatch-border.png');
   border-color: transparent;
 } 
-.swatch .swatch-element {
-  float:left;
-  -webkit-transform:translateZ(0); /* webkit flicker fix */
-  -webkit-font-smoothing:antialiased; /* webkit text rendering fix */
-  /* Spacing between buttons */
-  margin:0px 10px 10px 0;
-  /* To position the sold out graphic and tooltip */
-  position:relative;
-}
 /* Image with the cross in it */
 .crossed-out { position:absolute; width:100%; height:100%; left:0; top:0; }
 .swatch .swatch-element .crossed-out { display:none; }
@@ -1718,54 +1724,6 @@ body {
   -khtml-opacity: 0.6;      /* khtml, old safari */
   -moz-opacity: 0.6;       /* mozilla, netscape */
   opacity: 0.6;           /* fx, safari, opera */
-}
-/* Tooltips */
-.swatch .tooltip {
-  text-align:center;
-  background:gray;
-  color:#fff;
-  bottom:100%;
-  padding: 10px;
-  display:block;
-  position:absolute;
-  width:100px;
-  left:{{ width | remove: 'px' | to_number | divided_by: 2 | minus: 50 | plus: 2 }}px;
-  margin-bottom:15px;
-  /* Make it invisible by default */
-  filter:alpha(opacity=0);
-  -khtml-opacity: 0;
-  -moz-opacity: 0;
-  opacity:0;
-  visibility:hidden;
-  /* Animations */
-  -webkit-transform: translateY(10px);
-     -moz-transform: translateY(10px);
-      -ms-transform: translateY(10px);
-       -o-transform: translateY(10px);
-          transform: translateY(10px);
-  -webkit-transition: all .25s ease-out;
-     -moz-transition: all .25s ease-out;
-      -ms-transition: all .25s ease-out;
-       -o-transition: all .25s ease-out;
-          transition: all .25s ease-out;
-  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
-     -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
-      -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
-       -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
-          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
-  z-index: 10000;
-  -moz-box-sizing:border-box; 
-  -webkit-box-sizing:border-box; 
-  box-sizing:border-box;
-}
-.swatch .tooltip:before {
-  bottom:-20px;
-  content:" ";
-  display:block;
-  height:20px;
-  left:0;
-  position:absolute;
-  width:100%;
 }
 /* CSS triangle */
 .swatch .tooltip:after {
