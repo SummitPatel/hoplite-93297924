@@ -66,10 +66,16 @@ theme.init = function () {
 
 theme.displaySwatchColor = function () {
   theme.cache.$swatchElement.on('click', function () {
-    var color = $(this).attr('class').split(' ')[2];
-    color = color.split('-').join(' ');
+    var el = $(this);
+    if(el.hasClass('soldout')) {
+      return;
+    }
+    else {
+      var color = el.attr('class').split(' ')[2];
+      color = color.split('-').join(' ');
 
-    theme.cache.$selectedSwatchColor.text(color);
+      theme.cache.$selectedSwatchColor.text(color);
+    }
 
   });
 };
