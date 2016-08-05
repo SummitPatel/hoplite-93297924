@@ -82,8 +82,9 @@ theme.displaySwatchColor = function () {
 
 theme.heroScroll = function () {
   theme.cache.$heroDropDownIcon.on('click', function () {
+    var el = $(this).parents(".grid__item").siblings('.grid__item');
     theme.cache.$body.animate({
-      scrollTop: $('.tab-container').offset().top
+      scrollTop: el.offset().top
     }, 2000);
   });
 
