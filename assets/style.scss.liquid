@@ -468,20 +468,16 @@ body {
 }
 
 .dyneema-tile { 
-  .img-bg {
-    background-size: cover;
-    height: 82vh;
-    @include at-query(null, $postSmall, $large) {
-      height: 66vh;
-    }
-    @include at-query($max, $small) {
-      height: 66vh;
-    }
+  background-size: cover;
+  height: 82vh;
+  @include at-query(null, $postSmall, $large) {
+    height: 66vh;
+  }
+  @include at-query($max, $small) {
+    height: 66vh;
   }
 
   .text-wrapper {
-    top: 50%;
-    transform: translateY(-50%);
     max-width: 90vw;
     margin: 0 auto;
 
@@ -557,50 +553,42 @@ body {
 }
 
 .insane-abrasion-protection-tile {
-  .img-bg {
-    background-image: url( {{'insane-abrasion-protection-large.png' | asset_url}} );
-    @include at-query(null, $postSmall, $large) {
-      background-image: url( {{'insane-abrasion-protection-medium.png' | asset_url}} );
-    }
-    @include at-query($max, $small) {
-      background-image: url( {{'insane-abrasion-protection-small.png' | asset_url}} );
-    }
+  background-image: url( {{'insane-abrasion-protection-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'insane-abrasion-protection-medium.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'insane-abrasion-protection-small.png' | asset_url}} );
   }
 }
 
 .rip-and-tear-proof-tile {
-  .img-bg {
-    background-image: url( {{'rip-and-tear-proof-large.png' | asset_url}} );
-    @include at-query(null, $postSmall, $large) {
-      background-image: url( {{'rip-and-tear-proof-medium.png' | asset_url}} );
-    }
-    @include at-query($max, $small) {
-      background-image: url( {{'rip-and-tear-proof-small.png' | asset_url}} );
-    }
+  background-image: url( {{'rip-and-tear-proof-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'rip-and-tear-proof-medium.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'rip-and-tear-proof-small.png' | asset_url}} );
   }
 }
 
 .eerily-cold-tile {
-  .img-bg {
-    background-image: url( {{'eerily-cold-large.png' | asset_url}} );
-    @include at-query(null, $postSmall, $large) {
-      background-image: url( {{'eerily-cold-medium.png' | asset_url}} );
-    }
-    @include at-query($max, $small) {
-      background-image: url( {{'eerily-cold-small.png' | asset_url}} );
-    }
+  background-image: url( {{'eerily-cold-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'eerily-cold-medium.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'eerily-cold-small.png' | asset_url}} );
   }
 }
 
 .perfectly-balanced-compression-tile {
-  .img-bg {
-    background-image: url( {{'perfectly-balanced-compression-large.png' | asset_url}} );
-    @include at-query(null, $postSmall, $large) {
-      background-image: url( {{'perfectly-balanced-compression-medium.png' | asset_url}} );
-    }
-    @include at-query($max, $small) {
-      background-image: url( {{'perfectly-balanced-compression-small.png' | asset_url}} );
-    }
+  background-image: url( {{'perfectly-balanced-compression-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'perfectly-balanced-compression-medium.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'perfectly-balanced-compression-small.png' | asset_url}} );
   }
 }
 
