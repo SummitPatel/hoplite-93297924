@@ -25,7 +25,7 @@ theme.cacheSelectors = function () {
     $productImage: $('#ProductPhotoImg'),
     $productImageGallery: $('.gallery__item'),
     $noMeasuringTapeCover: $('.no-measuring-tape-cover'),
-    $heroDropDownIcon: $('.hero-img-triangle-icon img'),
+    $heroDropDownWrapper: $('.hero-dropdown-wrapper'),
     $ShopNowSocksBtn: $('#shop-now-socks'),
     $swatchesContainer: $('.swatches-container'),
     $swatchElement: $('.swatch-element'),
@@ -81,7 +81,7 @@ theme.displaySwatchColor = function () {
 };
 
 theme.heroScroll = function () {
-  theme.cache.$heroDropDownIcon.on('click', function () {
+  theme.cache.$heroDropDownWrapper.on('click', function () {
     var el = $(this).parents(".grid__item").siblings('.grid__item');
     theme.cache.$body.animate({
       scrollTop: el.offset().top
