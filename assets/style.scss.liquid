@@ -330,6 +330,7 @@ body {
   }
 
   .text-wrapper {
+    position: relative;
     color: #fff;
     text-transform: uppercase;
 
@@ -753,15 +754,13 @@ body {
   }
   
   .text-wrapper {
-    position: absolute;
-    top: 33vh;
+    float: right;
     color: #fff;
     text-transform: uppercase;
 
     br { display: none; }
 
     @include at-query($min, $postSmall) {
-      left: 65vw;
       text-align: left;
 
       br { display: block; }
