@@ -594,8 +594,6 @@ body {
 
 .product-tile {
   .text-wrapper {
-    top: 50%;
-    transform: translateY(-50%);
     margin: 0 auto;
     max-width: 80vw;
     @include at-query($min, $postSmall) {
@@ -684,45 +682,38 @@ body {
   }
 }
 
-.knee-high-socks-homepage-tile {
-  .img-bg {
+.knee-high-socks-homepage-tile, .arm-sleeves-tile, .leg-sleeves-homepage-tile {
     height: 48vh;
     background-size: cover;
-    background-image: url( {{'knee-high-socks-large.png' | asset_url}} );
-    @include at-query(null, $postSmall, $large) {
-      background-image: url( {{'knee-high-socks-medium.png' | asset_url}} );
-    }
-    @include at-query($max, $small) {
-      background-image: url( {{'knee-high-socks-small.png' | asset_url}} );
-    }
+}
+
+.knee-high-socks-homepage-tile {
+  background-image: url( {{'knee-high-socks-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'knee-high-socks-medium.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'knee-high-socks-small.png' | asset_url}} );
   }
 }
 
 .arm-sleeves-tile {
-  .img-bg {
-    height: 48vh;
-    background-size: cover;
-    background-image: url( {{'arm-sleeves-large.png' | asset_url}} );
-    @include at-query(null, $postSmall, $large) {
-      background-image: url( {{'arm-sleeves-medium.png' | asset_url}} );
-    }
-    @include at-query($max, $small) {
-      background-image: url( {{'arm-sleeves-small.png' | asset_url}} );
-    }
+  background-image: url( {{'arm-sleeves-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'arm-sleeves-medium.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'arm-sleeves-small.png' | asset_url}} );
   }
 }
 
 .leg-sleeves-homepage-tile {
-  .img-bg {
-    height: 48vh;
-    background-size: cover;
-    background-image: url( {{'leg-sleeves-large.png' | asset_url}} );
-    @include at-query(null, $postSmall, $large) {
-      background-image: url( {{'leg-sleeves-medium.png' | asset_url}} );
-    }
-    @include at-query($max, $small) {
-      background-image: url( {{'leg-sleeves-small.png' | asset_url}} );
-    }
+  background-image: url( {{'leg-sleeves-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'leg-sleeves-medium.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'leg-sleeves-small.png' | asset_url}} );
   }
 }
 
