@@ -484,7 +484,8 @@ body {
 
     h2, h4, h5 {
       font-family: 'PF DIN Text Pro Regular';
-      margin: 0 0 2rem 0;
+      margin: 0;
+      padding: 0 0 2rem 0;
     }
 
     h2 {
@@ -1476,10 +1477,6 @@ body {
     h2 {
       font-size: 3vw;
     }
-
-    h5 {
-      font-size: 1.5vw;
-    }
   }
 }
 
@@ -1489,17 +1486,16 @@ body {
   @include at-query($max, $small) {
     height: 31vh;
 
-    .text-wrapper {
-      br { display: none; }
+    br { display: block; }
 
-      h2 { font-size: 7vw;}
+    h2 { font-size: 7vw; }
 
-      h5 { font-size: 4vw;}
-    }
+    h5 { font-size: 4vw; }
   }
 
   .text-wrapper {
     color: #333;
+    br { display: none; }
 
     a {
       color: #333;
