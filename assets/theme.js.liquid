@@ -24,7 +24,7 @@ theme.cacheSelectors = function () {
     // Product page
     $productImage: $('#ProductPhotoImg'),
     $productImageGallery: $('.gallery__item'),
-    $noMeasuringTapeCover: $('.no-measuring-tape-cover'),
+    $measuringTapeCover: $('.measuring-tape-cover'),
     $heroDropDownWrapper: $('.hero-dropdown-wrapper'),
     $ShopNowSocksBtn: $('#shop-now-socks'),
     $swatchesContainer: $('.swatches-container'),
@@ -96,16 +96,16 @@ theme.heroScroll = function () {
 };
 
 theme.slideCover = function () {
-  $('.no-measuring-tape-cover-btn').on('click', function (e) {
+  $('.measuring-tape-cover-btn').on('click', function (e) {
     e.preventDefault();
-    theme.cache.$noMeasuringTapeCover.animate({ 
-      left: -2*theme.cache.$noMeasuringTapeCover.outerWidth()
+    theme.cache.$measuringTapeCover.animate({ 
+      left: -2*theme.cache.$measuringTapeCover.outerWidth()
     }, 800);
   });
 
-  $('.back-arrow').on('click', function (e) {
+  $('.measuring-tape-back-btn').on('click', function (e) {
     e.preventDefault();
-    theme.cache.$noMeasuringTapeCover.animate({ left: 0 }, 600);
+    theme.cache.$measuringTapeCover.animate({ left: 0 }, 600);
   });
 };
 
