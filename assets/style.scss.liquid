@@ -1009,6 +1009,10 @@ body {
   height: 53vh;
   overflow: hidden;
 
+  .icon {
+    margin: 0 0 2rem 0;
+  }
+
   .text-wrapper {
     position: relative;
     color: #333;
@@ -1041,6 +1045,7 @@ body {
 
   h5 {
     margin: 0;
+    padding: 0 0 .5rem 0;
     font-family: 'PF DIN Text Pro Bold';
     font-size: 1.3vw;
     line-height: 1;
@@ -1055,11 +1060,12 @@ body {
   }
 
   p {
-    font-size: 1.3vw;
+    font-size: 1.1vw;
     letter-spacing: .05rem;
     text-transform: none;
     margin: 0;
     padding: 0 0 4vh 0;
+    line-height: 1.5;
     @include at-query(null, $postSmall, $large) {
       font-size:1.4vw;
     }
@@ -1661,6 +1667,7 @@ body {
   font-family:monospace;
 }
 
+
 /*============================================================================
   Product Landing Page (Collections Page)
 ==============================================================================*/
@@ -1673,3 +1680,19 @@ body {
     background-image: url( {{'hero-product-landing-page.png' | asset_url}} );
   }
 }
+
+
+/*============================================================================
+  Compression 101 Page
+==============================================================================*/
+
+.hero-tile.hero-compression-101 {
+  background-image: url( {{'hero-product-landing-page.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'hero-product-landing-page.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'hero-compression-101-small.png' | asset_url}} );
+  }
+}
+
