@@ -11,8 +11,8 @@
 
     <div class="grid__item padded">
 
-      <div class="tile-wrapper diamond-infographic">
-        <a href="prev" class="prev"><img class="chevron-left" src="{{'chevron-orange.png' | asset_url}}" width="16px" alt=""></a>
+      <div class="tile-wrapper infographic diamond-infographic">
+        <a href="prev" class="prev"><img src="{{'chevron-orange.png' | asset_url}}" width="16px" alt=""></a>
         <div class="diamond-slider">
           <ul class="slides">
             <li>
@@ -35,20 +35,56 @@
             </li>
           </ul>
         </div>
-        <a href="next" class="next"><img class="chevron-right" src="{{'chevron-orange.png' | asset_url}}" width="16px" alt=""></a>
+        <a href="next" class="next"><img src="{{'chevron-orange.png' | asset_url}}" width="16px" alt=""></a>
 
         <div class="text-wrapper">
           <h3>Why?</h3>
           <p>Quick recap of freshman anatomy: Fresh blood delivers oxygen to your muscles. Old blood strips away metabolic waste (like lactic acid) that weighs them down. Compression speeds this process up, and keeps your muscles working at peak condition longer.</p>
         </div>
       </div>
+
     </div>
 
     <div class="grid__item centered no-padding">
       {{ pages.compression-101-tighter.content }}
     </div>
     <div class="grid__item centered no-padding">
-      {{ pages.eerily-cold.content }}
+      
+      <div class="tile-wrapper infographic goldilocks-infographic">
+        <a href="prev" class="prev"><img src="{{'link-arrow-black-reverse.png' | asset_url}}" alt=""></a>
+        <div class="goldilocks-slider">
+          <ul class="slides">
+            <li>
+              <div class="slider-content">
+                <img class="goldilocks-img" src="{{'just-right.png' | asset_url}}" alt="">
+                <h3 class="orange">Just right</h3>
+                <p>Perfectly balanced</p>
+              </div>
+            </li>
+            <li>
+              <div class="slider-content">
+                <img class="goldilocks-img" src="{{'too-tight.png' | asset_url}}" alt="">
+                <h3 class="orange">Too tight</h3>
+                <p>Overcompensates</p>
+              </div>
+            </li>
+            <li>
+              <div class="slider-content">
+                <img class="goldilocks-img" src="{{'too-loose.png' | asset_url}}" alt="">
+                <h3 class="orange">Too loose</h3>
+                <p>Underperforms</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="next" class="next"><img src="{{'link-arrow-black.png' | asset_url}}" alt=""></a>
+
+        <div class="text-wrapper">
+          <h3>The Goldilocks Effect</h3>
+          <p>Too tight and it cuts off the return of fresh blood. Too loose and it won't send blood back to the heart any faster. In short: compression should massage your muscles, not strangle them.</p>
+        </div>
+      </div>
+
     </div>
     <div class="grid__item centered no-padding">
       {{ pages.compression-101-measurement.content }}

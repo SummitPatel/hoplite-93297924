@@ -1720,17 +1720,11 @@ body {
   background-color: #333;
 }
 
-.diamond-infographic {
-  height: 94vw;
 
-  .diamond-slider {
+.infographic {
+  .slider-content {
     width: 75%;
     margin: 0 auto;
-    padding: 2rem 0 0 0;
-  }
-
-  .slides {
-    margin: 0;
   }
 
   li {
@@ -1738,32 +1732,18 @@ body {
     margin: 1.5rem 0 0 0;
   }
 
-  .slider-content {
-    width: 75%;
-    margin: 0 auto;
+  .prev, .next {
+    position: absolute;
+    top: 25%;
+    cursor: pointer;
   }
 
   .prev {
-    position: absolute;
-    top: 25%;
     left: 5%;
   }
 
   .next {
-    position: absolute;
-    top: 25%;
     right: 5%;
-  }
-
-  .orange {
-    color: #d05d00;
-    text-transform: uppercase;
-  }
-
-  .text-wrapper {
-    height: 50%;
-    text-align: left;
-    padding: 1rem;
   }
 
   h3 {
@@ -1781,5 +1761,44 @@ body {
     line-height: 1.3;
   }
 }
+.diamond-infographic {
+  height: 94vw;
 
+  .diamond-slider {
+    width: 75%;
+    margin: 0 auto;
+    padding: 2rem 0 0 0;
+  }
 
+  .slides {
+    margin: 0;
+  }
+
+  .orange {
+    color: #d05d00;
+    text-transform: uppercase;
+  }
+
+  .text-wrapper {
+    height: 50%;
+    text-align: left;
+    padding: 1rem;
+  }
+}
+
+.goldilocks-infographic {
+  height: 70vh;
+
+  .text-wrapper {
+    color: #333;
+    text-align: left;
+    padding: 1rem;
+  }
+
+}
+
+.goldilocks-img {
+  @include at-query($max, $small) {
+    width: 150px;
+  }
+}
