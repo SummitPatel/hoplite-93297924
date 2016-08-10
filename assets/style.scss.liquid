@@ -243,22 +243,17 @@ body {
 .tile-wrapper {
   position: relative;
   line-height: 1;
+}
 
-  .content-wrapper {
-    position: relative;
-    overflow: auto;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .text-wrapper {
-    position: relative;
-    color: #fff;
-    text-transform: uppercase;
-  }
+.content-wrapper {
+  position: relative;
+  overflow: auto;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .text-wrapper {
+  position: relative;
   color: #fff;
   text-transform: uppercase;
   text-align: center;
@@ -1713,3 +1708,69 @@ body {
   }
 }
 
+.diamond-infographic {
+  height: 94vw;
+
+  .diamond-slider {
+    height: 50%;
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .flex-viewport {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .slides {
+    margin: 0;
+  }
+
+  li {
+    position: relative;
+    margin: 1.5rem 0 0 0;
+  }
+
+  .slider-content {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .chevron-left {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+  }
+
+  .chevron-right {
+    position: absolute;
+    top: 25%;
+    right: 5%;
+  }
+
+  .orange {
+    color: #d05d00;
+    text-transform: uppercase;
+  }
+
+  .text-wrapper {
+    height: 50%;
+    text-align: left;
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  h3 {
+    margin: 0;
+    color: #333;
+    font-family: 'PF DIN Text Pro Bold';
+    font-size: 1.4rem;
+  }
+
+  p {
+    margin: 0;
+    color: #333;
+    font-size: 1rem;
+    text-transform: none;
+    line-height: 1.3;
+  }
+}

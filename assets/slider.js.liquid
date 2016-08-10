@@ -2,8 +2,9 @@ window.timberSlider = window.timberSlider || {};
 
 timberSlider.cacheSelectors = function () {
   timberSlider.cache = {
-    // Home Page
-    $slider: $('.flexslider')
+    // Product Page
+    $slider: $('.flexslider'),
+    $diamondSlider: $('.diamond-slider')
   }
 };
 
@@ -13,6 +14,7 @@ timberSlider.init = function () {
 };
 
 timberSlider.sliders = function () {
+  // Product Page
   var $slider = timberSlider.cache.$slider,
     sliderArgs = {
       selector: '.slides > div',
@@ -28,11 +30,10 @@ timberSlider.sliders = function () {
       controlNav: true,
       manualControls: '.tabs li',
       directionNav: false,
-      smoothHeight: true
+      smoothHeight: false
     };
 
   if ($slider.length) {
-
     if ($slider.find('li').length === 1) {
       sliderArgs.slideshow = false;
       sliderArgs.slideshowSpeed = 0;
@@ -40,8 +41,43 @@ timberSlider.sliders = function () {
       sliderArgs.directionNav = false;
       sliderArgs.touch = true;
     }
-
     $slider.flexslider(sliderArgs);
+  }
+
+  // Compression Page
+  var $diamondSlider = timberSlider.cache.$diamondSlider,
+    sliderArgs = {
+      selector: '.slides > li',
+      animation: '{{ settings.slider_home_transition }}',
+      animationLoop: true,
+      animationSpeed: 800,
+      pauseOnHover: true,
+      keyboard: false,
+      // slideshow: {{ settings.slider_home_auto }},
+      slideshow: false,
+      slideshowSpeed: {{ settings.slider_home_rate }},
+      // controlNav: {{ settings.slider_home_show_dots }},
+      controlNav: false,
+      manualControls: '.tabs li',
+      directionNav: false,
+      smoothHeight: false
+    };
+
+  $('.prev, .next').on('click', function() {
+    var href = $(this).attr('href');
+    $diamondSlider.flexslider(href);
+    return false;
+  });
+
+  if ($diamondSlider.length) {
+    if ($diamondSlider.find('li').length === 1) {
+      sliderArgs.slideshow = false;
+      sliderArgs.slideshowSpeed = 0;
+      sliderArgs.controlNav = false;
+      sliderArgs.directionNav = false;
+      sliderArgs.touch = true;
+    }
+    $diamondSlider.flexslider(sliderArgs);
   }
 };
 
