@@ -1608,10 +1608,10 @@ body {
 .swatch .swatch-element .crossed-out { display:none; }
 .swatch .swatch-element.soldout .crossed-out { display:block; }
 .swatch .swatch-element.soldout label {
-  filter: alpha(opacity=60); /* internet explorer */
-  -khtml-opacity: 0.6;      /* khtml, old safari */
-  -moz-opacity: 0.6;       /* mozilla, netscape */
-  opacity: 0.6;           /* fx, safari, opera */
+  filter: alpha(opacity=30); /* internet explorer */
+  -khtml-opacity: 0.3;      /* khtml, old safari */
+  -moz-opacity: 0.3;       /* mozilla, netscape */
+  opacity: 0.3;           /* fx, safari, opera */
 }
 /* CSS triangle */
 .swatch .tooltip:after {
@@ -1701,9 +1701,9 @@ body {
   }
 
   .dropdown-chevron {
+    top: 93%;
     @include at-query($max, $small) {
       width: 12.5px;
-      top: 93%;
     }
   }
 }
@@ -1712,14 +1712,9 @@ body {
   height: 94vw;
 
   .diamond-slider {
-    height: 50%;
     width: 75%;
     margin: 0 auto;
-  }
-
-  .flex-viewport {
-    top: 50%;
-    transform: translateY(-50%);
+    padding: 2rem 0 0 0;
   }
 
   .slides {
@@ -1736,13 +1731,13 @@ body {
     margin: 0 auto;
   }
 
-  .chevron-left {
+  .prev {
     position: absolute;
     top: 25%;
     left: 5%;
   }
 
-  .chevron-right {
+  .next {
     position: absolute;
     top: 25%;
     right: 5%;
@@ -1756,7 +1751,7 @@ body {
   .text-wrapper {
     height: 50%;
     text-align: left;
-    padding: 0 1rem 1rem 1rem;
+    padding: 1rem;
   }
 
   h3 {
