@@ -13,7 +13,7 @@
 
       <div class="tile-wrapper infographic diamond-infographic">
         <a href="prev" class="prev"><img src="{{'chevron-orange.png' | asset_url}}" width="16px" alt=""></a>
-        <div class="diamond-slider">
+        <div class="slider diamond-slider">
           <ul class="slides">
             <li>
               <div class="slider-content">
@@ -21,17 +21,23 @@
                 <p>Lift heavy things for fun.</p>
               </div>
             </li>
-            <li class="slider-content">
-              <h3 class="orange">Veins</h3>
-              <p>Removes used blood. Compression speeds this up.</p>
+            <li>
+              <div class="slider-content">
+                <h3 class="orange">Veins</h3>
+                <p>Removes used blood. Compression speeds this up.</p>
+              </div>
             </li>
-            <li class="slider-content">
-              <h3 class="orange">Heart, lung, liver & kidneys</h3>
-              <p>Remove metabolic waste and replenish blood.</p>
+            <li>
+              <div class="slider-content">
+                <h3 class="orange">Heart, lung, liver & kidneys</h3>
+                <p>Remove metabolic waste and replenish blood.</p>
+              </div>
             </li>
-            <li class="slider-content">
-              <h3 class="orange">Arteries</h3>
-              <p>Deliver fresh blood to the muscles. Too much compression slows this down.</p>
+            <li>
+              <div class="slider-content">
+                <h3 class="orange">Arteries</h3>
+                <p>Deliver fresh blood to the muscles. Too much compression slows this down.</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -48,31 +54,38 @@
     <div class="grid__item centered no-padding">
       {{ pages.compression-101-tighter.content }}
     </div>
+
     <div class="grid__item centered no-padding">
       
       <div class="tile-wrapper infographic goldilocks-infographic">
         <a href="prev" class="prev"><img src="{{ 'link-arrow-black-reverse.png' | asset_url }}" alt=""></a>
-        <div class="goldilocks-slider">
+        <div class="slider goldilocks-slider">
           <ul class="slides">
             <li>
               <div class="slider-content">
                 <img class="goldilocks-img" src="{{ 'just-right.png' | asset_url }}" alt="">
-                <h3 class="orange">Just right</h3>
-                <p>Perfectly balanced</p>
+                <div class="text-wrapper text">
+                  <h6>Just right</h6>
+                  <h6>Perfectly balanced</h6>
+                </div>
               </div>
             </li>
             <li>
               <div class="slider-content">
                 <img class="goldilocks-img" src="{{ 'too-tight.png' | asset_url }}" alt="">
-                <h3 class="orange">Too tight</h3>
-                <p>Overcompensates</p>
+                <div class="text-wrapper text">
+                  <h6>Too tight</h6>
+                  <h6>Overcompensates</h6>
+                </div>
               </div>
             </li>
             <li>
               <div class="slider-content">
                 <img class="goldilocks-img" src="{{ 'too-loose.png' | asset_url }}" alt="">
-                <h3 class="orange">Too loose</h3>
-                <p>Underperforms</p>
+                <div class="text-wrapper text">
+                  <h6>Too loose</h6>
+                  <h6>Underperforms</h6>
+                  </div>
               </div>
             </li>
           </ul>
@@ -108,10 +121,47 @@
     <div class="grid__item centered no-padding">
       {{ pages.compression-101-result.content }}
     </div>
+
+    <div class="grid__item centered no-padding">
+
+      <div class="tile-wrapper infographic familiar-infographic">
+        <a href="prev" class="prev"><img src="{{ 'link-arrow-black-reverse.png' | asset_url }}" alt=""></a>
+        <div class="slider familiar-slider">
+          <ul class="slides">
+            <li>
+              <div class="slider-content text-wrapper">
+                <h6>Before</h6>
+                <h2>Faster warm up</h2>
+              </div>
+            </li>
+            <li>
+              <div class="slider-content text-wrapper">
+                <h6>During</h6>
+                <h2>Reduced fatigue</h2>
+              </div>
+            </li>
+            <li>
+              <div class="slider-content text-wrapper">
+                <h6>After</h6>
+                <h2>Faster recovery</h2>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="next" class="next"><img src="{{ 'link-arrow-black.png' | asset_url }}" alt=""></a>
+
+        <div class="text-wrapper">
+          <h3>Sound familiar?</h3>
+          <p>Turns out, swapping old blood for new blood has some pretty noticable results. We don't agree with Lance, but we see where he was coming from.</p>
+        </div>
+      </div>
+
+    </div>
+
     <div class="grid__item padded">
       {{ pages.add-compression.content }}
     </div>
-    
+
   </div>
 
 </div>
