@@ -51,33 +51,33 @@
     <div class="grid__item centered no-padding">
       
       <div class="tile-wrapper infographic goldilocks-infographic">
-        <a href="prev" class="prev"><img src="{{'link-arrow-black-reverse.png' | asset_url}}" alt=""></a>
+        <a href="prev" class="prev"><img src="{{ 'link-arrow-black-reverse.png' | asset_url }}" alt=""></a>
         <div class="goldilocks-slider">
           <ul class="slides">
             <li>
               <div class="slider-content">
-                <img class="goldilocks-img" src="{{'just-right.png' | asset_url}}" alt="">
+                <img class="goldilocks-img" src="{{ 'just-right.png' | asset_url }}" alt="">
                 <h3 class="orange">Just right</h3>
                 <p>Perfectly balanced</p>
               </div>
             </li>
             <li>
               <div class="slider-content">
-                <img class="goldilocks-img" src="{{'too-tight.png' | asset_url}}" alt="">
+                <img class="goldilocks-img" src="{{ 'too-tight.png' | asset_url }}" alt="">
                 <h3 class="orange">Too tight</h3>
                 <p>Overcompensates</p>
               </div>
             </li>
             <li>
               <div class="slider-content">
-                <img class="goldilocks-img" src="{{'too-loose.png' | asset_url}}" alt="">
+                <img class="goldilocks-img" src="{{ 'too-loose.png' | asset_url }}" alt="">
                 <h3 class="orange">Too loose</h3>
                 <p>Underperforms</p>
               </div>
             </li>
           </ul>
         </div>
-        <a href="next" class="next"><img src="{{'link-arrow-black.png' | asset_url}}" alt=""></a>
+        <a href="next" class="next"><img src="{{ 'link-arrow-black.png' | asset_url }}" alt=""></a>
 
         <div class="text-wrapper">
           <h3>The Goldilocks Effect</h3>
@@ -90,7 +90,20 @@
       {{ pages.compression-101-measurement.content }}
     </div>
     <div class="grid__item centered no-padding">
-      {{ pages.eerily-cold.content }}
+      
+      <div class="tile-wrapper infographic magic-numbers-infographic">
+        <div class="content-wrapper">
+          <div class="grid__item large--one-half medium--one-half small--one-whole img-container">
+            <img src="{{ 'medical-grade-compression-sock.png' | asset_url }}" alt="medical grade compression sock" />
+          </div>
+          <div class="grid__item large--one-half medium--one-half text-wrapper">
+            <h3>The Magic is in the numbers</h3>
+            <p>Graduated compression works by slowly changing its strength (measured in mmHg) over the length of the sock or sleeve. Take a couple quick measurements and we maximize its effictiveness by fine tuning this process to your body.</p>
+            <p><span>No measuring tape?</span> We can help you measure with a dollar bill and a pair of headphones.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="grid__item centered no-padding">
       {{ pages.compression-101-result.content }}
