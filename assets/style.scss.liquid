@@ -1022,7 +1022,7 @@ body {
   .text {
     margin: 0 auto;
     @include at-query($max, $small) {
-      width: 63%;
+      width: 65%;
     }
   }
 
@@ -1040,7 +1040,7 @@ body {
 
   h5 {
     margin: 0;
-    padding: 0 0 .5rem 0;
+    padding: 0;
     font-family: 'PF DIN Text Pro Bold';
     font-size: 1.3vw;
     line-height: 1;
@@ -1050,7 +1050,7 @@ body {
       font-size: 1.7vw;
     }
     @include at-query($max, $small) {
-      font-size: .9rem;
+      font-size: .8rem;
     }
   }
 
@@ -1059,13 +1059,13 @@ body {
     letter-spacing: .05rem;
     text-transform: none;
     margin: 0;
-    padding: 0 0 4vh 0;
+    padding: 0 0 1rem 0;
     line-height: 1.5;
     @include at-query(null, $postSmall, $large) {
       font-size:1.4vw;
     }
     @include at-query($max, $small) {
-      font-size: .9rem;
+      font-size: .8rem;
     }
   }
 }
@@ -1457,11 +1457,12 @@ body {
 
   .text-wrapper {
     color: #333;
-
-    a {
-      color: #333;
-    }
   }
+
+  a {
+      color: #333;
+      text-decoration: underline;
+    }
 }
 
 .better-than-jeans-protection-tile, .wont-wear-out-tile {
