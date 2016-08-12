@@ -1689,12 +1689,17 @@ body {
 ==============================================================================*/
 
 .hero-tile.hero-compression-101 {
-  background-image: url( {{'hero-product-landing-page.png' | asset_url}} );
+  background-image: url( {{'hero-compression-101-large.png' | asset_url}} );
   @include at-query(null, $postSmall, $large) {
     background-image: url( {{'hero-product-landing-page.png' | asset_url}} );
   }
   @include at-query($max, $small) {
     background-image: url( {{'hero-compression-101-small.png' | asset_url}} );
+  }
+
+  .text-wrapper {
+    width: 75%;
+    margin: 0 auto;
   }
 }
 
