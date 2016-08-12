@@ -1128,10 +1128,21 @@ body {
     text-transform: uppercase;
     color: #fff;
     font-family: 'PF DIN Text Pro Bold';
-    font-size: 2vw;
+    font-size: 1.5vw;
+    line-height: 1;
     @include at-query($max, $small) {
       font-size: 6vw;
       text-align: center;
+    }
+  }
+
+  h1 {
+    margin: 0 0 1rem 0;
+  }
+
+  .product-single__price {
+    @include at-query($min, $postSmall) {
+      font-size: 3.5vw;
     }
   }
 }

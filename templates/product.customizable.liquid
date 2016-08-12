@@ -126,12 +126,14 @@
             <!-- {% if settings.product_vendor_enable %}
               <h3 itemprop="brand">{{ product.vendor }}</h3>
             {% endif %} -->
-            <h1 itemprop="name">
-              {{ product.title }}
-              <span id="ProductPrice" class="product-single__price" itemprop="price">
+            <div class="grid">
+              <h1 class="grid__item small--two-thirds push--small--one-twelfth" itemprop="name">
+                {{ product.title }}
+              </h1>
+              <span id="ProductPrice" class="grid__item small--one-twelfth push--small--one-twelfth product-single__price" itemprop="price">
                 {{ product.price | money_without_trailing_zeros | remove: '.00' }}
               </span>
-            </h1>
+            </div>
 
 
             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
