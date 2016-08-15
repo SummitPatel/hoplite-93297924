@@ -16,18 +16,19 @@ timberSlider.cacheSelectors = function () {
 
 timberSlider.init = function () {
   timberSlider.cacheSelectors();
+  timberSlider.productSliders();
+
   timberSlider.cache.$w.on('resize', function() {
     var size = timberSlider.cache.$w.width();
 
     // activate sliders only if on mobile
     if(size < timberSlider.cache.$mobileBreakpoint) {
-      timberSlider.sliders();
+      timberSlider.compressionSliders();
     }
   }).resize(); //trigger resize on load
 };
 
-timberSlider.sliders = function () {
-  // Product Page
+timberSlider.productSliders = function () {
   var $slider = timberSlider.cache.$slider,
     sliderArgs = {
       selector: '.slides > div',
@@ -56,9 +57,9 @@ timberSlider.sliders = function () {
     }
     $slider.flexslider(sliderArgs);
   }
+};
 
-
-  // Compression Page
+timberSlider.compressionSliders = function () {
   var $diamondSlider = timberSlider.cache.$diamondSlider,
     sliderArgs = {
       selector: '.slides > li',
