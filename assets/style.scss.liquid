@@ -1710,14 +1710,15 @@ body {
   }
 
   .icon {
-    margin: 0 0 1rem 0;
+    margin: 0 0 2rem 0;
     @include at-query($max, $small) {
       width: 40px;
+      margin: 0 0 1rem 0;
     }
   }
 
   .text-wrapper {
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
   }
 
@@ -1738,12 +1739,20 @@ body {
 }
 
 .slider {
-  width: 75%;
   margin: 0 auto;
-  padding: 2rem 0 0 0;
+  @include at-query($max, $small) {
+    width: 75%;
+    padding: 2rem 0 0 0;
+  }
 }
 
 .infographic {
+  .grid__item {
+    @include at-query($max, $small) {
+      float: none;
+    }
+  }
+
   .slides {
     margin: 0;
   }
@@ -1762,6 +1771,9 @@ body {
     position: absolute;
     top: 30%;
     cursor: pointer;
+    @include at-query($min, $postSmall) {
+      display: none;
+    }
   }
 
   .prev {
@@ -1775,6 +1787,10 @@ body {
   .text-wrapper {
     padding: 1rem;
     text-align: left;
+    @include at-query($min, $postSmall) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   h3 {
@@ -1798,7 +1814,66 @@ body {
 }
 
 .diamond-infographic {
-  height: 94vw;
+  height: 53vh;
+
+  .slider {
+    margin: 0 auto;
+
+    @include at-query($max, $small) {
+      padding: 2rem 0 0 0;
+      width: 75%;
+    }
+  }
+
+  .slides {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 65%;
+      width: 44%;
+      top: 0;
+      left: 0;
+      transform-origin: 0 100%;
+      transform: translateX(109%) translateY(49%) rotate(-45deg) translateZ(0);
+      border: 2px solid #d05d00;
+    }
+    &:after {
+      padding-bottom: 66%;
+      display: block;
+      content: '';
+    }
+  }
+
+  li {
+    position: absolute;
+  }
+
+  .slider-content {
+    width: 60%;
+  }
+
+  .top-content {
+    left: 0;
+    right: 3%;
+    top: 15%;
+  }
+  .left-content {
+    top: 40%;
+    left: 18%;
+  }
+  .right-content {
+    top: 38%;
+    right: 22%;
+  }
+  .bottom-content {
+    left: 0;
+    right: 4%;
+    top: 70%;
+    width: 30%;
+    margin: 0 auto;
+  }
 
   .prev, .next {
     top: 25%;
@@ -1807,10 +1882,6 @@ body {
   .orange {
     color: #d05d00;
     text-transform: uppercase;
-  }
-
-  .text-wrapper {
-    height: 50%;
   }
 }
 

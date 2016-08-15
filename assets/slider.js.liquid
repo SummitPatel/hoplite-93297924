@@ -2,8 +2,12 @@ window.timberSlider = window.timberSlider || {};
 
 timberSlider.cacheSelectors = function () {
   timberSlider.cache = {
+    $w: $(window),
+    $mobileBreakpoint: 640,
     // Product Page
     $slider: $('.flexslider'),
+
+    // Compression Page
     $diamondSlider: $('.diamond-slider'),
     $goldilocksSlider: $('.goldilocks-slider'),
     $familiarSlider: $('.familiar-slider')
@@ -12,7 +16,14 @@ timberSlider.cacheSelectors = function () {
 
 timberSlider.init = function () {
   timberSlider.cacheSelectors();
-  timberSlider.sliders();
+  timberSlider.cache.$w.on('resize', function() {
+    var size = timberSlider.cache.$w.width();
+
+    // activate sliders only if on mobile
+    if(size < timberSlider.cache.$mobileBreakpoint) {
+      timberSlider.sliders();
+    }
+  }).resize(); //trigger resize on load
 };
 
 timberSlider.sliders = function () {
