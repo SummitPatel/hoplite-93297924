@@ -1930,11 +1930,24 @@ body {
 }
 
 .magic-numbers-infographic {
-  height: 88vh;
+  .content-wrapper {
+    top: 0;
+    transform: none;
+  }
 
   img {
     width: 33vw;
+    @include at-query($min, $postSmall) {
+      width: 25vw;
+    }
     margin: 0 0 4rem 0;
+  }
+
+  .text-wrapper {
+    @include at-query($min, $postSmall) {
+      position: absolute;
+      left: 50%;
+    }
   }
 }
 
