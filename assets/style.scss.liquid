@@ -1890,14 +1890,31 @@ body {
 }
 
 .goldilocks-infographic {
-  height: 70vh;
+  overflow: auto;
 
   .text-wrapper {
     color: #333;
+    @include at-query($min, $postSmall) {
+      position: absolute;
+    }
+  }
+
+  @include at-query($min, $postSmall) {
+    li:first-child {
+      margin-top: 50%; 
+    }
+    li:nth-child(2n + 0) {
+      margin-top: 30%;
+    }
+    li:last-child {
+      margin-top: 10%;
+    }
   }
 
   .text {
     text-align: center;
+    transform: none;
+    position: relative;
 
     h6 + h6 {
       font-family: 'PF DIN Text Pro Regular';
