@@ -1771,8 +1771,10 @@ body {
 
   .prev, .next {
     position: absolute;
-    top: 30%;
+    top: 27%;
     cursor: pointer;
+    width: 32px;
+    height: 32px;
     @include at-query($min, $postSmall) {
       display: none;
     }
@@ -1784,6 +1786,12 @@ body {
 
   .next {
     right: 5%;
+  }
+
+  .prev-icon, .next-icon {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .text-wrapper {
@@ -1910,6 +1918,24 @@ body {
       position: absolute;
       width: 25%;
       text-align: left;
+    }
+  }
+
+  h6 {
+    @include at-query($max, $small) {
+      font-size: 3.15vw;
+    }
+  }
+
+  h3 {
+    @include at-query($max, $small) {
+      font-size: 4.7vw;
+    }
+  }
+
+  p {
+    @include at-query($max, $small) {
+      font-size: 3.75vw;
     }
   }
 
