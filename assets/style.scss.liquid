@@ -1704,7 +1704,7 @@ body {
 }
 
 .compression-101 {
-  height: 66vh;
+  height: 74vh;
   @include at-query($max, $small) {
     height: 94vw;
   }
@@ -1758,8 +1758,10 @@ body {
   }
 
   .slider-content {
-    width: 75%;
     margin: 0 auto;
+    @include at-query($max, $small) {
+      width: 75%;
+    }
   }
 
   li {
@@ -1805,7 +1807,7 @@ body {
     color: #333;
     font-size: .9rem;
     text-transform: none;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   span {
@@ -1814,7 +1816,11 @@ body {
 }
 
 .diamond-infographic {
-  height: 53vh;
+  height: 56vh;
+  overflow: auto;
+  @include at-query($min, $postSmall) {
+    height: 87vh;
+  }
 
   .slider {
     margin: 0 auto;
@@ -1828,56 +1834,60 @@ body {
   .slides {
     position: relative;
 
-    &:before {
-      content: '';
+    @include at-query($min, $postSmall) {
+      &:before {
+        content: '';
+        position: absolute;
+        height: 65%;
+        width: 44%;
+        top: 0;
+        left: 0;
+        transform-origin: 0 100%;
+        transform: translateX(109%) translateY(49%) rotate(-45deg) translateZ(0);
+        border: 2px solid #d05d00;
+      }
+      &:after {
+        padding-bottom: 66%;
+        display: block;
+        content: '';
+      }
+    }
+  }
+
+  @include at-query($min, $postSmall) {
+    .slider-content {
+      width: 60%;
+    }
+
+    li {
       position: absolute;
-      height: 65%;
-      width: 44%;
-      top: 0;
+    }
+
+    .top-content {
       left: 0;
-      transform-origin: 0 100%;
-      transform: translateX(109%) translateY(49%) rotate(-45deg) translateZ(0);
-      border: 2px solid #d05d00;
+      right: 3%;
+      top: 15%;
     }
-    &:after {
-      padding-bottom: 66%;
-      display: block;
-      content: '';
+    .left-content {
+      top: 40%;
+      left: 18%;
     }
-  }
-
-  li {
-    position: absolute;
-  }
-
-  .slider-content {
-    width: 60%;
-  }
-
-  .top-content {
-    left: 0;
-    right: 3%;
-    top: 15%;
-  }
-  .left-content {
-    top: 40%;
-    left: 18%;
-  }
-  .right-content {
-    top: 38%;
-    right: 22%;
-  }
-  .bottom-content {
-    left: 0;
-    right: 4%;
-    top: 70%;
-    width: 30%;
-    margin: 0 auto;
+    .right-content {
+      top: 38%;
+      right: 22%;
+    }
+    .bottom-content {
+      left: 0;
+      right: 4%;
+      top: 70%;
+      width: 30%;
+      margin: 0 auto;
+    }
   }
 
   .prev, .next {
     top: 25%;
-    } 
+  }
 
   .orange {
     color: #d05d00;
@@ -1891,23 +1901,31 @@ body {
 
 .goldilocks-infographic {
   overflow: auto;
+  padding: 0 5%;
 
   .text-wrapper {
     color: #333;
+    text-align: center;
     @include at-query($min, $postSmall) {
       position: absolute;
+      width: 25%;
+      text-align: left;
     }
   }
 
   @include at-query($min, $postSmall) {
+    .slides {
+      margin: 5% 0;
+    }
+
     li:first-child {
-      margin-top: 50%; 
+      margin-top: 40%; 
     }
     li:nth-child(2n + 0) {
-      margin-top: 30%;
+      margin-top: 20%;
     }
     li:last-child {
-      margin-top: 10%;
+      margin-top: 0%;
     }
   }
 
@@ -1915,18 +1933,15 @@ body {
     text-align: center;
     transform: none;
     position: relative;
+    @include at-query($min, $postSmall) {
+      width: inherit;
+    }
 
     h6 + h6 {
       font-family: 'PF DIN Text Pro Regular';
     }
   }
 
-}
-
-.goldilocks-img {
-  @include at-query($max, $small) {
-    width: 150px;
-  }
 }
 
 .magic-numbers-infographic {
@@ -1947,12 +1962,30 @@ body {
     @include at-query($min, $postSmall) {
       position: absolute;
       left: 50%;
+      width: 25%;
+      margin: 0 0 0 5vw;
+    }
+  }
+
+  h3 {
+    @include at-query($min, $postSmall) {
+      letter-spacing: .1rem;
     }
   }
 }
 
 .familiar-infographic {
   height: 53vh;
+  @include at-query($min, $postSmall) {
+    height: 96vh;
+    padding: 0 5%;
+  }
+
+  .text-wrapper {
+    @include at-query($min, $postSmall) {
+      width: 30%
+    }
+  }
 
   .slider-content {
     color: #333;
@@ -1960,6 +1993,15 @@ body {
     padding: 0;
     top: 0;
     transform: none;
+    @include at-query($min, $postSmall) {
+      text-align: left;
+    }
+  }
+
+  .text {
+    @include at-query($min, $postSmall) {
+      width: inherit;
+    }
   }
 
   h2 {
@@ -1975,4 +2017,9 @@ body {
 
 .familiar-slider {
   margin: 0 auto 2rem;
+  @include at-query($min, $postSmall) {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
