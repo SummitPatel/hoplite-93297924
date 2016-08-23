@@ -1828,13 +1828,8 @@ body {
 
 .diamond-infographic {
   overflow: auto;
-  @include at-query($min, $postSmall) {
-    height: 87vh;
-  }
 
   .slider {
-    margin: 0 auto;
-
     @include at-query($max, $small) {
       padding: 2rem 0 0 0;
       width: 75%;
@@ -1843,55 +1838,8 @@ body {
 
   .slides {
     position: relative;
-
     @include at-query($min, $postSmall) {
-      &:before {
-        content: '';
-        position: absolute;
-        height: 65%;
-        width: 44%;
-        top: 0;
-        left: 0;
-        transform-origin: 0 100%;
-        transform: translateX(109%) translateY(49%) rotate(-45deg) translateZ(0);
-        border: 2px solid #d05d00;
-      }
-      &:after {
-        padding-bottom: 66%;
-        display: block;
-        content: '';
-      }
-    }
-  }
-
-  @include at-query($min, $postSmall) {
-    .slider-content {
-      width: 60%;
-    }
-
-    li {
-      position: absolute;
-    }
-
-    .top-content {
-      left: 0;
-      right: 3%;
-      top: 15%;
-    }
-    .left-content {
-      top: 40%;
-      left: 18%;
-    }
-    .right-content {
-      top: 38%;
-      right: 22%;
-    }
-    .bottom-content {
-      left: 0;
-      right: 4%;
-      top: 70%;
-      width: 30%;
-      margin: 0 auto;
+      display: none;
     }
   }
 
@@ -1905,10 +1853,18 @@ body {
   }
 
   .text-wrapper {
-    @include at-query($max, $small) {
-      text-align: center;
+    text-align: center;
+    @include at-query($min, $postSmall) {
+      position: absolute;
+      right: 4vw;
+      text-align: left;
     }
   }
+}
+
+.diamond-infographic-img {
+  margin: 4vw;
+  width: 50vw;
 }
 
 .goldilocks-infographic, .familiar-infographic {
