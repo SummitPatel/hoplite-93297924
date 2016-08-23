@@ -1726,6 +1726,7 @@ body {
     top: 93%;
     @include at-query($max, $small) {
       width: 12.5px;
+      display: none;
     }
   }
 }
@@ -1805,6 +1806,7 @@ body {
 
   h3 {
     margin: 0 0 .25rem 0;
+    padding: 0 1rem;
     color: #333;
     font-family: 'PF DIN Text Pro Bold';
     font-size: 1.3rem;
@@ -1812,6 +1814,7 @@ body {
 
   p {
     margin: 0 0 1rem 0;
+    padding: 0 1rem;
     color: #333;
     font-size: .9rem;
     text-transform: none;
@@ -1824,7 +1827,6 @@ body {
 }
 
 .diamond-infographic {
-  height: 56vh;
   overflow: auto;
   @include at-query($min, $postSmall) {
     height: 87vh;
@@ -1894,12 +1896,18 @@ body {
   }
 
   .prev, .next {
-    top: 25%;
+    top: 17%;
   }
 
   .orange {
     color: #d05d00;
     text-transform: uppercase;
+  }
+
+  .text-wrapper {
+    @include at-query($max, $small) {
+      text-align: center;
+    }
   }
 }
 
@@ -1918,24 +1926,6 @@ body {
       position: absolute;
       width: 25%;
       text-align: left;
-    }
-  }
-
-  h6 {
-    @include at-query($max, $small) {
-      font-size: 3.15vw;
-    }
-  }
-
-  h3 {
-    @include at-query($max, $small) {
-      font-size: 4.7vw;
-    }
-  }
-
-  p {
-    @include at-query($max, $small) {
-      font-size: 3.75vw;
     }
   }
 
@@ -1979,17 +1969,20 @@ body {
   img {
     width: 33vw;
     @include at-query($min, $postSmall) {
-      width: 25vw;
+      width: 20vw;
     }
-    margin: 2rem 0 2rem 0;
+    margin: 8vw 0;
   }
 
   .text-wrapper {
+    padding: 1rem;
+    text-align: center;
     @include at-query($min, $postSmall) {
       position: absolute;
       left: 50%;
       width: 25%;
       margin: 0 0 0 5vw;
+      text-align: left;
     }
   }
 
@@ -2008,8 +2001,11 @@ body {
   }
 
   .text-wrapper {
+    padding: 1rem;
+    text-align: center;
     @include at-query($min, $postSmall) {
-      width: 30%
+      width: 30%;
+      text-align: left;
     }
   }
 
