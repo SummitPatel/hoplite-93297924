@@ -1760,9 +1760,6 @@ body {
 
   .slider-content {
     margin: 0 auto;
-    @include at-query($max, $small) {
-      width: 75%;
-    }
   }
 
   li {
@@ -1856,8 +1853,9 @@ body {
     text-align: center;
     @include at-query($min, $postSmall) {
       position: absolute;
-      right: 4vw;
+      left: 63vw;
       text-align: left;
+      width: 25%;
     }
   }
 }
@@ -1913,7 +1911,106 @@ body {
       font-family: 'PF DIN Text Pro Regular';
     }
   }
+}
 
+.too-loose-circle, .just-right-circle, .too-tight-circle, .inner-circle-1, .inner-circle-2, .inner-circle-3 {
+  width: 18vw;
+  height: 18vw;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  @include at-query($max, $small) {
+    width: 65vw;
+    height: 65vw;
+  }
+}
+
+.inner-circle-1, .inner-circle-2, .inner-circle-3 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.circle-text {
+  position: relative;
+  top: 55%;
+  transform: translateY(-50%);
+  text-transform: uppercase;
+
+  h3 {
+    font-size: 4vw;
+    @include at-query($min, $postSmall) {
+      font-size: 1.3vw;
+    }
+  }
+
+  p {
+    font-size: 3.5vw;
+    @include at-query($min, $postSmall) {
+      font-size: 1.2vw;
+    }
+  }
+
+  img {
+    width: 33%;
+  }
+}
+
+.too-loose-circle {
+  .inner-circle-1 {
+    width: 17vw;
+    height: 17vw;
+    @include at-query($max, $small) {
+      width: 50vw;
+      height: 50vw;
+    }
+  }
+}
+
+.just-right-circle {
+  .inner-circle-1 {
+    width: 16vw;
+    height: 16vw;
+    @include at-query($max, $small) {
+      width: 55vw;
+      height: 55vw;
+    }
+  }
+  .inner-circle-2 {
+    width: 14vw;
+    height: 14vw;
+    @include at-query($max, $small) {
+      width: 45vw;
+      height: 45vw;
+    }
+  }
+}
+
+.too-tight-circle {
+  .inner-circle-1 {
+    width: 16vw;
+    height: 16vw;
+    @include at-query($max, $small) {
+      width: 57vw;
+      height: 57vw;
+    }
+  }
+  .inner-circle-2 {
+    width: 14vw;
+    height: 14vw;
+    @include at-query($max, $small) {
+      width: 48vw;
+      height: 48vw;
+    }
+  }
+  .inner-circle-3 {
+    width: 12vw;
+    height: 12vw;
+    @include at-query($max, $small) {
+      width: 40vw;
+      height: 40vw;
+    }
+  }
 }
 
 .magic-numbers-infographic {
@@ -1937,7 +2034,7 @@ body {
       position: absolute;
       left: 50%;
       width: 25%;
-      margin: 0 0 0 5vw;
+      margin: 0 0 0 2vw;
       text-align: left;
     }
   }
@@ -1960,7 +2057,7 @@ body {
     padding: 1rem;
     text-align: center;
     @include at-query($min, $postSmall) {
-      width: 30%;
+      width: 25%;
       text-align: left;
     }
   }
@@ -1971,6 +2068,7 @@ body {
     padding: 0;
     top: 0;
     transform: none;
+    width: 80%;
     @include at-query($min, $postSmall) {
       text-align: left;
     }
