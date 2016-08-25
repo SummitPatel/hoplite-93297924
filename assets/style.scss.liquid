@@ -53,31 +53,6 @@ $max: max-width;
 
 @include at-query($max, $small) {
   .padded {
-    padding-right: 1vw;
-    padding-bottom: 1vw;
-    padding-left: 2vw;
-    padding: 0;
-  }
-}
-
-@include at-query($min, $postSmall) {
-  .padded {
-    padding-right: 1vw;
-    /* padding-left is inherited from the Timber framework*/
-    padding: 0;
-  }
-
-  .padded-half-first {
-    padding-top: 1vw;
-    padding-right: 0;
-    padding-bottom: 1vw;
-    padding: 0;
-  }
-
-  .padded-half-second {
-    padding-top: 1vw;
-    padding-left: 1vw;
-    padding-bottom: 1vw;
     padding: 0;
   }
 }
@@ -673,7 +648,7 @@ body {
   background: #333;
 }
 
-.designed-and-knit-tile, .break-it-tile {
+.designed-and-knit-tile.left-aligned, .break-it-tile {
   .text-wrapper {
     @include at-query($min, $postSmall) {
       margin-right: 10%;
@@ -681,7 +656,7 @@ body {
   }
 }
 
-.buy-give-homepage-tile, .buy-give-tile {
+.designed-and-knit-tile.right-aligned, .buy-give-homepage-tile, .buy-give-tile {
   .text-wrapper {
     @include at-query($min, $postSmall) {
       margin-left: 10%;
