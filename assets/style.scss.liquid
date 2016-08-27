@@ -360,7 +360,7 @@ body {
   }
 }
 
-.worlds-toughest-workouts-tile {
+.worlds-toughest-workouts-tile, .meet-dyneema {
   height: 82vh;
   max-width: 100vw;
   background-size: cover;
@@ -407,49 +407,49 @@ body {
       }
     }
   }
+}
 
-  .icons-wrapper {
-    position: relative;
-    left: 0;
-    right: 0;
-    margin: auto;
-    max-width: 80%;
-    top: 50%;
-    @include at-query(null, $postSmall, $large) {
-      top: 60%;
+.icons-wrapper {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 85%;
+  top: 50%;
+  @include at-query(null, $postSmall, $large) {
+    top: 60%;
+  }
+  @include at-query($max, $small) {
+    top: 65%;
+  }
+
+  .icon {
+    padding: 0;
+  }
+
+  img {
+    margin-bottom: 5vh;
+    @include at-query ($min, $postSmall) {
+      min-height: 74px;
     }
     @include at-query($max, $small) {
-      top: 65%;
+      max-height: 10vw;
     }
+  }
 
-    .icon {
-      padding: 0;
+  p {
+    text-transform: uppercase;
+    font-size: 2vw;
+    color: #333;
+    line-height: 1.3;
+    @include at-query(null, $postSmall, $large) {
+      margin-top: 5vh;
     }
-
-    img {
-      margin-bottom: 5vh;
-      @include at-query ($min, $postSmall) {
-        min-height: 74px;
-      }
-      @include at-query($max, $small) {
-        max-height: 10vw;
-      }
+    @include at-query($max, $small) {
+      font-size: 3vw;
     }
-
-    p {
-      text-transform: uppercase;
-      font-size: 2vw;
-      color: #333;
-      @include at-query(null, $postSmall, $large) {
-        margin-top: 5vh;
-      }
-      @include at-query($max, $small) {
-        margin-top: 3vh;
-        font-size: 3vw;
-      }
-      @include at-query($max, $large) {
-        font-size: 1rem;
-      }
+    @include at-query($max, $large) {
+      font-size: 1rem;
     }
   }
 }
@@ -2093,3 +2093,25 @@ body {
 .hero-dyneema {
   background-color: #000;
 }
+
+.meet-dyneema {
+  background-color: #1a4880;
+
+  .text-wrapper {
+    color: #fff;
+  }
+
+  h6 {
+    text-transform: none;
+  }
+
+  img {
+    margin-bottom: 1vh;
+  }
+
+  p {
+    color: #fff;
+    font-size: 4vw;
+  }
+}
+
