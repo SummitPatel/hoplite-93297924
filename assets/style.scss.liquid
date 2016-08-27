@@ -57,6 +57,14 @@ $max: max-width;
   }
 }
 
+img {
+  image-rendering: -moz-crisp-edges;         /* Firefox */
+  image-rendering:   -o-crisp-edges;         /* Opera */
+  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+}
+
 /*============================================================================
   Site Nav & Header
 ==============================================================================*/
@@ -1863,14 +1871,15 @@ body {
       margin: 5% 0;
     }
 
+    // Look in html for Timber helper classes that change the order visually but not in code
     li:first-child {
-      margin-top: 40%; 
+      margin-top: 0%; 
     }
     li:nth-child(2n + 0) {
       margin-top: 20%;
     }
     li:last-child {
-      margin-top: 0%;
+      margin-top: 40%;
     }
   }
 
@@ -1933,11 +1942,11 @@ body {
 
 .too-loose-circle {
   .inner-circle-1 {
-    width: 17vw;
-    height: 17vw;
+    width: 16vw;
+    height: 16vw;
     @include at-query($max, $small) {
-      width: 50vw;
-      height: 50vw;
+      width: 57vw;
+      height: 57vw;
     }
   }
 }
@@ -1947,16 +1956,16 @@ body {
     width: 16vw;
     height: 16vw;
     @include at-query($max, $small) {
-      width: 55vw;
-      height: 55vw;
+      width: 57vw;
+      height: 57vw;
     }
   }
   .inner-circle-2 {
     width: 14vw;
     height: 14vw;
     @include at-query($max, $small) {
-      width: 45vw;
-      height: 45vw;
+      width: 48vw;
+      height: 48vw;
     }
   }
 }
