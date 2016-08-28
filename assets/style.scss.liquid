@@ -2220,16 +2220,20 @@ body {
 
   .text-wrapper {
     margin: 0 auto;
+    @include at-query($min, $postSmall) {
+      padding-bottom: 10vh;
+    }
   }
 
   .number {
     color: #989898;
     border: 1px solid #989898;
     border-radius: 50%;
-    height: 6vh;
-    width: 6vh;
-    line-height: 6vh;
-    margin: 0 auto;
+    height: 7vh;
+    width: 7vh;
+    line-height: 7vh;
+    margin: 0 auto 3vh;
+    font-weight: bold;
   }
 
   h2 {
@@ -2246,12 +2250,24 @@ body {
   }
 
   h5 {
-    text-align: left;
+    margin: 0 auto 1vh;
+    @include at-query($min, $postSmall) {
+      width: 67%;
+    }
+    @include at-query($max, $small) {
+      text-align: left;
+    }
   }
 
   p {
-    text-align: left;
+    margin: 0 auto 1vh;
     padding-bottom: 2rem;
+    @include at-query($min, $postSmall) {
+      width: 67%;
+    }
+    @include at-query($max, $small) {
+      text-align: left;
+    }
   }
 }
 
