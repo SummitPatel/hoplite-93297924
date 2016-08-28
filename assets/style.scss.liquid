@@ -2149,3 +2149,28 @@ body {
 .dyneema-rip {
   background-color: #333;
 }
+
+.dyneema-us-them {
+  height: inherit;
+
+  h2 {
+    padding: 0;
+  }
+}
+
+.dyneema-us, .dyneema-them {
+  background-size: cover;
+  height: 26vh;
+}
+
+.dyneema-us {
+  @include at-query($max, $small) {
+    background-image: url({{ 'dyneema-us-bg.png' | asset_url }});
+  }
+}
+
+.dyneema-them {
+  @include at-query($max, $small) {
+    background-image: url({{ 'dyneema-them-bg.png' | asset_url }});
+  }
+}
