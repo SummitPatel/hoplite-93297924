@@ -2161,16 +2161,25 @@ body {
 .dyneema-us, .dyneema-them {
   background-size: cover;
   height: 26vh;
+  @include at-query($min, $postSmall) {
+    height: 70vh;
+  }
 }
 
 .dyneema-us {
+  @include at-query($min, $postSmall) {
+    background-image: url({{ 'dyneema-us-large.png' | asset_url }});
+  }
   @include at-query($max, $small) {
-    background-image: url({{ 'dyneema-us-bg.png' | asset_url }});
+    background-image: url({{ 'dyneema-us-small.png' | asset_url }});
   }
 }
 
 .dyneema-them {
+  @include at-query($min, $postSmall) {
+    background-image: url({{ 'dyneema-them-large.png' | asset_url }});
+  }
   @include at-query($max, $small) {
-    background-image: url({{ 'dyneema-them-bg.png' | asset_url }});
+    background-image: url({{ 'dyneema-them-small.png' | asset_url }});
   }
 }
