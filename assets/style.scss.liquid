@@ -672,12 +672,12 @@ body {
   }
 }
 
-.knee-high-socks-homepage-tile, .arm-sleeves-tile, .leg-sleeves-homepage-tile, .add-compression {
+.knee-high-socks-homepage-tile, .arm-sleeves-tile, .leg-sleeves-homepage-tile, .add-compression, .add-dyneema {
   height: 48vh;
   background-size: cover;
 }
 
-.knee-high-socks-homepage-tile, .add-compression {
+.knee-high-socks-homepage-tile, .add-compression, .add-dyneema {
   background-image: url( {{'knee-high-socks-large.png' | asset_url}} );
   @include at-query(null, $postSmall, $large) {
     background-image: url( {{'knee-high-socks-medium.png' | asset_url}} );
@@ -2183,3 +2183,37 @@ body {
     background-image: url({{ 'dyneema-them-small.png' | asset_url }});
   }
 }
+
+.dyneema-why-bother {
+  background-color: #e9e9e9;
+  height: 41vh;
+  @include at-query($max, $small) {
+    height: 31vh;
+  }
+
+  .content-wrapper {
+    margin: 0 auto;
+    @include at-query($min, $postSmall) {
+      width: 66%;
+    }
+  }
+
+  .text-wrapper {
+    color: #333;
+
+    h5 {
+      line-height: 1.3;
+    }
+  }
+}
+
+.add-dyneema {
+  .text-wrapper {
+    @include at-query($min, $postSmall) {
+      width: 42vw;
+    }
+  }
+}
+
+
+
