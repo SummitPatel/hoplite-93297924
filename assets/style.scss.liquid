@@ -887,33 +887,33 @@ body {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+  }
 
-    h5 {
-      font-family: 'PF DIN Text Pro Bold';
-      font-size: 1.3vw;
-      line-height: 1;
-      margin: 0;
-      letter-spacing: .1rem;
-      text-transform: uppercase;
-      @include at-query(null, $postSmall, $large) {
-        font-size: 1.7vw;
-      }
-      @include at-query($max, $small) {
-        font-size: 4vw;
-      }
+  h5 {
+    font-family: 'PF DIN Text Pro Bold';
+    font-size: 1.3vw;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    @include at-query(null, $postSmall, $large) {
+      font-size: 1.7vw;
     }
+    @include at-query($max, $small) {
+      font-size: 4vw;
+    }
+  }
 
-    p {
-      font-size: 1.3vw;
-      font-family: 'PF DIN Text Pro Regular';
-      letter-spacing: .05rem;
-      text-transform: none;
-      @include at-query(null, $postSmall, $large) {
-        font-size:1.4vw;
-      }
-      @include at-query($max, $small) {
-        font-size: 4vw;
-      }
+  p {
+    font-size: 1.3vw;
+    font-family: 'PF DIN Text Pro Regular';
+    letter-spacing: .05rem;
+    text-transform: none;
+    @include at-query(null, $postSmall, $large) {
+      font-size:1.4vw;
+    }
+    @include at-query($max, $small) {
+      font-size: 4vw;
     }
   }
 
@@ -979,6 +979,12 @@ body {
     @include at-query($max, $small) {
       display: none;
     }
+  }
+}
+
+#leg-sleeves {
+  .foot-length {
+    display: none;
   }
 }
 
@@ -2238,6 +2244,7 @@ body {
 
   h2 {
     margin: 10% auto 5%;
+    width: 80%;
     font-family: 'PF DIN Text Pro Bold';
     letter-spacing: .4vw;
     font-size: 3vw;
@@ -2249,7 +2256,7 @@ body {
     }
   }
 
-  h5 {
+  h5, p {
     margin: 0 auto 1vh;
     @include at-query($min, $postSmall) {
       width: 67%;
@@ -2260,14 +2267,7 @@ body {
   }
 
   p {
-    margin: 0 auto 1vh;
     padding-bottom: 2rem;
-    @include at-query($min, $postSmall) {
-      width: 67%;
-    }
-    @include at-query($max, $small) {
-      text-align: left;
-    }
   }
 }
 
