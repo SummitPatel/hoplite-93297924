@@ -345,6 +345,40 @@ body {
   right: 0;
 }
 
+.site-footer {
+  background: #fff;
+  padding-bottom: 20vh;
+}
+
+.footer-content {
+  position: relative;
+}
+
+.footer-logo {
+  margin-bottom: 5%;
+  width: 75px;
+  @include at-query($min, $postSmall) {
+    width: initial;
+  }
+}
+
+.social-icons {
+  @include at-query($min, $postSmall) {
+    position: absolute;
+    right: 1%;
+    width: 20%;
+    top: 15%;
+  }
+
+  img {
+    margin: 0 2%;
+    width: 25px;
+    @include at-query($min, $postSmall) {
+      width: initial;
+    }
+  }
+}
+
 
 /*============================================================================
   Homepage
@@ -2176,10 +2210,14 @@ body {
 
 .dyneema-us-them {
   height: inherit;
+  background-size: cover;
+  background-image: url({{ 'giphy.gif' | asset_url }});
+  background-position: center;
 
   h2 {
     padding: 0;
   }
+  
 }
 
 .dyneema-us, .dyneema-them {
@@ -2191,21 +2229,21 @@ body {
 }
 
 .dyneema-us {
-  @include at-query($min, $postSmall) {
-    background-image: url({{ 'dyneema-us-large.png' | asset_url }});
-  }
-  @include at-query($max, $small) {
-    background-image: url({{ 'dyneema-us-small.png' | asset_url }});
-  }
+  // @include at-query($min, $postSmall) {
+  //   background-image: url({{ 'dyneema-us-large.png' | asset_url }});
+  // }
+  // @include at-query($max, $small) {
+  //   background-image: url({{ 'dyneema-us-small.png' | asset_url }});
+  // }
 }
 
 .dyneema-them {
-  @include at-query($min, $postSmall) {
-    background-image: url({{ 'dyneema-them-large.png' | asset_url }});
-  }
-  @include at-query($max, $small) {
-    background-image: url({{ 'dyneema-them-small.png' | asset_url }});
-  }
+  // @include at-query($min, $postSmall) {
+  //   background-image: url({{ 'dyneema-them-large.png' | asset_url }});
+  // }
+  // @include at-query($max, $small) {
+  //   background-image: url({{ 'dyneema-them-small.png' | asset_url }});
+  // }
 }
 
 .dyneema-why-bother {
