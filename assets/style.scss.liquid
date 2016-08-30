@@ -385,12 +385,16 @@ body {
 ==============================================================================*/
 
 .hero-tile.hero-homepage {
-  background-image: url( {{'hero-homepage-large.png' | asset_url}} );
+  // linear gradient with 3 color stops
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-homepage-large.png' | asset_url}} );
+  background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'hero-homepage-medium.png' | asset_url}} );
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-homepage-medium.png' | asset_url}} );
+    background-size: cover;
   }
   @include at-query($max, $small) {
-    background-image: url( {{'hero-homepage-small.png' | asset_url}} );
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-homepage-small.png' | asset_url}} );
+    background-size: cover;
   }
 }
 
@@ -755,7 +759,7 @@ body {
   letter-spacing: .1rem;
   line-height: 1;
   text-decoration: none;
-  padding: 1vw 2vw 1vw 0;
+  padding: 1vw;
   background: transparent no-repeat;
   background-image: url( {{'link-arrow-black.png' | asset_url}} );
   background-position: 100% 45%;
@@ -770,8 +774,8 @@ body {
 .link-arrow-black-reverse {
   position: absolute;
   display: inline-block;
-  top: 3%;
-  left: 3%;
+  top: 8%;
+  left: 5%;
   font-size: 1rem;
   font-family: 'PF DIN Text Pro Bold';
   color: #333;
@@ -1096,9 +1100,8 @@ body {
   }
 
   p {
-    font-size: 1.1vw;
+    font-size: 1vw;
     letter-spacing: .05rem;
-    text-transform: none;
     margin: 0;
     padding: 0 0 1rem 0;
     line-height: 1.5;
@@ -1108,6 +1111,12 @@ body {
     @include at-query($max, $small) {
       font-size: .8rem;
     }
+  }
+}
+
+.measuring-tape-tile {
+  .content-wrapper {
+    top: 55%;
   }
 }
 
@@ -1130,6 +1139,12 @@ body {
   a {
     color: #333;
     text-decoration: none;
+  }
+
+  br {
+    @include at-query($min, $postSmall) {
+      display: none;
+    }
   }
 }
 
