@@ -2157,6 +2157,12 @@ body {
       font-size: 4vw;
     }
   }
+
+  br {
+    @include at-query($min, $postSmall) {
+      display: none;
+    }
+  }
 }
 
 .familiar-slider {
