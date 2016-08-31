@@ -879,7 +879,6 @@ body {
 }
 
 .measurements-tile {
-  height: 100vh;
   padding: 0 5vw;
 
   .text-wrapper {
@@ -925,7 +924,8 @@ body {
       padding: 0 0 0 10vw;
     }
     @include at-query($max, $small) {
-      height: 30vh;
+      height: inherit;
+      padding-top: 20%;
     }
   }
 
