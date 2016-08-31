@@ -69,6 +69,7 @@ img {
   &:active, &:focus, &:hover {
     background-color: #fff;
     color: #313;
+    outline: none;
   }
 }
 
@@ -702,7 +703,7 @@ body {
   }
 }
 
-.designed-and-knit-tile, .buy-give-homepage-tile, .break-it-tile, .buy-give-tile {
+.designed-and-knit-tile, .buy-give-tile, .break-it-tile {
   height: 48vh;
   background-size: cover;
   background: #333;
@@ -716,7 +717,7 @@ body {
   }
 }
 
-.designed-and-knit-tile.right-aligned, .buy-give-homepage-tile, .buy-give-tile {
+.designed-and-knit-tile.right-aligned, .buy-give-tile {
   .text-wrapper {
     @include at-query($min, $postSmall) {
       margin-left: 10%;
@@ -2110,6 +2111,12 @@ body {
   h3 {
     @include at-query($min, $postSmall) {
       letter-spacing: .1rem;
+    }
+  }
+
+  br {
+    @include at-query($min, $postSmall) {
+      display: none;
     }
   }
 }
