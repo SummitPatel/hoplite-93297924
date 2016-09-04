@@ -19,21 +19,9 @@
 
     <div class="grid__item centered no-padding">
       <div class="grid grid__item dyneema-tile dyneema-us-them">
-        <div class="grid__item large--one-half medium--one-half dyneema-us">
-          <div class="content-wrapper">
-            <div class="text-wrapper">
-              <h2>Us.</h2>
-            </div>
-          </div>
-        </div>
-        <div class="grid__item large--one-half medium--one-half dyneema-them">
-          <div class="content-wrapper">
-            <div class="text-wrapper">
-              <h2>Them.</h2>
-            </div>
-          </div>
-        </div>
-      </div>
+        <video id="dyneema-video-bg" playsinline autoplay loop width="100%">
+          <source src="{{ 'video-dyneema.webm' | asset_url }}" type="video/webm">
+        </video>
     </div>
 
     <div class="grid__item centered no-padding">

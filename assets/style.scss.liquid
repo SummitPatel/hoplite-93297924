@@ -438,11 +438,9 @@ body {
       letter-spacing: 1rem;
       @include at-query($max, $large) {
         font-size: 4rem;
-        letter-spacing: .7rem;
       }
       @include at-query($max, $small) {
         font-size: 12vw;
-        letter-spacing: .2rem;
       }
     }
 
@@ -1773,7 +1771,6 @@ body {
   /* Color swatches contain no text so they need to have a width. */
   min-width:{{ width }}; 
   height:{{ height }};
-  /* No extra spacing between them */
   margin:0;
   /* The border when the button is not selected */
   //border:#ccc 1px solid;
@@ -2395,10 +2392,14 @@ body {
 }
 
 .dyneema-us-them {
-  height: inherit;
   background-size: cover;
-  background-image: url({{ 'giphy.gif' | asset_url }});
   background-position: center;
+  @include at-query($max, $small) {
+    background-image: url({{ 'video-dyneema.gif' | asset_url }});
+    #dyneema-video-bg {
+      display: none;
+    }
+  }
 
   h2 {
     padding: 0;
