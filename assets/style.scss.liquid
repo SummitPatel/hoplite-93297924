@@ -2344,21 +2344,19 @@ body {
   }
 }
 
-.made-with-dyneema {
-  .grid__item + .grid__item {
+.made-with-dyneema, .dyneema-destroy {
+  .grid__item {
     height: 35vw;
     @include at-query($max, $small) {
-      height: 26vh;
+      height: 30vh;
     }
   }
 
   .bg-img {
     background-image: url({{ 'made-with-dyneema-graphic.png' | asset_url }});
     background-size: cover;
-    height: 35vw;
     @include at-query($max, $small) {
       background-image: url({{ 'made-with-dyneema-graphic-small.png' | asset_url }});
-      height: 30vh;
     }
   }
 
@@ -2394,10 +2392,6 @@ body {
       font-size: 4vw;
     }
   }
-}
-
-.dyneema-rip {
-  background-color: #333;
 }
 
 .dyneema-us-them {
