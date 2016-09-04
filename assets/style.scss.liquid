@@ -762,8 +762,20 @@ body {
 
 
 /*============================================================================
-  Product Page
+  Product Page - Knee-High Socks
 ==============================================================================*/
+.hero-tile.hero-knee-high-socks {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-knee-high-socks-large.png' | asset_url}} );
+  background-size: cover;
+  @include at-query(null, $postSmall, $large) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-knee-high-socks-medium.png' | asset_url}} );
+    background-size: cover;
+  }
+  @include at-query($max, $small) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-knee-high-socks-small.png' | asset_url}} );
+    background-size: cover;
+  }
+}
 
 .dyneema-link-black {
   display: inline-block;
@@ -809,18 +821,7 @@ body {
   }
 }
 
-.hero-tile.hero-knee-high-socks {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-knee-high-socks-large.png' | asset_url}} );
-  background-size: cover;
-  @include at-query(null, $postSmall, $large) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-knee-high-socks-medium.png' | asset_url}} );
-    background-size: cover;
-  }
-  @include at-query($max, $small) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-knee-high-socks-small.png' | asset_url}} );
-    background-size: cover;
-  }
-  
+.hero-tile.product-page {
   .text-wrapper {
     color: #fff;
     text-transform: uppercase;
@@ -1353,6 +1354,132 @@ body {
 .workout-tile {
   height: 5rem;
   line-height: 4.5;
+}
+
+
+/*============================================================================
+  Product Page - Leg Sleeves
+==============================================================================*/
+
+.hero-tile.hero-leg-sleeves {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-leg-sleeves-large.png' | asset_url}} );
+  background-size: cover;
+  @include at-query(null, $postSmall, $large) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-leg-sleeves-medium.png' | asset_url}} );
+    background-size: cover;
+  }
+  @include at-query($max, $small) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-leg-sleeves-small.png' | asset_url}} );
+    background-size: cover;
+  }
+}
+
+
+/*============================================================================
+  Product Page - Arm Sleeves
+==============================================================================*/
+
+.hero-tile.hero-arm-sleeves {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-arm-sleeves-large.png' | asset_url}} );
+  background-size: cover;
+  @include at-query(null, $postSmall, $large) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-arm-sleeves-medium.png' | asset_url}} );
+    background-size: cover;
+  }
+  @include at-query($max, $small) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-arm-sleeves-small.png' | asset_url}} );
+    background-size: cover;
+  }
+}
+
+
+/*============================================================================
+  Product Page - Crew Socks
+==============================================================================*/
+
+.hero-tile.hero-crew-socks {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-crew-socks-large.png' | asset_url}} );
+  background-size: cover;
+  @include at-query(null, $postSmall, $large) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-crew-socks-medium.png' | asset_url}} );
+    background-size: cover;
+  }
+  @include at-query($max, $small) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-crew-socks-small.png' | asset_url}} );
+    background-size: cover;
+  }
+}
+
+
+/*============================================================================
+  Product Page - No-Show Socks
+==============================================================================*/
+
+.hero-tile.hero-no-show-socks {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-no-show-socks-large.png' | asset_url}} );
+  background-size: cover;
+  @include at-query(null, $postSmall, $large) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-no-show-socks-medium.png' | asset_url}} );
+    background-size: cover;
+  }
+  @include at-query($max, $small) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-no-show-socks-small.png' | asset_url}} );
+    background-size: cover;
+  }
+}
+
+
+/*============================================================================
+  Product Page - Hat
+==============================================================================*/
+
+.hero-tile.hero-hat {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-hat-large.png' | asset_url}} );
+  background-size: cover;
+  @include at-query(null, $postSmall, $large) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-hat-medium.png' | asset_url}} );
+    background-size: cover;
+  }
+  @include at-query($max, $small) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-hat-small.png' | asset_url}} );
+    background-size: cover;
+  }
+}
+
+
+/*============================================================================
+  Product Page - Unisex T-shirt
+==============================================================================*/
+
+.hero-tile.hero-unisex-t-shirt {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-unisex-t-shirt-large.png' | asset_url}} );
+  background-size: cover;
+  @include at-query(null, $postSmall, $large) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-unisex-t-shirt-medium.png' | asset_url}} );
+    background-size: cover;
+  }
+  @include at-query($max, $small) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-unisex-t-shirt-small.png' | asset_url}} );
+    background-size: cover;
+  }
+}
+
+
+/*============================================================================
+  Product Page - Racerback Tank
+==============================================================================*/
+
+.hero-tile.hero-racerback-tank {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-racerback-tank-large.png' | asset_url}} );
+  background-size: cover;
+  @include at-query(null, $postSmall, $large) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-racerback-tank-medium.png' | asset_url}} );
+    background-size: cover;
+  }
+  @include at-query($max, $small) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-racerback-tank-small.png' | asset_url}} );
+    background-size: cover;
+  }
 }
 
 
