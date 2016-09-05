@@ -723,7 +723,7 @@ body {
   }
 }
 
-.knee-high-socks-product-tile, .arm-sleeves-product-tile, .leg-sleeves-product-tile, .add-compression, .add-dyneema {
+.knee-high-socks-product-tile, .arm-sleeves-product-tile, .leg-sleeves-product-tile, .crew-socks-product-tile, .no-show-socks-product-tile, .hat-product-tile, .unisex-t-shirt-product-tile, .racerback-tank-product-tile, .add-compression, .add-dyneema {
   height: 48vh;
   background-size: cover;
 }
@@ -755,6 +755,56 @@ body {
   }
   @include at-query($max, $small) {
     background-image: url( {{'leg-sleeves-small.png' | asset_url}} );
+  }
+}
+
+.crew-socks-product-tile {
+  background-image: url( {{'crew-socks-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'crew-socks-large.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'crew-socks-small.png' | asset_url}} );
+  }
+}
+
+.no-show-socks-product-tile {
+  background-image: url( {{'no-show-socks-small.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'no-show-socks-small.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'no-show-socks-small.png' | asset_url}} );
+  }
+}
+
+.hat-product-tile {
+  background-image: url( {{'hat-small.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'hat-small.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'hat-small.png' | asset_url}} );
+  }
+}
+
+.unisex-t-shirt-product-tile {
+  background-image: url( {{'unisex-t-shirt-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'unisex-t-shirt-large.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'unisex-t-shirt-small.png' | asset_url}} );
+  }
+}
+
+.racerback-tank-product-tile {
+  background-image: url( {{'racerback-tank-small.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'racerback-tank-small.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'racerback-tank-small.png' | asset_url}} );
   }
 }
 
@@ -1442,6 +1492,12 @@ body {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-hat-small.png' | asset_url}} );
     background-size: cover;
   }
+
+  .text-wrapper {
+    @include at-query($min, $postSmall) {
+      padding-right: 15%;
+    }
+  }
 }
 
 
@@ -1675,7 +1731,7 @@ body {
     }
 }
 
-.better-than-jeans-protection-tile, .wont-wear-out-tile {
+.fear-no-rope-burn-tile, .wont-wear-out-tile {
   height: 82vh;
 
   @include at-query($max, $small) {
@@ -1693,13 +1749,13 @@ body {
   }
 }
 
-.better-than-jeans-protection-tile {
-  background-image: url( {{'better-than-jeans-protection-large.png' | asset_url}} );
+.fear-no-rope-burn-tile {
+  background-image: url( {{'fear-no-rope-burn-large.png' | asset_url}} );
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'better-than-jeans-protection-medium.png' | asset_url}} );
+    background-image: url( {{'fear-no-rope-burn-medium.png' | asset_url}} );
   }
   @include at-query($max, $small) {
-    background-image: url( {{'better-than-jeans-protection-small.png' | asset_url}} );
+    background-image: url( {{'fear-no-rope-burn-small.png' | asset_url}} );
   }
 }
 
@@ -1710,18 +1766,6 @@ body {
   }
   @include at-query($max, $small) {
     background-image: url( {{'wont-wear-out-small.png' | asset_url}} );
-  }
-}
-
-.no-show-socks-product-tile {
-  height: 48vh;
-  background-size: cover;
-  background-image: url( {{'no-show-socks-large.png' | asset_url}} );
-  @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'no-show-socks-medium.png' | asset_url}} );
-  }
-  @include at-query($max, $small) {
-    background-image: url( {{'no-show-socks-small.png' | asset_url}} );
   }
 }
 
