@@ -1731,7 +1731,7 @@ body {
     }
 }
 
-.fear-no-rope-burn-tile, .wont-wear-out-tile {
+.fear-no-bar-scrape-tile, .fear-no-wall-rash, .wont-wear-out-tile {
   height: 82vh;
 
   @include at-query($max, $small) {
@@ -1749,13 +1749,23 @@ body {
   }
 }
 
-.fear-no-rope-burn-tile {
-  background-image: url( {{'fear-no-rope-burn-large.png' | asset_url}} );
+.fear-no-bar-scrape-tile {
+  background-image: url( {{'fear-no-bar-scrape-large.png' | asset_url}} );
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'fear-no-rope-burn-medium.png' | asset_url}} );
+    background-image: url( {{'fear-no-bar-scrape-medium.png' | asset_url}} );
   }
   @include at-query($max, $small) {
-    background-image: url( {{'fear-no-rope-burn-small.png' | asset_url}} );
+    background-image: url( {{'fear-no-bar-scrape-small.png' | asset_url}} );
+  }
+}
+
+.fear-no-wall-rash-tile {
+  background-image: url( {{'fear-no-wall-rash-large.png' | asset_url}} );
+  @include at-query(null, $postSmall, $large) {
+    background-image: url( {{'fear-no-wall-rash-medium.png' | asset_url}} );
+  }
+  @include at-query($max, $small) {
+    background-image: url( {{'fear-no-wall-rash-small.png' | asset_url}} );
   }
 }
 
@@ -1903,14 +1913,14 @@ body {
   Product Landing Page (Collections Page)
 ==============================================================================*/
 .hero-tile.hero-product-landing-page {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-product-landing-page.png' | asset_url}} );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-product-landing-page-large.png' | asset_url}} );
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-product-landing-page.png' | asset_url}} );
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-product-landing-page-medium.png' | asset_url}} );
     background-size: cover;
   }
   @include at-query($max, $small) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-product-landing-page.png' | asset_url}} );
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-product-landing-page-small.png' | asset_url}} );
     background-size: cover;
   }
 }
