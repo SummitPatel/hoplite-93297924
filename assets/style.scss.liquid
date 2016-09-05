@@ -241,6 +241,7 @@ body {
 .tile-wrapper {
   position: relative;
   line-height: 1;
+  background-position: center;
 }
 
 .content-wrapper {
@@ -404,7 +405,7 @@ body {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-homepage-large.png' | asset_url}} );
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-homepage-medium.png' | asset_url}} );
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-homepage-large.png' | asset_url}} );
     background-size: cover;
   }
   @include at-query($max, $small) {
@@ -425,7 +426,7 @@ body {
   .text-wrapper {
     position: relative;
     color: #333;
-    margin: 0 auto 10vh;
+    margin: 5vh auto 10vh;
     max-width: 85%;
 
     h2, h6, p {
@@ -595,7 +596,7 @@ body {
 .insane-abrasion-protection-tile {
   background-image: url( {{'insane-abrasion-protection-large.png' | asset_url}} );
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'insane-abrasion-protection-medium.png' | asset_url}} );
+    background-image: url( {{'insane-abrasion-protection-large.png' | asset_url}} );
   }
   @include at-query($max, $small) {
     background-image: url( {{'insane-abrasion-protection-small.png' | asset_url}} );
@@ -605,7 +606,7 @@ body {
 .rip-and-tear-proof-tile {
   background-image: url( {{'rip-and-tear-proof-large.png' | asset_url}} );
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'rip-and-tear-proof-medium.png' | asset_url}} );
+    background-image: url( {{'rip-and-tear-proof-large.png' | asset_url}} );
   }
   @include at-query($max, $small) {
     background-image: url( {{'rip-and-tear-proof-small.png' | asset_url}} );
@@ -615,7 +616,7 @@ body {
 .eerily-cold-tile {
   background-image: url( {{'eerily-cold-large.png' | asset_url}} );
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'eerily-cold-medium.png' | asset_url}} );
+    background-image: url( {{'eerily-cold-large.png' | asset_url}} );
   }
   @include at-query($max, $small) {
     background-image: url( {{'eerily-cold-small.png' | asset_url}} );
@@ -625,7 +626,7 @@ body {
 .perfectly-balanced-compression-tile {
   background-image: url( {{'perfectly-balanced-compression-large.png' | asset_url}} );
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'perfectly-balanced-compression-medium.png' | asset_url}} );
+    background-image: url( {{'perfectly-balanced-compression-large.png' | asset_url}} );
   }
   @include at-query($max, $small) {
     background-image: url( {{'perfectly-balanced-compression-small.png' | asset_url}} );
@@ -730,7 +731,7 @@ body {
 .knee-high-socks-product-tile, .add-compression, .add-dyneema {
   background-image: url( {{'knee-high-socks-large.png' | asset_url}} );
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'knee-high-socks-medium.png' | asset_url}} );
+    background-image: url( {{'knee-high-socks-large.png' | asset_url}} );
   }
   @include at-query($max, $small) {
     background-image: url( {{'knee-high-socks-small.png' | asset_url}} );
@@ -740,7 +741,7 @@ body {
 .arm-sleeves-product-tile {
   background-image: url( {{'arm-sleeves-large.png' | asset_url}} );
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'arm-sleeves-medium.png' | asset_url}} );
+    background-image: url( {{'arm-sleeves-large.png' | asset_url}} );
   }
   @include at-query($max, $small) {
     background-image: url( {{'arm-sleeves-small.png' | asset_url}} );
@@ -750,7 +751,7 @@ body {
 .leg-sleeves-product-tile {
   background-image: url( {{'leg-sleeves-large.png' | asset_url}} );
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'leg-sleeves-medium.png' | asset_url}} );
+    background-image: url( {{'leg-sleeves-large.png' | asset_url}} );
   }
   @include at-query($max, $small) {
     background-image: url( {{'leg-sleeves-small.png' | asset_url}} );
@@ -783,7 +784,7 @@ body {
   letter-spacing: .1rem;
   line-height: 1;
   text-decoration: none;
-  padding: 1vw;
+  padding: 1vw 1vw 1vw 0;
   background: transparent no-repeat;
   background-image: url( {{'link-arrow-black.png' | asset_url}} );
   background-position: 100% 45%;
@@ -1617,32 +1618,31 @@ body {
       position: relative;
       top: 50%;
       transform: translateY(-50%);
-
-      h5 {
-        font-family: 'PF DIN Text Pro Bold';
-        font-size: 1.3vw;
-        line-height: 1;
-        margin: 0;
-        letter-spacing: .1rem;
-        text-transform: uppercase;
-        @include at-query(null, $postSmall, $large) {
-          font-size: 1.7vw;
-        }
-        @include at-query($max, $small) {
-          font-size: 4vw;
-        }
+    }
+    h5 {
+      font-family: 'PF DIN Text Pro Bold';
+      font-size: 1.3vw;
+      line-height: 1;
+      margin: 0;
+      letter-spacing: .1rem;
+      text-transform: uppercase;
+      @include at-query(null, $postSmall, $large) {
+        font-size: 1.7vw;
       }
+      @include at-query($max, $small) {
+        font-size: 4vw;
+      }
+    }
 
-      p {
-        font-size: 1.3vw;
-        font-family: 'PF DIN Text Pro Regular';
-        letter-spacing: .05rem;
-        @include at-query(null, $postSmall, $large) {
-          font-size:1.4vw;
-        }
-        @include at-query($max, $small) {
-          font-size: 4vw;
-        }
+    p {
+      font-size: 1.3vw;
+      font-family: 'PF DIN Text Pro Regular';
+      letter-spacing: .05rem;
+      @include at-query(null, $postSmall, $large) {
+        font-size:1.4vw;
+      }
+      @include at-query($max, $small) {
+        font-size: 4vw;
       }
     }
   }
@@ -1992,21 +1992,33 @@ body {
     }
   }
 
-  h3 {
-    margin: 0;
-    padding: 0 1rem .25rem;
+  h5 {
     color: #333;
     font-family: 'PF DIN Text Pro Bold';
-    font-size: 1.3rem;
+    font-size: 1.3vw;
+    line-height: 1;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    @include at-query(null, $postSmall, $large) {
+      font-size: 1.7vw;
+    }
+    @include at-query($max, $small) {
+      font-size: 4vw;
+    }
   }
 
   p {
-    margin: 0;
-    padding: 0 1rem 1rem;
     color: #333;
-    font-size: .9rem;
+    font-size: 1.3vw;
+    font-family: 'PF DIN Text Pro Regular';
+    letter-spacing: .05rem;
     text-transform: none;
-    line-height: 1.5;
+    @include at-query(null, $postSmall, $large) {
+      font-size:1.4vw;
+    }
+    @include at-query($max, $small) {
+      font-size: 4vw;
+    }
   }
 
   span {
@@ -2225,7 +2237,7 @@ body {
     @include at-query($min, $postSmall) {
       position: absolute;
       left: 50%;
-      width: 25%;
+      width: 30%;
       margin: 0 0 0 2vw;
       text-align: left;
     }
@@ -2311,7 +2323,16 @@ body {
 ==============================================================================*/
 
 .hero-dyneema {
-  background-color: #000;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-dyneema-large.png' | asset_url}} );
+  background-size: cover;
+  @include at-query(null, $postSmall, $large) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-dyneema-medium.png' | asset_url}} );
+    background-size: cover;
+  }
+  @include at-query($max, $small) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-dyneema-small.png' | asset_url}} );
+    background-size: cover;
+  }
 }
 
 .dyneema-its-true {
@@ -2358,10 +2379,8 @@ body {
   }
 
   .content-wrapper {
-    @include at-query($min, $postSmall) {
-      width: 80%;
-      margin: 0 auto;
-    }
+    width: 80%;
+    margin: 0 auto;
   }
 
   .text-wrapper {
@@ -2370,20 +2389,30 @@ body {
     }
   }
 
-  h3 {
-    font-size: 2vw;
+  h5 {
+    color: #333;
+    font-family: 'PF DIN Text Pro Bold';
+    font-size: 1.3vw;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
     @include at-query(null, $postSmall, $large) {
-      font-size: 2.5vw;
+      font-size: 1.7vw;
     }
     @include at-query($max, $small) {
-      font-size: 6vw;
+      font-size: 4vw;
     }
   }
 
   p {
-    font-size: 1vw;
+    color: #333;
+    font-size: 1.3vw;
+    font-family: 'PF DIN Text Pro Regular';
+    letter-spacing: .05rem;
+    padding: 0;
     @include at-query(null, $postSmall, $large) {
-      font-size: 1.5vw;
+      font-size:1.4vw;
     }
     @include at-query($max, $small) {
       font-size: 4vw;
@@ -2394,9 +2423,14 @@ body {
 .dyneema-us-them {
   background-size: cover;
   background-position: center;
+  height: inherit;
+  @include at-query($min, $postSmall) {
+    .dyneema-video-gif {
+      display: none;
+    }
+  }
   @include at-query($max, $small) {
-    background-image: url({{ 'video-dyneema.gif' | asset_url }});
-    #dyneema-video-bg {
+    .dyneema-video-bg {
       display: none;
     }
   }
@@ -2510,8 +2544,33 @@ body {
     }
   }
 
+  h5 {
+    color: #333;
+    font-family: 'PF DIN Text Pro Bold';
+    font-size: 1.3vw;
+    line-height: 1;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    @include at-query(null, $postSmall, $large) {
+      font-size: 1.7vw;
+    }
+    @include at-query($max, $small) {
+      font-size: 4vw;
+    }
+  }
+
   p {
+    color: #333;
+    font-size: 1.3vw;
+    font-family: 'PF DIN Text Pro Regular';
+    letter-spacing: .05rem;
     padding-bottom: 2rem;
+    @include at-query(null, $postSmall, $large) {
+      font-size:1.4vw;
+    }
+    @include at-query($max, $small) {
+      font-size: 4vw;
+    }
   }
 }
 
