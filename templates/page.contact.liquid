@@ -6,7 +6,11 @@
       {{ page.content }}
     </div>
 
-    <div>
+    <div class="grid__item centered-padded contact-form">
+      <div class="text-wrapper">
+        <h2>Ask us anything.</h2>
+        <h6>We’ll get back to you as soon as we get back from the gym.</h6>
+      </div>
       
       {% form 'contact' %}
 
@@ -32,7 +36,7 @@
         <label for="ContactFormMessage" class="label--hidden">{{ 'contact.form.message' | t }}</label>
         <textarea rows="10" id="ContactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
 
-        <input type="submit" class="btn right" value="{{ 'contact.form.send' | t }}">
+        <input type="submit" class="shop-now-btn" value="Ask Away">
 
       {% endform %}
       
