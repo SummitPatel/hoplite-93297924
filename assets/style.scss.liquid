@@ -2633,6 +2633,9 @@ body {
 
 .contact-form {
   padding: 10% 2%;
+  @include at-query($min, $postSmall) {
+    padding: 5% 10%;
+  }
 
   .text-wrapper {
     color: #333;
@@ -2656,21 +2659,44 @@ body {
     margin: 0;
     letter-spacing: inherit;
     @include at-query($max, $small) {
-      font-size: 4vw;
+      font-size: 3.6vw;
     }
   }
 
   input[type=text], input[type=email] {
     font-family: 'PF DIN Text Pro Bold';
+    color: #333;
+    border-radius: 0;
+    border-color: #999;
+    @include at-query($min, $postSmall) {
+      width: 80%;
+    }
   }
 
   textarea {
     font-family: 'PF DIN Text Pro Regular';
+    color: #333;
+    border-radius: 0;
+    border-color: #999;
   }
 
   .shop-now-btn {
     border-color: #333;
     width: 100%;
+    color: #000;
+    @include at-query($min, $postSmall) {
+      width: 25%;
+      margin: 5% 25% 0;
+    }
+  }
+}
+
+.contact-label {
+  text-align: left;
+  text-transform: uppercase;
+  color: #333;
+  @include at-query($max, $small) {
+    font-size: 4vw;
   }
 }
 
