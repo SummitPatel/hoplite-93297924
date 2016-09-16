@@ -362,12 +362,17 @@ body {
 }
 
 .site-footer {
-  background: #fff;
+  background: #000;
   padding-bottom: 20vh;
 }
 
 .footer-content {
   position: relative;
+
+  p {
+    color: #fff;
+    margin: 0 10%;
+  }
 }
 
 .footer-logo {
@@ -379,10 +384,11 @@ body {
 }
 
 .social-icons {
+  position: absolute;
+  right: 1%;
+  width: 20%;
+  top: 0;
   @include at-query($min, $postSmall) {
-    position: absolute;
-    right: 1%;
-    width: 20%;
     top: 15%;
   }
 
