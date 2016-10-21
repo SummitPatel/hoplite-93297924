@@ -2376,6 +2376,7 @@ body {
   .text-wrapper {
     color: #fff;
     max-width: 85%;
+    margin-bottom: 5vh;
   }
 
   h2 {
@@ -2392,6 +2393,23 @@ body {
 
   img {
     margin-bottom: 1vh;
+  }
+
+  span {
+    font-family: 'PF DIN Text Comp Pro Light';
+    color: #999;
+  }
+
+  .number {
+    @include at-query($max, $small) {
+      font-size: 3rem;
+    }
+  }
+
+  .multiplier {
+    @include at-query($max, $small) {
+      font-size: 1.5rem;
+    }
   }
 
   p {
