@@ -2380,11 +2380,11 @@ body {
   h6 {
     text-transform: none;
     letter-spacing: normal;
+    @include at-query(null, $postSmall, $large) {
+      font-size: 2vw;
+    }
     @include at-query($max, $small) {
       font-size: 4vw;
-    }
-    @include at-query(null, $postSmall, $large) {
-      font-size: 3vw;
     }
   }
 
@@ -2419,7 +2419,7 @@ body {
     color: #fff;
     @include at-query(null, $postSmall, $large) {
       font-size: 1.2rem;
-      margin-top: 1vh;
+      margin-top: 2%;
     }
     @include at-query($max, $small) {
       font-size: 3.5vw;
