@@ -249,6 +249,7 @@ body {
   overflow: auto;
   top: 50%;
   transform: translateY(-50%);
+  margin: 0 auto;
 }
 
 .text-wrapper {
@@ -2367,6 +2368,12 @@ body {
 .dyneema-its-true {
   background-color: #333;
 
+  .content-wrapper {
+    @include at-query($min, $large) {
+      max-width: 66%;
+    }
+  }
+
   .text-wrapper {
     color: #fff;
     max-width: 85%;
@@ -2380,6 +2387,7 @@ body {
   h6 {
     text-transform: none;
     letter-spacing: normal;
+    font-size: 1.5rem;
     @include at-query(null, $postSmall, $large) {
       font-size: 2vw;
     }
@@ -2398,6 +2406,9 @@ body {
   }
 
   .number {
+    @include at-query($min, $large) {
+      font-size: 7rem;
+    }
     @include at-query(null, $postSmall, $large) {
       font-size: 5rem;
     }
@@ -2407,6 +2418,9 @@ body {
   }
 
   .multiplier {
+    @include at-query($min, $large) {
+      font-size: 4.5rem;
+    }
     @include at-query(null, $postSmall, $large) {
       font-size: 3rem;
     }
@@ -2417,6 +2431,9 @@ body {
 
   p {
     color: #fff;
+    @include at-query($min, $large) {
+      font-size: 1.4rem;
+    }
     @include at-query(null, $postSmall, $large) {
       font-size: 1.2rem;
       margin-top: 2%;
@@ -2445,7 +2462,6 @@ body {
 
   .content-wrapper {
     width: 80%;
-    margin: 0 auto;
   }
 
   .text-wrapper {
@@ -2522,7 +2538,6 @@ body {
   }
 
   .content-wrapper {
-    margin: 0 auto;
     @include at-query($min, $postSmall) {
       width: 70%;
     }
