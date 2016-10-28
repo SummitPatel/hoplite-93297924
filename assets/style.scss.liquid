@@ -2455,6 +2455,7 @@ body {
   .bg-img {
     background-image: url({{ 'made-with-dyneema-graphic.png' | asset_url }});
     background-size: cover;
+    background-position: center;
     @include at-query($max, $small) {
       background-image: url({{ 'made-with-dyneema-graphic-small.png' | asset_url }});
     }
@@ -2483,6 +2484,7 @@ body {
     }
     @include at-query($max, $small) {
       font-size: 4vw;
+      margin-bottom: 3%;
     }
   }
 
@@ -2492,11 +2494,22 @@ body {
     font-family: 'PF DIN Text Pro Regular';
     letter-spacing: .05rem;
     padding: 0;
+    margin: 0;
     @include at-query(null, $postSmall, $large) {
       font-size:1.4vw;
     }
     @include at-query($max, $small) {
       font-size: 4vw;
+      line-height: 1.4;
+    }
+  }
+}
+
+.dyneema-destroy {
+  .bg-img {
+    background-image: url({{ 'made-with-dyneema-graphic.png' | asset_url }});
+    @include at-query($max, $small) {
+      background-image: url({{ 'dyneema-destroy-graphic-small.png' | asset_url }});
     }
   }
 }
