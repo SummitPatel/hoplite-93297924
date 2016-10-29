@@ -32,9 +32,7 @@
   <meta name="theme-color" content="{{ settings.color_primary }}">
 
   <!-- CSS ================================================== -->
-  {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
-  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
-
+  <!--Timber and Theme SCSS files are imported in application.scss -->
   {{ 'application.css' | asset_url | stylesheet_tag}}
 
   {% include 'google-fonts' %}
