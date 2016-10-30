@@ -1,10 +1,10 @@
-This project uses [Quickshot](https://quickshot.readme.io/) to handle local development. 
+This project uses [Quickshot](https://quickshot.readme.io/) and [Compass](http://compass-style.org/) to handle local development. 
+
+Workflow is based off [this](http://code-shopify.herokuapp.com/blog_posts/shopify-development-flow-sass-compass-and-liquid) model. Instead of using the Shopify Theme Gem, we're using Quickshot instead.
+
+In your terminal, you'll have two tabs open, one for `qs theme watch` and another for `compass watch`.
 
 #SCSS
-After setup, to continue using regular scss.liquid files, just import the corresponding .scss file in `application.scss`
+Using Quickshot allows us to to sync our scss files to Shopify. Using Compass allows us to compile regular scss files (with full scss functionality, not the limited Shopify way) to scss.liquid files, which Quickshot watches for and compiles to regular css. This css file is then uploaded to Shopify.
 
-```
-@import "style.scss";
-```
-
-Then keep working in your `style.scss.liquid` file. This means that you now get full scss functionality in additon to existing liquid functionality!
+This gives us full scss functionality, and with some minor mixins + [liquid escaping](https://github.com/luciddesign/bootstrapify/wiki/Escaping-liquid-in-SASS), we can now leverage both scss and Liquid to their fullest.
