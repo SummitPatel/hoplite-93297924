@@ -12,6 +12,29 @@
     - http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
 ==============================================================================*/
 
+@mixin font-file($asset-font-name) {
+  src: url(' {{ "#{$asset-font-name}.eot" | asset_url }} ');
+  src: url(' {{ "#{$asset-font-name}.eot" | asset_url }} ?#iefix ') format("embedded-opentype"),
+  url(' {{ "#{$asset-font-name}.woff" | asset_url }} ') format("woff"),
+  url(' {{ "#{$asset-font-name}.ttf" | asset_url }} ') format("truetype"),
+  url(' {{ "#{$asset-font-name}.svg" | asset_url }} ') format("svg");
+}
+// @mixin background-file($asset-image-with-extension) {
+//   background-image: url(' {{ "#{$asset-image-with-extension}" | asset_url }} ');
+// }
+// @mixin background-file($linear-gradient, $asset-image-with-extension) {
+//   background-image: $linear-gradient, url(' {{ "#{$asset-image-with-extension}" | asset_url }} ');
+// }
+@mixin background-file($args...) {
+  @if length($args) == 2 {
+    background-image: nth($args, 1), url(' {{ "#{nth($args, 2)}" | asset_url }} ');
+  }
+  @else {
+    background-image: url(' {{ "#{nth($args, 1)}" | asset_url }} ');
+  }
+}
+
+
 $small: 640px;
 $medium: 1099px;
 $large: 1100px;
@@ -404,14 +427,14 @@ body {
 
 .hero-tile.hero-homepage {
   // linear gradient with 3 color stops
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-homepage-large.png' | asset_url}} );
+  @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-homepage-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-homepage-large.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-homepage-large.png' );
     background-size: cover;
   }
   @include at-query($max, $small) {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-homepage-small.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-homepage-small.png' );
     background-size: cover;
   }
 }
@@ -579,7 +602,7 @@ body {
       text-decoration: none;
       color: #fff;
       padding: .5rem 3rem;
-      background-image: url( {{'dyneema-link-arrow.png' | asset_url}} );
+      @include background-file('dyneema-link-arrow.png');
       background-position: 90% 45%;
       @include at-query($max, $small) {
         font-size: .9rem;
@@ -593,42 +616,42 @@ body {
 }
 
 .insane-abrasion-protection-tile {
-  background-image: url( {{'insane-abrasion-protection-large.png' | asset_url}} );
+  @include background-file('insane-abrasion-protection-large.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'insane-abrasion-protection-large.png' | asset_url}} );
+    @include background-file('insane-abrasion-protection-large.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'insane-abrasion-protection-small.png' | asset_url}} );
+    @include background-file('insane-abrasion-protection-small.png');
   }
 }
 
 .rip-and-tear-proof-tile {
-  background-image: url( {{'rip-and-tear-proof-large.png' | asset_url}} );
+  @include background-file('rip-and-tear-proof-large.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'rip-and-tear-proof-large.png' | asset_url}} );
+    @include background-file('rip-and-tear-proof-large.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'rip-and-tear-proof-small.png' | asset_url}} );
+    @include background-file('rip-and-tear-proof-small.png');
   }
 }
 
 .eerily-cold-tile {
-  background-image: url( {{'eerily-cold-large.png' | asset_url}} );
+  @include background-file('eerily-cold-large.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'eerily-cold-large.png' | asset_url}} );
+    @include background-file('eerily-cold-large.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'eerily-cold-small.png' | asset_url}} );
+    @include background-file('eerily-cold-small.png');
   }
 }
 
 .perfectly-balanced-compression-tile {
-  background-image: url( {{'perfectly-balanced-compression-large.png' | asset_url}} );
+  @include background-file('perfectly-balanced-compression-large.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'perfectly-balanced-compression-large.png' | asset_url}} );
+    @include background-file('perfectly-balanced-compression-large.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'perfectly-balanced-compression-small.png' | asset_url}} );
+    @include background-file('perfectly-balanced-compression-small.png');
   }
 }
 
@@ -728,82 +751,82 @@ body {
 }
 
 .knee-high-socks-product-tile, .add-compression, .add-dyneema {
-  background-image: url( {{'knee-high-socks-large.png' | asset_url}} );
+  @include background-file('knee-high-socks-large.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'knee-high-socks-large.png' | asset_url}} );
+    @include background-file('knee-high-socks-large.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'knee-high-socks-small.png' | asset_url}} );
+    @include background-file('knee-high-socks-small.png');
   }
 }
 
 .arm-sleeves-product-tile {
-  background-image: url( {{'arm-sleeves-large.png' | asset_url}} );
+  @include background-file('arm-sleeves-large.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'arm-sleeves-large.png' | asset_url}} );
+    @include background-file('arm-sleeves-large.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'arm-sleeves-small.png' | asset_url}} );
+    @include background-file('arm-sleeves-small.png');
   }
 }
 
 .leg-sleeves-product-tile {
-  background-image: url( {{'leg-sleeves-small.png' | asset_url}} );
+  @include background-file('leg-sleeves-small.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'leg-sleeves-small.png' | asset_url}} );
+    @include background-file('leg-sleeves-small.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'leg-sleeves-small.png' | asset_url}} );
+    @include background-file('leg-sleeves-small.png');
   }
 }
 
 .crew-socks-product-tile {
-  background-image: url( {{'crew-socks-large.png' | asset_url}} );
+  @include background-file('crew-socks-large.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'crew-socks-large.png' | asset_url}} );
+    @include background-file('crew-socks-large.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'crew-socks-small.png' | asset_url}} );
+    @include background-file('crew-socks-small.png');
   }
 }
 
 .no-show-socks-product-tile {
-  background-image: url( {{'no-show-socks-small.png' | asset_url}} );
+  @include background-file('no-show-socks-small.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'no-show-socks-small.png' | asset_url}} );
+    @include background-file('no-show-socks-small.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'no-show-socks-small.png' | asset_url}} );
+    @include background-file('no-show-socks-small.png');
   }
 }
 
 .hat-product-tile {
-  background-image: url( {{'hat-small.png' | asset_url}} );
+  @include background-file('hat-small.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'hat-small.png' | asset_url}} );
+    @include background-file('hat-small.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'hat-small.png' | asset_url}} );
+    @include background-file('hat-small.png');
   }
 }
 
 .unisex-t-shirt-product-tile {
-  background-image: url( {{'unisex-t-shirt-small.png' | asset_url}} );
+  @include background-file('unisex-t-shirt-small.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'unisex-t-shirt-small.png' | asset_url}} );
+    @include background-file('unisex-t-shirt-small.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'unisex-t-shirt-small.png' | asset_url}} );
+    @include background-file('unisex-t-shirt-small.png');
   }
 }
 
 .racerback-tank-product-tile {
-  background-image: url( {{'racerback-tank-small.png' | asset_url}} );
+  @include background-file('racerback-tank-small.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'racerback-tank-small.png' | asset_url}} );
+    @include background-file('racerback-tank-small.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'racerback-tank-small.png' | asset_url}} );
+    @include background-file('racerback-tank-small.png');
   }
 }
 
@@ -812,14 +835,14 @@ body {
   Product Page - Knee-High Socks
 ==============================================================================*/
 .hero-tile.hero-knee-high-socks {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-knee-high-socks-large.png' | asset_url}} );
+  @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-knee-high-socks-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-knee-high-socks-medium.png' | asset_url}} );
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-knee-high-socks-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-knee-high-socks-small.png' | asset_url}} );
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-knee-high-socks-small.png');
     background-size: cover;
   }
 }
@@ -835,7 +858,7 @@ body {
   text-decoration: none;
   padding: 1vw 1vw 1vw 0;
   background: transparent no-repeat;
-  background-image: url( {{'link-arrow-black.png' | asset_url}} );
+  @include background-file('link-arrow-black.png');
   background-position: 100% 45%;
   @include at-query($max, $small) {
     font-size: .9rem;
@@ -859,7 +882,7 @@ body {
   text-decoration: none;
   padding: 1vw;
   background: transparent no-repeat;
-  background-image: url( {{'link-arrow-black-reverse.png' | asset_url}} );
+  @include background-file('link-arrow-black-reverse.png');
   background-position: 0 45%;
   @include at-query($max, $small) {
     font-size: .9rem;
@@ -1277,7 +1300,7 @@ body {
   select {
     width: 90%;
     background-color: #333;
-    background-image: url('dropdown-arrow.png');
+    @include background-file('dropdown-arrow.png');
     border-color: #999;
     color: #fff;
     text-transform: uppercase;
@@ -1385,14 +1408,14 @@ body {
 ==============================================================================*/
 
 .hero-tile.hero-leg-sleeves {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-leg-sleeves-large.png' | asset_url}} );
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-leg-sleeves-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-leg-sleeves-medium.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-leg-sleeves-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-leg-sleeves-small.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-leg-sleeves-small.png');
     background-size: cover;
   }
 }
@@ -1403,14 +1426,14 @@ body {
 ==============================================================================*/
 
 .hero-tile.hero-arm-sleeves {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-arm-sleeves-large.png' | asset_url}} );
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-arm-sleeves-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-arm-sleeves-medium.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-arm-sleeves-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-arm-sleeves-small.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-arm-sleeves-small.png');
     background-size: cover;
   }
 }
@@ -1421,14 +1444,14 @@ body {
 ==============================================================================*/
 
 .hero-tile.hero-crew-socks {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-crew-socks-large.png' | asset_url}} );
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-crew-socks-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-crew-socks-medium.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-crew-socks-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-crew-socks-small.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-crew-socks-small.png');
     background-size: cover;
   }
 }
@@ -1439,14 +1462,14 @@ body {
 ==============================================================================*/
 
 .hero-tile.hero-no-show-socks {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-no-show-socks-large.png' | asset_url}} );
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-no-show-socks-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-no-show-socks-medium.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-no-show-socks-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-no-show-socks-small.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-no-show-socks-small.png');
     background-size: cover;
   }
 }
@@ -1457,14 +1480,14 @@ body {
 ==============================================================================*/
 
 .hero-tile.hero-hat {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-hat-large.png' | asset_url}} );
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-hat-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-hat-medium.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-hat-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-hat-small.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-hat-small.png');
     background-size: cover;
   }
 
@@ -1481,14 +1504,14 @@ body {
 ==============================================================================*/
 
 .hero-tile.hero-unisex-t-shirt {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-unisex-t-shirt-large.png' | asset_url}} );
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-unisex-t-shirt-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-unisex-t-shirt-medium.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-unisex-t-shirt-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-unisex-t-shirt-small.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-unisex-t-shirt-small.png');
     background-size: cover;
   }
 }
@@ -1499,14 +1522,14 @@ body {
 ==============================================================================*/
 
 .hero-tile.hero-racerback-tank {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-racerback-tank-large.png' | asset_url}} );
+  @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-racerback-tank-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-racerback-tank-medium.png' | asset_url}} );
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-racerback-tank-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-racerback-tank-small.png' | asset_url}} );
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-racerback-tank-small.png');
     background-size: cover;
   }
 }
@@ -1723,32 +1746,32 @@ body {
 }
 
 .fear-no-bar-scrape-tile {
-  background-image: url( {{'fear-no-bar-scrape-large.png' | asset_url}} );
+  @include background-file('fear-no-bar-scrape-large.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'fear-no-bar-scrape-medium.png' | asset_url}} );
+    @include background-file('fear-no-bar-scrape-medium.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'fear-no-bar-scrape-small.png' | asset_url}} );
+    @include background-file('fear-no-bar-scrape-small.png');
   }
 }
 
 .fear-no-wall-rash-tile {
-  background-image: url( {{'fear-no-wall-rash-large.png' | asset_url}} );
+  @include background-file('fear-no-wall-rash-large.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'fear-no-wall-rash-medium.png' | asset_url}} );
+    @include background-file('fear-no-wall-rash-medium.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'fear-no-wall-rash-small.png' | asset_url}} );
+    @include background-file('fear-no-wall-rash-small.png');
   }
 }
 
 .wont-wear-out-tile {
-  background-image: url( {{'wont-wear-out-large.png' | asset_url}} );
+  @include background-file('wont-wear-out-large.png');
   @include at-query(null, $postSmall, $large) {
-    background-image: url( {{'wont-wear-out-medium.png' | asset_url}} );
+    @include background-file('wont-wear-out-medium.png');
   }
   @include at-query($max, $small) {
-    background-image: url( {{'wont-wear-out-small.png' | asset_url}} );
+    @include background-file('wont-wear-out-small.png');
   }
 }
 
@@ -1756,8 +1779,8 @@ body {
   Color Swatches
 ==============================================================================*/
 
-{% assign width = '47px' %}
-{% assign height = '45px' %}
+$swatchWidth: 47px;
+$swatchHeight: 45px;
 
 .swatches-container {
   display: table;
@@ -1796,8 +1819,8 @@ body {
   /* To give width and height */
   float:left;
   /* Color swatches contain no text so they need to have a width. */
-  min-width:{{ width }}; 
-  height:{{ height }};
+  min-width:$swatchWidth; 
+  height:$swatchHeight;
   margin:0;
   /* The border when the button is not selected */
   //border:#ccc 1px solid;
@@ -1806,7 +1829,7 @@ body {
   /* Styling text */
   font-size:13px;
   text-align:center;
-  line-height:{{ height }};
+  line-height:$swatchHeight;
   white-space:nowrap;
   text-transform:uppercase;
   background: no-repeat;
@@ -1824,7 +1847,8 @@ body {
     width: 47px;
     height: 50px;
     left: 0;
-    background: url( {{ 'color-swatch-border.png' | asset_url }} ) no-repeat;
+    @include background-file('color-swatch-border.png');
+    background-repeat: no-repeat;
   }
 } 
 /* Image with the cross in it */
@@ -1886,14 +1910,14 @@ body {
   Product Landing Page (Collections Page)
 ==============================================================================*/
 .hero-tile.hero-product-landing-page {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-product-landing-page-large.png' | asset_url}} );
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-product-landing-page-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-product-landing-page-medium.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-product-landing-page-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-product-landing-page-small.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-product-landing-page-small.png');
     background-size: cover;
   }
 }
@@ -1904,14 +1928,14 @@ body {
 ==============================================================================*/
 
 .hero-tile.hero-compression-101 {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-compression-101-large.png' | asset_url}} );
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-compression-101-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-product-landing-page.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-product-landing-page.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-compression-101-small.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-compression-101-small.png');
     background-size: cover;
   }
 
@@ -2350,14 +2374,14 @@ body {
 ==============================================================================*/
 
 .hero-dyneema {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-dyneema-large.png' | asset_url}} );
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-dyneema-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-dyneema-medium.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-dyneema-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-dyneema-small.png' | asset_url}} );
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-dyneema-small.png');
     background-size: cover;
   }
 }
@@ -2450,16 +2474,16 @@ body {
   }
 
   .bg-img {
-    background-image: url({{ 'made-with-dyneema-graphic.png' | asset_url }});
+    @include background-file('made-with-dyneema-graphic.png');
     background-size: cover;
     background-position: center;
     @include at-query($max, $small) {
-      background-image: url({{ 'made-with-dyneema-graphic-small.png' | asset_url }});
+      @include background-file('made-with-dyneema-graphic-small.png');
     }
   }
 
   .content-wrapper {
-    width: 80%;
+    width: 75%;
   }
 
   .text-wrapper {
@@ -2504,9 +2528,9 @@ body {
 
 .dyneema-destroy {
   .bg-img {
-    background-image: url({{ 'made-with-dyneema-graphic.png' | asset_url }});
+    @include background-file('made-with-dyneema-graphic.png');
     @include at-query($max, $small) {
-      background-image: url({{ 'dyneema-destroy-graphic-small.png' | asset_url }});
+      @include background-file('dyneema-destroy-graphic-small.png');
     }
   }
 }
@@ -2655,14 +2679,14 @@ body {
 
 .hero-tile.hero-contact {
   // linear gradient with 3 color stops
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-contact-large.png' | asset_url}} );
+  @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-contact-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-contact-large.png' | asset_url}} );
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-contact-large.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), url( {{'hero-contact-small.png' | asset_url}} );
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-contact-small.png');
     background-size: cover;
   }
 }
