@@ -2528,7 +2528,7 @@ $swatchHeight: 45px;
 
 .dyneema-destroy {
   .bg-img {
-    @include background-file('made-with-dyneema-graphic.png');
+    @include background-file('dyneema-destroy-graphic-large.png');
     @include at-query($max, $small) {
       @include background-file('dyneema-destroy-graphic-small.png');
     }
