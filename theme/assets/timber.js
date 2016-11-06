@@ -153,7 +153,7 @@ timber.productPage = function (options) {
 
     // Regardless of stock, update the product price
     // Removed because it was messing with formatting from the liquid filter in html
-    // $productPrice.html( Shopify.formatMoney(variant.price, moneyFormat) );
+    $productPrice.html( Shopify.formatMoney(variant.price, moneyFormat) );
 
     // Also update and show the product's compare price if necessary
     if (variant.compare_at_price > variant.price) {
