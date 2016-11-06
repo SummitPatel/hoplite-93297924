@@ -2,7 +2,9 @@ This project uses [Quickshot](https://quickshot.readme.io/) and [Compass](http:/
 
 Workflow is based off [this model](http://code-shopify.herokuapp.com/blog_posts/shopify-development-flow-sass-compass-and-liquid). Instead of using the Shopify Theme Gem, we're using Quickshot instead.
 
-In your terminal, you'll have two tabs open, one for `qs theme watch` and another for `compass watch`.
+In your terminal, you'll have two tabs open, one for `qs theme watch` and another for `compass watch`. Depending on where you configured Quickshot and Compass, you'll need to be in different directories to make sure you're watching the right folders. 
+
+For example, I run `qs theme watch` in the top level directory and run `compass watch` in the `theme` directory below that.
 
 #SCSS
 Using Quickshot allows us to to sync our scss files to Shopify. Using Compass allows us to compile regular scss files (with full scss functionality, not the limited Shopify way) to scss.liquid files, which Quickshot watches for and compiles to regular css. This css file is then uploaded to Shopify.

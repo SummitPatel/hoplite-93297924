@@ -142,9 +142,9 @@ $breakpoints: (
   
   'post-large' '(min-width: #{$large})'
 );
-$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large', 'post-large', 'wide');
-$breakpoint-has-push:  ('small', 'medium', 'medium-down', 'large', 'post-large', 'wide');
-$breakpoint-has-pull:  ('small', 'medium', 'medium-down', 'large', 'post-large', 'wide');
+$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large', 'post-large');
+$breakpoint-has-push:  ('small', 'medium', 'medium-down', 'large', 'post-large');
+$breakpoint-has-pull:  ('small', 'medium', 'medium-down', 'large', 'post-large');
 
 /*================ Color variables ================*/
 $colorPrimary: #50b3da;
