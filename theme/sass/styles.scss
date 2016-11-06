@@ -7,11 +7,6 @@
 // font-family: 'PF DIN Text Comp Pro Light'
 // font-family: 'PF DIN Text Pro Bold'
 
-/*============================================================================
-  Dependency-free breakpoint mixin
-    - http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
-==============================================================================*/
-
 @mixin font-file($asset-font-name) {
   src: url(' {{ "#{$asset-font-name}.eot" | asset_url }} ');
   src: url(' {{ "#{$asset-font-name}.eot" | asset_url }} ?#iefix ') format("embedded-opentype"),
@@ -19,12 +14,20 @@
   url(' {{ "#{$asset-font-name}.ttf" | asset_url }} ') format("truetype"),
   url(' {{ "#{$asset-font-name}.svg" | asset_url }} ') format("svg");
 }
-// @mixin background-file($asset-image-with-extension) {
-//   background-image: url(' {{ "#{$asset-image-with-extension}" | asset_url }} ');
-// }
-// @mixin background-file($linear-gradient, $asset-image-with-extension) {
-//   background-image: $linear-gradient, url(' {{ "#{$asset-image-with-extension}" | asset_url }} ');
-// }
+
+
+/*============================================================================
+  Background images come in two forms:
+  1. Hero images with a linear gradient
+  2. Regular background images
+
+  arg 1: linear gradient
+  arg 2: background image
+
+  It also wraps image urls with Shopify Liquid tags so they can be cached and
+  optimized by Shopify.
+==============================================================================*/
+
 @mixin background-file($args...) {
   @if length($args) == 2 {
     background-image: nth($args, 1), url(' {{ "#{nth($args, 2)}" | asset_url }} ');
@@ -35,15 +38,10 @@
 }
 
 
-$small: 640px;
-$medium: 1099px;
-$large: 1100px;
-
-$viewportIncrement: 1px;
-$postSmall: $small + $viewportIncrement;
-$preMedium: $medium - $viewportIncrement;
-$preLarge: $large - $viewportIncrement;
-
+/*============================================================================
+  Dependency-free breakpoint mixin
+    - http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
+==============================================================================*/
 $min: min-width;
 $max: max-width;
 @mixin at-query ($constraint, $viewport1, $viewport2:null) {
@@ -61,6 +59,15 @@ $max: max-width;
     }
   }
 }
+
+$small: 640px;
+$medium: 1099px;
+$large: 1100px;
+
+$viewportIncrement: 1px;
+$postSmall: $small + $viewportIncrement;
+$preMedium: $medium - $viewportIncrement;
+$preLarge: $large - $viewportIncrement;
 
 
 /*============================================================================
@@ -220,6 +227,7 @@ img {
 html {
   font-size: 14px;
 }
+
 body {
   font-family: 'PF DIN Text Pro Regular';
 }

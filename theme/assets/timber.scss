@@ -112,12 +112,10 @@ $max: max-width;
   font-family: $accentFontStack;
   font-weight: $accentFontWeight;
   font-style: normal;
-  
-  
 }
 
 
-  $siteWidth: 1030px;
+$siteWidth: 1030px;
 
 
 $gutter: 30px;
@@ -127,7 +125,6 @@ $radius: 2px;
 $small: 640px;
 $medium: 1100px;
 $large: 1101px;
-$wide: 1400px;
 
 
 $viewportIncrement: 1px;
