@@ -2547,12 +2547,12 @@ $swatchHeight: 45px;
   background-size: cover;
   background-position: center;
   height: inherit;
-  @include at-query($min, $postSmall) {
+  @include at-query($min, $large) {
     .dyneema-video-gif {
       display: none;
     }
   }
-  @include at-query($max, $small) {
+  @include at-query($max, $medium) {
     .dyneema-video-bg {
       display: none;
     }
