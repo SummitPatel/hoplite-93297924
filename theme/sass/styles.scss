@@ -2200,8 +2200,11 @@ $swatchHeight: 45px;
   transform: translateY(-50%);
   text-transform: uppercase;
 
-  h3 {
+  h5 {
     font-size: 4vw;
+    @include at-query(null, $postSmall, $large) {
+      font-size: 1.5vw;
+    }
     @include at-query($min, $postSmall) {
       font-size: 1.3vw;
     }
