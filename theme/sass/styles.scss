@@ -1008,7 +1008,9 @@ body {
   .text-container {
     height: 70vh;
     @include at-query($min, $postSmall) {
+      height: 60vh;
       padding: 0 0 0 16vw;
+      margin-bottom: 10vh;
     }
     @include at-query($max, $small) {
       height: inherit;
