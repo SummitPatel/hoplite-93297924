@@ -759,12 +759,12 @@ body {
 }
 
 .knee-high-socks-product-tile, .add-compression, .add-dyneema {
-  @include background-file('knee-high-socks-large.png');
+  @include background-file('add-dyneema-large.png');
   @include at-query(null, $postSmall, $large) {
-    @include background-file('knee-high-socks-large.png');
+    @include background-file('add-dyneema-large.png');
   }
   @include at-query($max, $small) {
-    @include background-file('knee-high-socks-small.png');
+    @include background-file('add-dyneema-small.png');
   }
 }
 
