@@ -1,0 +1,83 @@
+/*============================================================================
+  Background images come in two forms:
+  1. Hero images with a linear gradient
+  2. Regular background images
+
+  arg 1: linear gradient
+  arg 2: background image
+
+  It also wraps image urls with Shopify Liquid tags so they can be cached and
+  optimized by Shopify.
+==============================================================================*/
+
+@mixin background-file($args...) {
+  @if length($args) == 2 {
+    background-image: nth($args, 1), url(' {{ "#{nth($args, 2)}" | asset_url }} ');
+  }
+  @else {
+    background-image: url(' {{ "#{nth($args, 1)}" | asset_url }} ');
+  }
+}
+
+
+/*============================================================================
+  Dependency-free breakpoint mixin
+    - http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
+==============================================================================*/
+$min: min-width;
+$max: max-width;
+@mixin at-query ($constraint, $viewport1, $viewport2:null) {
+  @if $constraint == $min {
+    @media screen and ($min: $viewport1) {
+      @content;
+    }
+  } @else if $constraint == $max {
+    @media screen and ($max: $viewport1) {
+      @content;
+    }
+  } @else {
+    @media screen and ($min: $viewport1) and ($max: $viewport2) {
+      @content;
+    }
+  }
+}
+
+$small: 640px;
+$medium: 1099px;
+$large: 1100px;
+
+$viewportIncrement: 1px;
+$postSmall: $small + $viewportIncrement;
+$preMedium: $medium - $viewportIncrement;
+$preLarge: $large - $viewportIncrement;
+
+
+/*============================================================================
+  Timber Overrides and Helper Classes
+==============================================================================*/
+
+.rte > div {
+  margin-bottom: 0;
+}
+
+@include at-query($max, $small) {
+  .padded {
+    padding: 0;
+  }
+}
+
+img {
+  image-rendering: -moz-crisp-edges;         /* Firefox */
+  image-rendering:   -o-crisp-edges;         /* Opera */
+  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+}
+
+.btn {
+  &:active, &:focus, &:hover {
+    background-color: #fff;
+    color: #313;
+    outline: none;
+  }
+}
