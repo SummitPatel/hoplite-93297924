@@ -376,17 +376,13 @@ body {
     }
   }
 
-  h6 {
+  h5, h6 {
     font-size: 1rem;
     letter-spacing: .1rem;
     font-family: 'PF DIN Text Pro Regular';
     @include at-query($max, $small) {
       font-size: 3vw;
     }
-  }
-
-  p {
-    font-family: 'PF DIN Text Pro Regular';
   }
 }
 
