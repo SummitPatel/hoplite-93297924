@@ -2407,12 +2407,17 @@ $swatchHeight: 45px;
 
   h5 {
     color: #333;
-    font-family: 'PF DIN Text Pro Bold';
+    font-family: 'PF DIN Text Pro';
     font-size: 1.3vw;
-    line-height: 1;
+    line-height: 1.3;
     margin: 0;
     letter-spacing: .1rem;
     text-transform: uppercase;
+    overflow: hidden;
+
+    &.header--bold {
+      font-family: 'PF DIN Text Pro Bold';
+    }
     @include at-query(null, $postSmall, $large) {
       font-size: 1.7vw;
     }
