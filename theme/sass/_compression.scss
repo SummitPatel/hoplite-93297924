@@ -1,0 +1,454 @@
+/*============================================================================
+  Compression 101 Page
+==============================================================================*/
+
+
+.hero-tile.hero-compression-101 {
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-compression-101-large.png');
+  background-size: cover;
+  @include at-query(null, $postSmall, $large) {
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-compression-101-medium.png');
+    background-size: cover;
+  }
+  @include at-query($max, $small) {
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-compression-101-small.png');
+    background-size: cover;
+  }
+
+  .text-wrapper {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
+.compression-101 {
+  height: 74vh;
+  @include at-query($max, $small) {
+    height: 94vw;
+  }
+
+  .icon {
+    margin: 0 0 2rem 0;
+    @include at-query($max, $small) {
+      width: 40px;
+      margin: 0 0 1rem 0;
+    }
+  }
+
+  .text-wrapper {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .dropdown-chevron {
+    top: 93%;
+    @include at-query($max, $small) {
+      width: 12.5px;
+      display: none;
+    }
+  }
+}
+
+.blood-flow, .measurement {
+  background-color: #d05d00;
+}
+
+.tighter, .result {
+  background-color: #333;
+}
+
+.slider {
+  margin: 0 auto;
+  @include at-query($max, $small) {
+    width: 75%;
+    padding: 2rem 0 0 0;
+  }
+}
+
+.infographic {
+  .grid__item {
+    @include at-query($max, $small) {
+      float: none;
+    }
+  }
+
+  .slides {
+    margin: 0;
+  }
+
+  .slider-content {
+    margin: 0 auto;
+  }
+
+  li {
+    position: relative;
+    margin: 1.5rem 0 0 0;
+  }
+
+  .prev, .next {
+    position: absolute;
+    top: 27%;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    @include at-query($min, $postSmall) {
+      display: none;
+    }
+  }
+
+  .prev {
+    left: 5%;
+  }
+
+  .next {
+    right: 5%;
+  }
+
+  .prev-icon, .next-icon {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .text-wrapper {
+    padding: 1rem;
+    text-align: left;
+    @include at-query($min, $postSmall) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  h5 {
+    color: #333;
+    font-family: 'PF DIN Text Pro Bold';
+    font-size: 1.3vw;
+    line-height: 1;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    @include at-query(null, $postSmall, $large) {
+      font-size: 1.7vw;
+    }
+    @include at-query($max, $small) {
+      font-size: 4vw;
+    }
+  }
+
+  p {
+    color: #333;
+    font-size: 1.3vw;
+    font-family: 'PF DIN Text Pro Regular';
+    letter-spacing: .05rem;
+    text-transform: none;
+    line-height: 1.4;
+    @include at-query(null, $postSmall, $large) {
+      font-size:1.4vw;
+    }
+    @include at-query($max, $small) {
+      font-size: 4vw;
+    }
+  }
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.diamond-infographic {
+  overflow: auto;
+
+  .slider {
+    @include at-query($max, $small) {
+      padding: 2rem 0 0 0;
+      width: 75%;
+    }
+  }
+
+  .slides {
+    position: relative;
+    @include at-query($min, $postSmall) {
+      display: none;
+    }
+  }
+
+  .prev, .next {
+    top: 17%;
+  }
+
+  .orange {
+    color: #d05d00;
+    text-transform: uppercase;
+  }
+
+  .text-wrapper {
+    text-align: center;
+    @include at-query($min, $postSmall) {
+      position: absolute;
+      left: 63vw;
+      text-align: left;
+      width: 25%;
+    }
+  }
+}
+
+.diamond-infographic-img {
+  margin: 4vw;
+  width: 50vw;
+}
+
+.goldilocks-infographic, .familiar-infographic {
+  background: #e9e9e9;
+}
+
+.goldilocks-infographic {
+  overflow: auto;
+  padding: 0 5%;
+
+  .text-wrapper {
+    color: #333;
+    text-align: center;
+    @include at-query($min, $postSmall) {
+      position: absolute;
+      width: 25%;
+      text-align: left;
+    }
+  }
+
+  @include at-query($min, $postSmall) {
+    .slides {
+      margin: 5% 0;
+    }
+
+    // Look in html for Timber helper classes that change the order visually but not in code
+    li:first-child {
+      margin-top: 0%; 
+    }
+    li:nth-child(2n + 0) {
+      margin-top: 20%;
+    }
+    li:last-child {
+      margin-top: 40%;
+    }
+  }
+
+  .text {
+    text-align: center;
+    transform: none;
+    position: relative;
+    @include at-query($min, $postSmall) {
+      width: inherit;
+    }
+
+    h6 + h6 {
+      font-family: 'PF DIN Text Pro Regular';
+    }
+  }
+}
+
+.too-loose-circle, .just-right-circle, .too-tight-circle, .inner-circle-1, .inner-circle-2, .inner-circle-3 {
+  width: 18vw;
+  height: 18vw;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  @include at-query($max, $small) {
+    width: 65vw;
+    height: 65vw;
+  }
+}
+
+.inner-circle-1, .inner-circle-2, .inner-circle-3 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.circle-text {
+  position: relative;
+  top: 55%;
+  transform: translateY(-50%);
+  text-transform: uppercase;
+
+  h6 {
+    font-family: 'PF DIN Text Pro Bold';
+    color: #333;
+    line-height: 1;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    font-size: 4vw;
+
+    @include at-query(null, $postSmall, $large) {
+      font-size: 1.5vw;
+    }
+    @include at-query($min, $postSmall) {
+      font-size: 1.3vw;
+    }
+  }
+
+  p {
+    font-size: 3.5vw;
+    @include at-query($min, $postSmall) {
+      font-size: 1.2vw;
+    }
+  }
+
+  img {
+    width: 33%;
+  }
+}
+
+.too-loose-circle {
+  .inner-circle-1 {
+    width: 16vw;
+    height: 16vw;
+    @include at-query($max, $small) {
+      width: 57vw;
+      height: 57vw;
+    }
+  }
+}
+
+.just-right-circle {
+  .inner-circle-1 {
+    width: 16vw;
+    height: 16vw;
+    @include at-query($max, $small) {
+      width: 57vw;
+      height: 57vw;
+    }
+  }
+  .inner-circle-2 {
+    width: 14vw;
+    height: 14vw;
+    @include at-query($max, $small) {
+      width: 48vw;
+      height: 48vw;
+    }
+  }
+}
+
+.too-tight-circle {
+  .inner-circle-1 {
+    width: 16vw;
+    height: 16vw;
+    @include at-query($max, $small) {
+      width: 57vw;
+      height: 57vw;
+    }
+  }
+  .inner-circle-2 {
+    width: 14vw;
+    height: 14vw;
+    @include at-query($max, $small) {
+      width: 48vw;
+      height: 48vw;
+    }
+  }
+  .inner-circle-3 {
+    width: 12vw;
+    height: 12vw;
+    @include at-query($max, $small) {
+      width: 40vw;
+      height: 40vw;
+    }
+  }
+}
+
+.magic-numbers-infographic {
+  .content-wrapper {
+    top: 0;
+    transform: none;
+  }
+
+  img {
+    width: 33vw;
+    @include at-query($min, $postSmall) {
+      width: 20vw;
+    }
+    margin: 8vw 0;
+  }
+
+  .text-wrapper {
+    padding: 1rem;
+    text-align: center;
+    @include at-query($min, $postSmall) {
+      position: absolute;
+      left: 50%;
+      width: 30%;
+      margin: 0 0 0 2vw;
+      text-align: left;
+    }
+  }
+
+  h3 {
+    @include at-query($min, $postSmall) {
+      letter-spacing: .1rem;
+    }
+  }
+
+  br {
+    @include at-query($min, $postSmall) {
+      display: none;
+    }
+  }
+}
+
+.familiar-infographic {
+  height: 53vh;
+  @include at-query($min, $postSmall) {
+    height: 96vh;
+    padding: 0 5%;
+  }
+
+  .text-wrapper {
+    padding: 1rem;
+    text-align: center;
+    @include at-query($min, $postSmall) {
+      width: 25%;
+      text-align: left;
+    }
+  }
+
+  .slider-content {
+    color: #333;
+    text-align: center;
+    padding: 0;
+    top: 0;
+    transform: none;
+    width: 80%;
+    @include at-query($min, $postSmall) {
+      text-align: left;
+    }
+  }
+
+  .text {
+    @include at-query($min, $postSmall) {
+      width: inherit;
+    }
+  }
+
+  h2 {
+    font-size: 12vw;
+    font-family: 'PF DIN Text Comp Pro Light';
+    text-transform: uppercase;
+    line-height: 1;
+    @include at-query($min, $postSmall) {
+      font-size: 4vw;
+    }
+  }
+
+  br {
+    @include at-query($min, $postSmall) {
+      display: none;
+    }
+  }
+}
+
+.familiar-slider {
+  margin: 0 auto 2rem;
+  @include at-query($min, $postSmall) {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
