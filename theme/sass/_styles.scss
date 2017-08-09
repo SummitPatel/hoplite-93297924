@@ -288,6 +288,12 @@ body {
   background-size: cover;
   background-position: center;
 
+  .text-wrapper {
+    width: 75%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
   .hero-dropdown-wrapper {
     position: absolute;
     top: 91%;
