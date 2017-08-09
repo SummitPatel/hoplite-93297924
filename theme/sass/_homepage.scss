@@ -1,0 +1,405 @@
+/*============================================================================
+  Homepage
+==============================================================================*/
+
+.hero-tile.hero-homepage {
+  // linear gradient with 3 color stops
+  @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-homepage-large.png');
+  background-size: cover;
+  @include at-query(null, $postSmall, $large) {
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-homepage-large.png' );
+    background-size: cover;
+  }
+  @include at-query($max, $small) {
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-homepage-small.png' );
+    background-size: cover;
+  }
+}
+
+.worlds-toughest-workouts-tile, .dyneema-its-true {
+  height: 82vh;
+  max-width: 100vw;
+  background-size: cover;
+  background-color: #e0d300;
+
+  .text-wrapper {
+    position: relative;
+    color: #333;
+    margin: 5vh auto 10vh;
+    max-width: 85%;
+  }
+
+  h2, h6, p {
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 5vw;
+    font-family: 'PF DIN Text Comp Pro Light';
+    letter-spacing: 1rem;
+    @include at-query($max, $large) {
+      font-size: 4rem;
+    }
+    @include at-query($max, $small) {
+      font-size: 12vw;
+    }
+  }
+
+  h5 {
+    font-size: 1.5vw;
+    line-height: 1;
+    margin: 0;
+    padding: 0 0 1rem 0;
+    font-family: 'PF DIN Text Pro Regular';
+    @include at-query($max, $small) {
+      font-size: 3vw;
+    }
+  }
+}
+
+.icons-wrapper {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 85%;
+  top: 50%;
+  @include at-query(null, $postSmall, $large) {
+    top: 60%;
+  }
+  @include at-query($max, $small) {
+    top: 65%;
+  }
+
+  .icon {
+    padding: 0;
+  }
+
+  img {
+    margin-bottom: 5vh;
+    @include at-query ($min, $postSmall) {
+      min-height: 74px;
+    }
+    @include at-query($max, $small) {
+      max-height: 10vw;
+    }
+  }
+
+  p {
+    text-transform: uppercase;
+    font-size: 2vw;
+    color: #333;
+    line-height: 1.3;
+    @include at-query(null, $postSmall, $large) {
+      margin-top: 5vh;
+    }
+    @include at-query($max, $small) {
+      font-size: 3vw;
+    }
+    @include at-query($max, $large) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.dyneema-tile { 
+  background-size: cover;
+  height: 82vh;
+  @include at-query(null, $postSmall, $large) {
+    height: 66vh;
+  }
+  @include at-query($max, $small) {
+    height: 66vh;
+  }
+
+  .text-wrapper {
+    max-width: 90vw;
+    margin: 0 auto;
+
+    h3, h5, h6 {
+      font-family: 'PF DIN Text Pro Regular';
+      margin: 0;
+      padding: 0 0 1rem 0;
+      line-height: 1;
+    }
+
+    h3 {
+      font-family: 'PF DIN Text Pro Bold';
+      letter-spacing: .4vw;
+      font-size: 3vw;
+      @include at-query($max, $large) {
+        font-size: 3rem;
+      }
+      @include at-query($max, $small) {
+        font-size: 7vw;
+      }
+    }
+
+    h5 {
+      font-size: 1.5vw;
+      text-transform: none;
+      @include at-query($max, $large) {
+        font-size: 1.5rem;
+      }
+      @include at-query($max, $small) {
+        font-size: 4vw;
+      }
+
+      .forced-line-break {
+        display: none;
+        @include at-query($max, $small) {
+          display: block;
+        }
+      }
+    }
+
+    h6 {
+      font-family: 'PF DIN Text Pro Bold';
+      letter-spacing: .2vw;
+      font-size: 1.2vw;
+      @include at-query($max, $large) {
+        font-size: 1rem;
+      }
+      @include at-query($max, $small) {
+        font-size: 3vw;
+      }
+    }
+
+    .dyneema-link {
+      display: inline-block;
+      background: transparent no-repeat;
+      font-size: 1rem;
+      font-family: 'PF DIN Text Pro Bold';
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+      line-height: 1;
+      text-decoration: none;
+      color: #fff;
+      padding: .5rem 3rem;
+      @include background-file('dyneema-link-arrow.png');
+      background-position: 90% 45%;
+      @include at-query($max, $small) {
+        font-size: .9rem;
+        padding: .5vw 3vw;
+        margin-top: 2vw;
+        background-position: 100% 24%;
+      }
+    }
+
+  }
+}
+
+.insane-abrasion-protection-tile {
+  @include background-file('insane-abrasion-protection-large.png');
+  @include at-query(null, $postSmall, $large) {
+    @include background-file('insane-abrasion-protection-large.png');
+  }
+  @include at-query($max, $small) {
+    @include background-file('insane-abrasion-protection-small.png');
+  }
+}
+
+.rip-and-tear-proof-tile {
+  @include background-file('rip-and-tear-proof-large.png');
+  @include at-query(null, $postSmall, $large) {
+    @include background-file('rip-and-tear-proof-large.png');
+  }
+  @include at-query($max, $small) {
+    @include background-file('rip-and-tear-proof-small.png');
+  }
+}
+
+.eerily-cold-tile {
+  @include background-file('eerily-cold-large.png');
+  @include at-query(null, $postSmall, $large) {
+    @include background-file('eerily-cold-large.png');
+  }
+  @include at-query($max, $small) {
+    @include background-file('eerily-cold-small.png');
+  }
+}
+
+.perfectly-balanced-compression-tile {
+  @include background-file('perfectly-balanced-compression-large.png');
+  @include at-query(null, $postSmall, $large) {
+    @include background-file('perfectly-balanced-compression-large.png');
+  }
+  @include at-query($max, $small) {
+    @include background-file('perfectly-balanced-compression-small.png');
+  }
+}
+
+.product-tile {
+  .text-wrapper {
+    margin: 0 auto;
+    max-width: 80vw;
+    @include at-query($min, $postSmall) {
+      width: 33vw;
+    }
+  }
+
+  .icon {
+    margin-bottom: 2rem;
+    max-height: 67px;
+  }
+
+  h2, h3, h4, h5, h6 {
+    font-family: 'PF DIN Text Pro Regular';
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 5rem;
+    font-family: 'PF DIN Text Pro Light';
+  }
+
+  h3 {
+    font-family: 'PF DIN Text Pro Bold';
+    letter-spacing: .1rem;
+    font-size: 3vw;
+    @include at-query($max, $small) {
+      font-size: 6vw;
+      letter-spacing: .1rem;
+    }
+  }
+
+  h4 {
+    font-size: 2vw;
+    font-family: 'PF DIN Text Pro Bold';
+    letter-spacing: .3rem;
+    @include at-query($max, $small) {
+      font-size: 3.5vw;
+      letter-spacing: .1rem;
+    }
+  }
+
+  h5 {
+    font-family: 'PF DIN Text Pro Bold';
+    letter-spacing: .1rem;
+    font-size: 1vw;
+    @include at-query($max, $small) {
+      font-size: 3vw;
+    }
+  }
+
+  h6 {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-transform: none;
+    @include at-query($max, $small) {
+      font-size: 4vw;
+
+      br {
+        display: none;
+      }
+    }
+
+  }
+}
+
+.designed-and-knit-tile, .buy-give-tile, .break-it-tile {
+  height: 48vh;
+  background-size: cover;
+  background: #333;
+}
+
+.designed-and-knit-tile.left-aligned, .break-it-tile {
+  .text-wrapper {
+    @include at-query($min, $postSmall) {
+      margin-right: 10%;
+    }
+  }
+}
+
+.designed-and-knit-tile.right-aligned, .buy-give-tile {
+  .text-wrapper {
+    @include at-query($min, $postSmall) {
+      margin-left: 10%;
+    }
+  }
+}
+
+.knee-high-socks-product-tile, .arm-sleeves-product-tile, .leg-sleeves-product-tile, .crew-socks-product-tile, .no-show-socks-product-tile, .hat-product-tile, .unisex-t-shirt-product-tile, .racerback-tank-product-tile, .add-compression, .add-dyneema {
+  height: 48vh;
+  background-size: cover;
+}
+
+.knee-high-socks-product-tile, .add-compression, .add-dyneema {
+  @include background-file('add-dyneema-large.png');
+  @include at-query(null, $postSmall, $large) {
+    @include background-file('add-dyneema-large.png');
+  }
+  @include at-query($max, $small) {
+    @include background-file('add-dyneema-small.png');
+  }
+}
+
+.arm-sleeves-product-tile {
+  @include background-file('arm-sleeves-large.png');
+  @include at-query(null, $postSmall, $large) {
+    @include background-file('arm-sleeves-large.png');
+  }
+  @include at-query($max, $small) {
+    @include background-file('arm-sleeves-small.png');
+  }
+}
+
+.leg-sleeves-product-tile {
+  @include background-file('leg-sleeves-small.png');
+  @include at-query(null, $postSmall, $large) {
+    @include background-file('leg-sleeves-small.png');
+  }
+  @include at-query($max, $small) {
+    @include background-file('leg-sleeves-small.png');
+  }
+}
+
+.crew-socks-product-tile {
+  @include background-file('crew-socks-large.png');
+  @include at-query(null, $postSmall, $large) {
+    @include background-file('crew-socks-large.png');
+  }
+  @include at-query($max, $small) {
+    @include background-file('crew-socks-small.png');
+  }
+}
+
+.no-show-socks-product-tile {
+  @include background-file('no-show-socks-small.png');
+  @include at-query(null, $postSmall, $large) {
+    @include background-file('no-show-socks-small.png');
+  }
+  @include at-query($max, $small) {
+    @include background-file('no-show-socks-small.png');
+  }
+}
+
+.hat-product-tile {
+  @include background-file('hat-small.png');
+  @include at-query(null, $postSmall, $large) {
+    @include background-file('hat-small.png');
+  }
+  @include at-query($max, $small) {
+    @include background-file('hat-small.png');
+  }
+}
+
+.unisex-t-shirt-product-tile {
+  @include background-file('unisex-t-shirt-small.png');
+  @include at-query(null, $postSmall, $large) {
+    @include background-file('unisex-t-shirt-small.png');
+  }
+  @include at-query($max, $small) {
+    @include background-file('unisex-t-shirt-small.png');
+  }
+}
+
+.racerback-tank-product-tile {
+  @include background-file('racerback-tank-small.png');
+  @include at-query(null, $postSmall, $large) {
+    @include background-file('racerback-tank-small.png');
+  }
+  @include at-query($max, $small) {
+    @include background-file('racerback-tank-small.png');
+  }
+}
