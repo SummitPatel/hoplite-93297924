@@ -117,75 +117,75 @@
     margin: 0 auto;
   }
 
-    h3, h5, h6 {
-      font-family: 'PF DIN Text Pro Regular';
-      margin: 0;
-      padding: 0 0 1rem 0;
-      line-height: 1;
+  h3, h5, h6 {
+    font-family: 'PF DIN Text Pro Regular';
+    margin: 0;
+    padding: 0 0 1rem 0;
+    line-height: 1;
+  }
+
+  h3 {
+    font-family: 'PF DIN Text Pro Bold';
+    letter-spacing: .4vw;
+    font-size: 3vw;
+    @include at-query($max, $large) {
+      font-size: 3rem;
+    }
+    @include at-query($max, $small) {
+      font-size: 7vw;
+    }
+  }
+
+  h5 {
+    font-size: 1.5vw;
+    text-transform: none;
+    @include at-query($max, $large) {
+      font-size: 1.5rem;
+    }
+    @include at-query($max, $small) {
+      font-size: 4vw;
     }
 
-    h3 {
-      font-family: 'PF DIN Text Pro Bold';
-      letter-spacing: .4vw;
-      font-size: 3vw;
-      @include at-query($max, $large) {
-        font-size: 3rem;
-      }
+    .forced-line-break {
+      display: none;
       @include at-query($max, $small) {
-        font-size: 7vw;
+        display: block;
       }
     }
+  }
 
-    h5 {
-      font-size: 1.5vw;
-      text-transform: none;
-      @include at-query($max, $large) {
-        font-size: 1.5rem;
-      }
-      @include at-query($max, $small) {
-        font-size: 4vw;
-      }
-
-      .forced-line-break {
-        display: none;
-        @include at-query($max, $small) {
-          display: block;
-        }
-      }
-    }
-
-    h6 {
-      font-family: 'PF DIN Text Pro Bold';
-      letter-spacing: .2vw;
-      font-size: 1.2vw;
-      @include at-query($max, $large) {
-        font-size: 1rem;
-      }
-      @include at-query($max, $small) {
-        font-size: 3vw;
-      }
-    }
-
-    .dyneema-link {
-      display: inline-block;
-      background: transparent no-repeat;
+  h6 {
+    font-family: 'PF DIN Text Pro Bold';
+    letter-spacing: .2vw;
+    font-size: 1.2vw;
+    @include at-query($max, $large) {
       font-size: 1rem;
-      font-family: 'PF DIN Text Pro Bold';
-      text-transform: uppercase;
-      letter-spacing: .1rem;
-      line-height: 1;
-      text-decoration: none;
-      color: #fff;
-      padding: .5rem 3rem;
-      @include background-file('dyneema-link-arrow.png');
-      background-position: 90% 45%;
-      @include at-query($max, $small) {
-        font-size: .9rem;
-        padding: .5vw 3vw;
-        margin-top: 2vw;
-        background-position: 100% 24%;
-      }
     }
+    @include at-query($max, $small) {
+      font-size: 3vw;
+    }
+  }
+
+  .dyneema-link {
+    display: inline-block;
+    background: transparent no-repeat;
+    font-size: 1rem;
+    font-family: 'PF DIN Text Pro Bold';
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    line-height: 1;
+    text-decoration: none;
+    color: #fff;
+    padding: .5rem 3rem;
+    @include background-file('dyneema-link-arrow.png');
+    background-position: 90% 45%;
+    @include at-query($max, $small) {
+      font-size: .9rem;
+      padding: .5vw 3vw;
+      margin-top: 2vw;
+      background-position: 100% 24%;
+    }
+  }
 }
 
 .insane-abrasion-protection-tile {

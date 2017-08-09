@@ -40,6 +40,19 @@
     margin: 0 auto;
   }
 
+  h2 {
+    font-size: 5vw;
+    font-family: 'PF DIN Text Comp Pro Light';
+    letter-spacing: 1rem;
+    margin: 0;
+    @include at-query($max, $large) {
+      font-size: 4rem;
+    }
+    @include at-query($max, $small) {
+      font-size: 12vw;
+    }
+  }
+
   .dropdown-chevron {
     top: 93%;
     @include at-query($max, $small) {
