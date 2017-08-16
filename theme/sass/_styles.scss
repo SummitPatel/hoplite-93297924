@@ -1175,7 +1175,7 @@ a, .dyneema-link, .dyneema-link-black {
 
       a {
         display: block;
-        font-size: 13px;
+        font-size: 1rem;
         height: 29px;
         line-height: 30px;
         margin: 0;
@@ -1184,6 +1184,8 @@ a, .dyneema-link, .dyneema-link-black {
         width: auto;
         color: #303030;
         border-bottom: none !important;
+        font-family: 'PF DIN Text Pro Bold';
+        letter-spacing: .1rem;
 
         &:active {
           background: none repeat scroll 0 0 #FFFFFF;
