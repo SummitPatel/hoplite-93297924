@@ -1,0 +1,330 @@
+/*============================================================================
+  Dyneema Page
+==============================================================================*/
+
+.hero-dyneema {
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-dyneema-large.png');
+  background-size: cover;
+  @include at-query(null, $postSmall, $large) {
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-dyneema-medium.png');
+    background-size: cover;
+  }
+  @include at-query($max, $small) {
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-dyneema-small.png');
+    background-size: cover;
+  }
+}
+
+.dyneema-its-true {
+  background-color: #333;
+
+  .content-wrapper {
+    @include at-query($min, $large) {
+      max-width: 66%;
+    }
+  }
+
+  .text-wrapper {
+    color: #fff;
+    max-width: 85%;
+    margin-bottom: 5vh;
+  }
+
+  h2 {
+    letter-spacing: .5rem;
+  }
+
+  h5 {
+    color: #fff;
+  }
+
+  h6 {
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 1.5rem;
+    @include at-query(null, $postSmall, $large) {
+      font-size: 2vw;
+    }
+    @include at-query($max, $small) {
+      font-size: 4vw;
+    }
+  }
+
+  img {
+    margin-bottom: 1vh;
+  }
+
+  span {
+    font-family: 'PF DIN Text Comp Pro Light';
+    color: #999;
+  }
+
+  .number {
+    @include at-query($min, $large) {
+      font-size: 7rem;
+    }
+    @include at-query(null, $postSmall, $large) {
+      font-size: 5rem;
+    }
+    @include at-query($max, $small) {
+      font-size: 3rem;
+    }
+  }
+
+  .multiplier {
+    @include at-query($min, $large) {
+      font-size: 4.5rem;
+    }
+    @include at-query(null, $postSmall, $large) {
+      font-size: 3rem;
+    }
+    @include at-query($max, $small) {
+      font-size: 1.5rem;
+    }
+  }
+
+  p {
+    color: #fff;
+    @include at-query($min, $large) {
+      font-size: 1.4rem;
+    }
+    @include at-query(null, $postSmall, $large) {
+      font-size: 1.2rem;
+      margin-top: 2%;
+    }
+    @include at-query($max, $small) {
+      font-size: 3.5vw;
+    }
+  }
+}
+
+.made-with-dyneema, .dyneema-destroy {
+  .grid__item {
+    height: 35vw;
+    @include at-query($max, $small) {
+      height: 30vh;
+    }
+  }
+
+  .bg-img {
+    @include background-file('made-with-dyneema-graphic.png');
+    background-size: cover;
+    background-position: center;
+    @include at-query($max, $small) {
+      @include background-file('made-with-dyneema-graphic-small.png');
+    }
+  }
+
+  .content-wrapper {
+    width: 80%;
+  }
+
+  .text-wrapper {
+    @include at-query($min, $postSmall) {
+      text-align: left;
+    }
+  }
+
+  h5 {
+    color: #333;
+    font-family: 'PF DIN Text Pro';
+    font-size: 1.3vw;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    overflow: hidden;
+
+    &.header--bold {
+      font-family: 'PF DIN Text Pro Bold';
+    }
+    @include at-query(null, $postSmall, $large) {
+      font-size: 1.7vw;
+    }
+    @include at-query($max, $small) {
+      font-size: 4vw;
+      padding-bottom: 3%;
+    }
+  }
+
+  p {
+    color: #333;
+    font-size: 1.3vw;
+    font-family: 'PF DIN Text Pro Regular';
+    letter-spacing: .05rem;
+    padding: 0;
+    margin: 0;
+    @include at-query(null, $postSmall, $large) {
+      font-size:1.4vw;
+    }
+    @include at-query($max, $small) {
+      font-size: 4vw;
+      line-height: 1.4;
+    }
+  }
+}
+
+.dyneema-destroy {
+  .bg-img {
+    @include background-file('dyneema-destroy-graphic-large.png');
+    @include at-query($max, $small) {
+      @include background-file('dyneema-destroy-graphic-small.png');
+    }
+  }
+}
+
+.dyneema-us-them {
+  background-size: cover;
+  background-position: center;
+  height: inherit;
+  @include at-query($min, $large) {
+    .dyneema-video-gif {
+      display: none;
+    }
+  }
+  @include at-query($max, $medium) {
+    .dyneema-video-bg {
+      display: none;
+    }
+  }
+
+  h2 {
+    padding: 0;
+  }
+  
+}
+
+.dyneema-us, .dyneema-them {
+  background-size: cover;
+  height: 26vh;
+  @include at-query($min, $postSmall) {
+    height: 70vh;
+  }
+}
+
+.dyneema-tools {
+  background-color: #e9e9e9;
+  height: 41vh;
+  @include at-query($max, $small) {
+    height: 31vh;
+  }
+
+  .content-wrapper {
+    @include at-query($min, $postSmall) {
+      width: 70%;
+    }
+  }
+
+  .text-wrapper {
+    color: #333;
+
+    h3 {
+      margin: 10% auto 5%;
+      width: 80%;
+      font-family: 'PF DIN Text Pro Bold';
+      letter-spacing: .4vw;
+      font-size: 3vw;
+      @include at-query($max, $large) {
+        font-size: 3rem;
+      }
+      @include at-query($max, $small) {
+        font-size: 7vw;
+      }
+    }
+
+    h5 {
+      line-height: 1.3;
+    }
+
+    br {
+      @include at-query($min, $postSmall) {
+        display: none;
+      }
+    }
+  }
+}
+
+.add-dyneema {
+  .text-wrapper {
+    @include at-query($min, $postSmall) {
+      width: 42vw;
+    }
+  }
+}
+
+.dyneema-four-wonders {
+  height: inherit;
+  background: #fff;
+
+  .text-wrapper {
+    margin: 0 auto;
+    @include at-query($min, $postSmall) {
+      padding-bottom: 10vh;
+    }
+  }
+
+  .number {
+    color: #989898;
+    border: 1px solid #989898;
+    border-radius: 50%;
+    height: 7vh;
+    width: 7vh;
+    line-height: 7vh;
+    margin: 0 auto 3vh;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  h3 {
+    margin: 10% auto 5%;
+    width: 80%;
+    font-family: 'PF DIN Text Pro Bold';
+    letter-spacing: .4vw;
+    font-size: 3vw;
+    @include at-query($max, $large) {
+      font-size: 3rem;
+    }
+    @include at-query($max, $small) {
+      font-size: 7vw;
+    }
+  }
+
+  h5 {
+    color: #333;
+    font-family: 'PF DIN Text Pro Bold';
+    font-size: 1.3vw;
+    line-height: 1;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    margin: 0 auto 1vh;
+    @include at-query(null, $postSmall, $large) {
+      font-size: 1.7vw;
+    }
+    @include at-query($min, $postSmall) {
+      width: 67%;
+    }
+    @include at-query($max, $small) {
+      font-size: 4vw;
+      text-align: left;
+    }
+  }
+
+  p {
+    color: #333;
+    font-family: 'PF DIN Text Pro Regular';
+    font-size: 1.3vw;
+    letter-spacing: .05rem;
+    padding-bottom: 2rem;
+    margin: 0 auto 1vh;
+    @include at-query(null, $postSmall, $large) {
+      font-size:1.4vw;
+    }
+    @include at-query($min, $postSmall) {
+      width: 67%;
+    }
+    @include at-query($max, $small) {
+      font-size: 4vw;
+      text-align: left;
+    }
+  }
+}
