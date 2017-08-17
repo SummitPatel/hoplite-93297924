@@ -1,0 +1,583 @@
+/*============================================================================
+  Product Page - Knee-High Socks
+==============================================================================*/
+.hero-tile.hero-knee-high-socks {
+  @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 85%, rgba(0, 0, 0, 1) 100%), 'hero-knee-high-socks-large.png');
+  background-size: cover;
+  @include at-query(null, $postSmall, $large) {
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-knee-high-socks-medium.png');
+    background-size: cover;
+  }
+  @include at-query($max, $small) {
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-knee-high-socks-small.png');
+    background-size: cover;
+  }
+}
+
+.dyneema-link-black {
+  display: inline-block;
+  font-size: 1rem;
+  font-family: 'PF DIN Text Pro Bold';
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  line-height: 1;
+  text-decoration: none;
+  padding: 1vw 1vw 1vw 0;
+  background: transparent no-repeat;
+  @include background-file('link-arrow-black.png');
+  background-position: 100% 45%;
+  @include at-query($max, $small) {
+    font-size: .9rem;
+    padding: .5vw 3vw;
+    margin-top: 2vw;
+    background-position: 100% 24%;
+  }
+}
+
+.link-arrow-black-reverse {
+  position: absolute;
+  display: inline-block;
+  top: 8%;
+  left: 5%;
+  font-size: 1rem;
+  font-family: 'PF DIN Text Pro Bold';
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  line-height: 1;
+  text-decoration: none;
+  padding: 1vw;
+  background: transparent no-repeat;
+  @include background-file('link-arrow-black-reverse.png');
+  background-position: 0 45%;
+  @include at-query($max, $small) {
+    font-size: .9rem;
+    padding: .5vw 3vw;
+    background-position: 0 24%;
+  }
+}
+
+.hero-tile.product-page {
+  .text-wrapper {
+    color: #fff;
+    text-transform: uppercase;
+
+    br { display: none; }
+
+    @include at-query($min, $postSmall) {
+      text-align: left;
+      float: right;
+
+      br { display: block; }
+    }
+
+    h2 { line-height: 1; }
+
+    h6 {
+      font-size: 1.3vw;
+      @include at-query($max, $small) {
+        font-size: 3vw;
+      }
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+  .hero-img-triangle-icon {
+    p {
+      @include at-query($max, $small) {
+        font-size: 4vw;
+      }
+    }
+  }
+}
+
+.indestructible-compression-tile {
+  .text-wrapper {
+    top: 20%;
+
+    h2 {
+      font-size: 4rem;
+    }
+
+    h6 {
+      margin-bottom: 0;
+      font-size: 1.2rem;
+    }
+  }
+
+  .icons-wrapper {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 80%;
+
+    img {
+      margin: 0 2rem;
+    }
+  }
+}
+
+.measurements-tile {
+  padding: 0 5vw;
+
+  .text-wrapper {
+    position: relative;
+    color: #333;
+    top: 0;
+    padding: 5vw 0 0 0;
+
+    h3 {
+      font-family: 'PF DIN Text Pro Bold';
+      font-size: 4vw;
+      letter-spacing: .1rem;
+      margin-bottom: 1vw;
+      @include at-query($max, $small) {
+        font-size: 8vw;
+      }
+    }
+
+    h4 {
+      font-family: 'PF DIN Text Pro Regular';
+      font-size: 3vw;
+      letter-spacing: .1rem;
+      margin: 0;
+      @include at-query($max, $small) {
+        font-size: 5vw;
+      }
+    }
+
+    h5 {
+      font-family: 'PF DIN Text Pro Regular';
+      font-size: 2vw;
+      text-transform: none;
+      margin: 0;
+      @include at-query($max, $small) {
+        display: none;
+      }
+    }
+  }
+
+  .text-container {
+    height: 70vh;
+    @include at-query($min, $postSmall) {
+      height: 60vh;
+      padding: 0 0 0 16vw;
+      margin-bottom: 10vh;
+    }
+    @include at-query($max, $small) {
+      height: inherit;
+      padding-top: 20%;
+    }
+  }
+
+  ul {
+    text-align: left;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    h5 {
+      font-family: 'PF DIN Text Pro Bold';
+      font-size: 1.3vw;
+      line-height: 1;
+      margin: 0 0 1vh 0;
+      letter-spacing: .1rem;
+      text-transform: uppercase;
+      @include at-query(null, $postSmall, $large) {
+        font-size: 1.7vw;
+      }
+      @include at-query($max, $small) {
+        font-size: 4vw;
+      }
+    }
+  }
+
+  
+
+  p {
+    font-size: 1.3vw;
+    font-family: 'PF DIN Text Pro Regular';
+    letter-spacing: .05rem;
+    text-transform: none;
+    @include at-query(null, $postSmall, $large) {
+      font-size:1.4vw;
+    }
+    @include at-query($max, $small) {
+      font-size: 4vw;
+    }
+  }
+
+  .img-container {
+    padding: 8vh 16vw 0 0;
+    @include at-query($max, $small) {
+      padding: 8vh 0 0 0;
+    }
+
+    img {
+      width: 18vw;
+      @include at-query(null, $postSmall, $large) {
+        width: 25vw;
+      }
+      @include at-query($max, $small) {
+        width: 50vw;
+      }
+    }
+  }
+
+  .icons-wrapper {
+    font-family: 'PF DIN Text Pro Regular';
+    margin: 5vw 0;
+
+    .icon {
+      height: 25vh;
+      width: 25vh;
+      font-family: 'PF DIN Text Pro Bold';
+      font-size: 12vh;
+      color: #989898;
+      line-height: 25vh;
+      border: 2px solid #999;
+      border-radius: 18vh;
+      margin: 0 auto;
+    }
+
+    .link-arrow {
+      position: absolute;
+      top: 10vh;
+      right: 5vw;
+    }
+
+    .text {
+      margin: 4vw 0 0 0;
+    }
+
+    h4 {
+      text-transform: uppercase;
+      font-family: 'PF DIN Text Pro Regular';
+      letter-spacing: .1rem;
+      color: #363636;
+      margin: 0 0 2vw 0;
+    }
+
+    p {
+      font-size: 3.8vw;
+      text-transform: uppercase;
+      margin: 0 0 4vw 0;
+    }
+  }
+
+  .dropdown-chevron {
+    @include at-query($max, $small) {
+      display: none;
+    }
+  }
+}
+
+
+.measuring-tape-tile, .dyneema-four-wonders {
+  background: #e9e9e9;
+  height: 53vh;
+  overflow: hidden;
+
+  .icon {
+    margin: 0 0 2rem 0;
+  }
+
+  .text-wrapper {
+    color: #333;
+    overflow: auto;
+    margin: 0 10%;
+  }
+
+  .content-wrapper {
+    margin: 0;
+  }
+
+  .text {
+    margin: 0 auto;
+    @include at-query($max, $small) {
+      width: 65%;
+    }
+  }
+
+  h4 {
+    font-family: 'PF DIN Text Pro Regular';
+    font-size: 3vw;
+    letter-spacing: .1rem;
+    margin: 0 0 5vh 0;
+    @include at-query($max, $small) {
+      font-size: 5vw;
+      margin: 0 auto 5vh;
+      max-width: 75%;
+    }
+  }
+
+  h5 {
+    margin: 0;
+    padding: 0;
+    font-family: 'PF DIN Text Pro Bold';
+    font-size: 1.3vw;
+    line-height: 1;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    @include at-query(null, $postSmall, $large) {
+      font-size: 1.7vw;
+    }
+    @include at-query($max, $small) {
+      font-size: .8rem;
+    }
+  }
+
+  p {
+    font-size: 1vw;
+    letter-spacing: .05rem;
+    margin: 0;
+    padding: 0 0 1rem 0;
+    line-height: 1.5;
+    text-transform: none;
+    @include at-query(null, $postSmall, $large) {
+      font-size:1.4vw;
+    }
+    @include at-query($max, $small) {
+      font-size: .8rem;
+    }
+  }
+}
+
+.measuring-tape-tile {
+  .content-wrapper {
+    top: 55%;
+  }
+  h5 {
+    margin-bottom: 1vh;
+  }
+}
+
+.measuring-tape-cover {
+  background: #e9e9e9;
+  position: absolute;
+  height: 53vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+
+  h3 {
+    
+  }
+
+  .content-wrapper {
+    margin: 0;
+  }
+
+  .text-wrapper {
+    padding: 0;
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  br {
+    @include at-query($min, $postSmall) {
+      display: none;
+    }
+  }
+}
+
+.product-single {
+  position: relative;
+  padding: 10vh 0;
+  background: #333;
+}
+
+.hero-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 40px 0 40px;
+  border-color: #e9e9e9 transparent transparent transparent;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+#ProductPhoto {
+  width: 50vw;
+  margin: 0 auto;
+  float: none;
+  text-align: center;
+  padding: 0;
+}
+
+.product-single__hero {
+  margin: 0;
+
+  h5, .product-single__price {
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'PF DIN Text Pro Bold';
+    font-size: 1.5vw;
+    line-height: 1;
+    @include at-query($max, $small) {
+      font-size: 6vw;
+      text-align: center;
+    }
+  }
+
+  h5 {
+    margin: 0 0 1rem 0;
+  }
+
+  .product-single__price {
+    @include at-query($min, $postSmall) {
+      font-size: 3.5vw;
+    }
+  }
+}
+
+.product-details {
+  text-align: left;
+  padding: 0 5vw;
+  @include at-query($max, $small) {
+    text-align: center;
+  }
+}
+
+.line-item-property__field, .selector-wrapper {
+  width: 50%;
+  float: left;
+  color: #fff;
+  font-family: 'PF DIN Text Pro Bold';
+  font-size: 1.3vw;
+  text-transform: uppercase;
+  @include at-query($max, $small) {
+    font-size: 4vw;
+  }
+
+  p {
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+
+  label {
+    text-align: left;
+    width: 90%;
+  }
+
+  select {
+    width: 90%;
+    background-color: #333;
+    @include background-file('dropdown-arrow.png');
+    border-color: #999;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'PF DIN Text Pro Bold';
+    font-size: 1.3vw;
+    @include at-query($max, $small) {
+      font-size: 4vw;
+    }
+  }
+
+  &:last-of-type {
+    margin: 0 0 4vh 0;
+    width: 90%;
+    text-align: center;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .radio-btn-label {
+      width: 50%;
+      float: left;
+      cursor: pointer;
+
+      /* HTML5 Boilerplate accessible hidden styles */
+      [type="radio"] {
+        border: 0; 
+        clip: rect(0 0 0 0); 
+        height: 1px; margin: -1px; 
+        overflow: hidden; 
+        padding: 0; 
+        position: absolute; 
+        width: 1px;
+      }
+
+      /* the basic, unchecked style */
+      [type="radio"] + span:before {
+        content: '';
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        vertical-align: -0.5rem;
+        border-radius: 1rem;
+        border: 0.150rem solid #fff;
+        margin-right: 0.75rem;
+        transition: 0.25s ease all;
+        @include at-query($max, $small) {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+
+      /* the checked style using the :checked pseudo class */
+      [type="radio"]:checked + span:before {
+        background: #fff;
+        box-shadow: 0 0 0 .09rem #fff;
+        border: 0.45rem solid #333;
+      }
+    }
+
+    input {
+      margin: 0 3vw 0 0;
+    }
+
+    span {
+      margin: 0 4vw 0 2px;
+      text-transform: uppercase;
+      font-family: 'PF DIN Text Pro Bold';
+    }
+  }
+
+
+}
+
+#AddToCart {
+  background-color: #fff;
+  color: #4d4d4d;
+  border-radius: 0px;
+  text-transform: uppercase;
+  font-family: 'PF DIN Text Pro Bold';
+  width: 60%;
+  @include at-query($max, $small) {
+    width: 90%;
+  }
+}
+
+#AddToCartForm {
+  overflow: auto;
+
+  hr {
+    margin: 5vh auto;
+    border-color: #5c5c5c;
+  }
+}
+
+.workout-tile {
+  height: 5rem;
+  line-height: 4.5;
+}
