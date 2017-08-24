@@ -3,14 +3,14 @@
 ==============================================================================*/
 
 .hero-dyneema {
-  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-dyneema-large.png');
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-dyneema-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-dyneema-medium.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-dyneema-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-dyneema-small.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-dyneema-small.png');
     background-size: cover;
   }
 }
@@ -219,7 +219,7 @@
     color: #333;
 
     h3 {
-      margin: 5% auto 0;
+      margin: 5% auto 0;;
       width: 80%;
       font-family: 'PF DIN Text Pro Bold';
       letter-spacing: .4vw;

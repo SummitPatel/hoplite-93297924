@@ -7,11 +7,11 @@
   @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 85%, rgba(0, 0, 0, 1) 100%), 'hero-compression-101-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-compression-101-medium.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-compression-101-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-compression-101-small.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-compression-101-small.png');
     background-size: cover;
   }
 

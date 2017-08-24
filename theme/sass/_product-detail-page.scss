@@ -2,14 +2,14 @@
   Product Page - Knee-High Socks
 ==============================================================================*/
 .hero-tile.hero-knee-high-socks {
-  @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 85%, rgba(0, 0, 0, 1) 100%), 'hero-knee-high-socks-large.png');
+  @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .55) 0%, rgba(0, 0, 0, .5) 85%, rgba(0, 0, 0, 1) 100%), 'hero-knee-high-socks-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-knee-high-socks-medium.png');
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .55) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-knee-high-socks-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-knee-high-socks-small.png');
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .55) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-knee-high-socks-small.png');
     background-size: cover;
   }
 }
@@ -590,14 +590,14 @@
 ==============================================================================*/
 
 .hero-tile.hero-leg-sleeves {
-  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-leg-sleeves-large.png');
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-leg-sleeves-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-leg-sleeves-medium.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-leg-sleeves-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-leg-sleeves-small.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-leg-sleeves-small.png');
     background-size: cover;
   }
 
@@ -610,14 +610,14 @@
 ==============================================================================*/
 
 .hero-tile.hero-arm-sleeves {
-  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-arm-sleeves-large.png');
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-arm-sleeves-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-arm-sleeves-medium.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-arm-sleeves-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-arm-sleeves-small.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-arm-sleeves-small.png');
     background-size: cover;
   }
 }
@@ -628,14 +628,14 @@
 ==============================================================================*/
 
 .hero-tile.hero-crew-socks {
-  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-crew-socks-large.png');
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-crew-socks-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-crew-socks-medium.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-crew-socks-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-crew-socks-small.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-crew-socks-small.png');
     background-size: cover;
   }
 }
@@ -646,14 +646,14 @@
 ==============================================================================*/
 
 .hero-tile.hero-no-show-socks {
-  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-no-show-socks-large.png');
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-no-show-socks-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-no-show-socks-medium.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-no-show-socks-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-no-show-socks-small.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-no-show-socks-small.png');
     background-size: cover;
   }
 }
@@ -664,14 +664,14 @@
 ==============================================================================*/
 
 .hero-tile.hero-hat {
-  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-hat-large.png');
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-hat-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-hat-medium.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-hat-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-hat-small.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-hat-small.png');
     background-size: cover;
   }
 
@@ -688,14 +688,14 @@
 ==============================================================================*/
 
 .hero-tile.hero-unisex-t-shirt {
-  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-unisex-t-shirt-large.png');
+  @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-unisex-t-shirt-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-unisex-t-shirt-medium.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-unisex-t-shirt-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-unisex-t-shirt-small.png');
+    @include background-file( linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-unisex-t-shirt-small.png');
     background-size: cover;
   }
 }
@@ -706,14 +706,14 @@
 ==============================================================================*/
 
 .hero-tile.hero-racerback-tank {
-  @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-racerback-tank-large.png');
+  @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-racerback-tank-large.png');
   background-size: cover;
   @include at-query(null, $postSmall, $large) {
-    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-racerback-tank-medium.png');
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-racerback-tank-medium.png');
     background-size: cover;
   }
   @include at-query($max, $small) {
-    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-racerback-tank-small.png');
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'hero-racerback-tank-small.png');
     background-size: cover;
   }
 }

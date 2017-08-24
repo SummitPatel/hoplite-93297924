@@ -38,13 +38,13 @@ theme.cacheSelectors = function () {
     //Navigation
     $hasDropdownItem: $('.site-nav--has-dropdown'),
     $siteHeader: $('.site-header')
-  }
+  };
 };
 
 timber.cacheVariables = function () {
   timber.vars = {
     isTouch: timber.cache.$html.hasClass('supports-touch')
-  }
+  };
 };
 
 theme.init = function () {
@@ -60,7 +60,7 @@ theme.init = function () {
   theme.displaySwatchColor();
 
   
-    theme.productImageGallery();
+  theme.productImageGallery();
   
 };
 
@@ -76,7 +76,6 @@ theme.displaySwatchColor = function () {
 
       theme.cache.$selectedSwatchColor.text(color);
     }
-
   });
 };
 
@@ -228,8 +227,8 @@ theme.toggleMenu = function () {
         $doc.off('click', handleClickOutsideDropdown)
       }
     }
-  })
+  });
 };
 
 // Initialize theme's JS on docready
-$(theme.init)
+$(theme.init);
