@@ -168,7 +168,7 @@
     height: 70vh;
     @include at-query($min, $postSmall) {
       height: 60vh;
-      padding: 0 0 0 16vw;
+      padding: 0 16vw 0 0;
       margin-bottom: 10vh;
     }
     @include at-query($max, $small) {
@@ -216,7 +216,7 @@
   }
 
   .img-container {
-    padding: 8vh 16vw 0 0;
+    padding: 8vh 0 0 16vw;
     @include at-query($max, $small) {
       padding: 8vh 0 0 0;
     }
