@@ -15,3 +15,24 @@
   url(' {{ "#{$asset-font-name}.svg" | asset_url }} ') format("svg");
 }
 
+
+@font-face {
+  font-family: 'PF DIN Text Pro Regular';
+  src: url(' {{ "pfdintextpro-regular-webfont.woff" | asset_url }} ') format("woff");
+}
+
+@font-face {
+  font-family: 'PF DIN Text Pro Light';
+  src: url(' {{ "pfdintextpro-light-webfont.woff" | asset_url }} ') format("woff");
+}
+
+@font-face {
+  font-family: 'PF DIN Text Comp Pro Light';
+  src: url(' {{ "pfdintextcomppro-light-webfont.woff" | asset_url }} ') format("woff");
+}
+
+@font-face {
+  font-family: 'PF DIN Text Pro Bold';
+  src: url(' {{ "pfdintextpro-bold-webfont.woff" | asset_url }} ') format("woff");
+}
+
