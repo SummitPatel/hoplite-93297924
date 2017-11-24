@@ -169,6 +169,7 @@
 
 .diamond-infographic {
   overflow: auto;
+  display: none;
 
   .slider {
     @include at-query($max, $small) {
