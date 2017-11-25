@@ -55,6 +55,7 @@
 
   .dropdown-chevron {
     top: 93%;
+    cursor: pointer;
     @include at-query($max, $small) {
       width: 12.5px;
       display: none;
@@ -74,11 +75,13 @@
   margin: 0 auto;
   @include at-query($max, $small) {
     width: 75%;
-    padding: 2rem 0 0 0;
+    padding: 0 0 2rem 0;
   }
 }
 
 .infographic {
+  //display: none;
+
   .grid__item {
     @include at-query($max, $small) {
       float: none;
@@ -100,7 +103,7 @@
 
   .prev, .next {
     position: absolute;
-    top: 27%;
+    top: 60%;
     cursor: pointer;
     width: 32px;
     height: 32px;
@@ -124,7 +127,7 @@
   }
 
   .text-wrapper {
-    padding: 1rem;
+    padding: 2rem 1rem 0;
     text-align: left;
     @include at-query($min, $postSmall) {
       top: 50%;
@@ -169,7 +172,6 @@
 
 .diamond-infographic {
   overflow: auto;
-  display: none;
 
   .slider {
     @include at-query($max, $small) {
@@ -186,7 +188,7 @@
   }
 
   .prev, .next {
-    top: 17%;
+    top: 68%;
   }
 
   .orange {
@@ -415,7 +417,6 @@
   }
 
   .text-wrapper {
-    padding: 1rem;
     text-align: center;
     @include at-query($min, $postSmall) {
       width: 25%;
