@@ -247,7 +247,8 @@ sup {
       font-size: 1.7vw;
     }
     @include at-query($max, $small) {
-      font-size: .8rem;
+      //font-size: .8rem;
+      font-size: 4vw;
     }
   }
 
@@ -270,10 +271,11 @@ sup {
     line-height: 1.5;
     text-transform: none;
     @include at-query(null, $postSmall, $large) {
-      font-size:1.4vw;
+      font-size: 1.4vw;
     }
     @include at-query($max, $small) {
-      font-size: .8rem;
+      //font-size: .8rem;
+      font-size: 4vw;
     }
   }
 }

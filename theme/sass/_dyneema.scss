@@ -111,12 +111,9 @@
   }
 
   .bg-img {
-    @include background-file('made-with-dyneema-graphic.png');
+    @include background-file('made-with-dyneema-graphic.jpg');
     background-size: cover;
     background-position: center;
-    @include at-query($max, $small) {
-      @include background-file('made-with-dyneema-graphic-small.png');
-    }
   }
 
   .content-wrapper {
