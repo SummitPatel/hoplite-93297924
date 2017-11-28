@@ -388,11 +388,5 @@
 }
 
 .racerback-tank-product-tile {
-  @include background-file('racerback-tank-small.png');
-  @include at-query(null, $postSmall, $large) {
-    @include background-file('racerback-tank-small.png');
-  }
-  @include at-query($max, $small) {
-    @include background-file('racerback-tank-small.png');
-  }
+  @include background-file('racerback-tank.jpg');
 }
