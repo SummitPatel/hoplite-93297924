@@ -18,6 +18,10 @@
 .dyneema-its-true {
   background-color: #333;
 
+  @include at-query($max, $small) {
+    height: 62vh;
+  }
+
   .content-wrapper {
     @include at-query($min, $large) {
       max-width: 66%;
@@ -102,7 +106,7 @@
   .grid__item {
     height: 35vw;
     @include at-query($max, $small) {
-      height: 30vh;
+      height: 40vh;
     }
   }
 
