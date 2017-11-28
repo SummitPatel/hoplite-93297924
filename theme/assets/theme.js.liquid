@@ -120,13 +120,12 @@ theme.slideCompressionCover = function () {
     
     if(reset) {
       reset = false;
-      $('.infographic').css('display', 'none');
+      $('.infographic').css({
+        'display': 'none',
+        'position': 'relative',
+        'top': 'initial'
+      });
     }
-    $('.infographic').css({
-      'position': 'relative',
-      'top': 'initial'
-    });
-
 
     e.preventDefault();
     var $compressionCoverContent = $(this).parents('.compression-101').parent().next().children('.infographic');

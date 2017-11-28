@@ -183,6 +183,10 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    @include at-query($max, $small) {
+      margin: 20% auto 0;
+    }
+    
 
     h5 {
       font-family: 'PF DIN Text Pro Bold';
@@ -218,7 +222,7 @@
   .img-container {
     padding: 8vh 0 0 16vw;
     @include at-query($max, $small) {
-      padding: 8vh 0 0 0;
+      padding: 0 0 8vh;
     }
 
     img {
@@ -367,10 +371,6 @@
   width: 100vw;
   top: 0;
   left: 0;
-
-  h3 {
-    
-  }
 
   .content-wrapper {
     margin: 0;
