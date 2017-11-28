@@ -169,7 +169,7 @@
     @include at-query($min, $postSmall) {
       height: 60vh;
       padding: 0 16vw 0 0;
-      margin-bottom: 10vh;
+      margin-bottom: 5vh;
     }
     @include at-query($max, $small) {
       height: inherit;
