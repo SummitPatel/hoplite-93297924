@@ -113,11 +113,21 @@ theme.slideCover = function () {
 theme.slideCompressionCover = function () {
   var reset = true;
   $('.dropdown-chevron').on('click', function (e) {
-    $('.infographic').css('position', 'relative');
+    // carousels don't render properly if initial display is none
+    // fix is done in two parts: 
+    // 1. starting position is absolute so carousel is taken out of DOM flow and reset to relative
+    // 2. display is set to none on first click so animations aren't backwards
+    
     if(reset) {
       reset = false;
       $('.infographic').css('display', 'none');
     }
+    $('.infographic').css({
+      'position': 'relative',
+      'top': 'initial'
+    });
+
+
     e.preventDefault();
     var $compressionCoverContent = $(this).parents('.compression-101').parent().next().children('.infographic');
     $compressionCoverContent.slideToggle( 800 );

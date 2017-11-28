@@ -81,6 +81,7 @@
 
 .infographic {
   position: absolute;
+  top: -3000px;
   .grid__item {
     @include at-query($max, $small) {
       float: none;
