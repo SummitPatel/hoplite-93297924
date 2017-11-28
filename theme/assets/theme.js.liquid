@@ -64,7 +64,6 @@ theme.init = function () {
 
   
   theme.productImageGallery();
-  
 };
 
 theme.displaySwatchColor = function () {
@@ -112,7 +111,13 @@ theme.slideCover = function () {
 };
 
 theme.slideCompressionCover = function () {
+  var reset = true;
   $('.dropdown-chevron').on('click', function (e) {
+    $('.infographic').css('position', 'relative');
+    if(reset) {
+      reset = false;
+      $('.infographic').css('display', 'none');
+    }
     e.preventDefault();
     var $compressionCoverContent = $(this).parents('.compression-101').parent().next().children('.infographic');
     $compressionCoverContent.slideToggle( 800 );
@@ -207,7 +212,6 @@ theme.productImageGallery = function() {
 };
 
 theme.cartPage = function () {
-  
 
   theme.cache.$body.on('click', theme.cache.cartNoteAdd, function () {
     $(this).addClass('is-hidden');

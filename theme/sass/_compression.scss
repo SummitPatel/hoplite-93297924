@@ -59,7 +59,6 @@
     @include at-query($max, $small) {
       width: 30px;
       top: 87%;
-      //display: none;
     }
   }
 }
@@ -76,13 +75,12 @@
   margin: 0 auto;
   @include at-query($max, $small) {
     width: 75%;
-    padding: 0 0 2rem 0;
+    padding: 2rem 0 0 0;
   }
 }
 
 .infographic {
-  display: none;
-
+  position: absolute;
   .grid__item {
     @include at-query($max, $small) {
       float: none;
@@ -104,7 +102,7 @@
 
   .prev, .next {
     position: absolute;
-    top: 53%;
+    top: 30%;
     cursor: pointer;
     width: 32px;
     height: 32px;
@@ -128,7 +126,7 @@
   }
 
   .text-wrapper {
-    padding: 2rem 1rem 0;
+    padding: 1rem;
     text-align: left;
     @include at-query($min, $postSmall) {
       top: 50%;
@@ -189,7 +187,7 @@
   }
 
   .prev, .next {
-    top: 68%;
+    top: 17%;
   }
 
   .orange {
@@ -418,6 +416,7 @@
   }
 
   .text-wrapper {
+    padding: 1rem;
     text-align: center;
     @include at-query($min, $postSmall) {
       width: 25%;
