@@ -25,8 +25,7 @@ theme.cacheSelectors = function () {
     $productImage: $('#ProductPhotoImg'),
     $productImageGallery: $('.gallery__item'),
     $measuringTapeCover: $('.measuring-tape-cover'),
-    $compressionCover: $('.compression-101.blood-flow'),
-    $compressionCoverContent: $('.infographic.diamond-infographic'),
+    $compressionCover: $('.compression-101'),
     $dropDownChevron: $('.dropdown-chevron'),
     $heroDropDownWrapper: $('.hero-dropdown-wrapper'),
     $ShopNowHeroBtn: $('.shop-now-hero-btn'),
@@ -115,7 +114,8 @@ theme.slideCover = function () {
 theme.slideCompressionCover = function () {
   $('.dropdown-chevron').on('click', function (e) {
     e.preventDefault();
-    theme.cache.$compressionCoverContent.slideToggle( 800 );
+    var $compressionCoverContent = $(this).parents('.compression-101').parent().next().children('.infographic');
+    $compressionCoverContent.slideToggle( 800 );
   });
 };
 
