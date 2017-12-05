@@ -421,7 +421,7 @@
 }
 
 .familiar-infographic {
-  height: 53vh;
+  height: 60vh;
   @include at-query($min, $postSmall) {
     height: 96vh;
     padding: 0 5%;
