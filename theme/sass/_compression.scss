@@ -71,6 +71,17 @@
   background-color: #333;
 }
 
+.result {
+  @include at-query($max, $small) {
+    h2 {
+      text-indent: 7vw;
+    }
+  }
+  h2 {
+    text-indent: 2vw;
+  }
+}
+
 .slider {
   margin: 0 auto;
   @include at-query($max, $small) {

@@ -389,4 +389,7 @@
 
 .racerback-tank-product-tile {
   @include background-file('racerback-tank.jpg');
+  @include at-query($max, $small) {
+    @include background-file('racerback-tank-small.png');
+  }
 }
