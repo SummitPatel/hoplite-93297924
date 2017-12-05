@@ -146,6 +146,22 @@
       font-size: 4vw;
       padding-bottom: 3%;
     }
+
+    &.small-view {
+      display: none;
+    }
+    &.large-view {
+      display: block;
+    }
+
+    @include at-query($max, $small) {
+      &.small-view {
+        display: block;
+      }
+      &.large-view {
+        display: none;
+      }
+    }
   }
 
   p {
