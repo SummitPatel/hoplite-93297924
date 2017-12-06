@@ -198,42 +198,42 @@
 }
 
 .insane-abrasion-protection-tile {
-  @include background-file('insane-abrasion-protection-large.png');
+  @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'insane-abrasion-protection-large.png');
   @include at-query(null, $postSmall, $large) {
-    @include background-file('insane-abrasion-protection-large.png');
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'insane-abrasion-protection-large.png');
   }
   @include at-query($max, $small) {
-    @include background-file('insane-abrasion-protection-small.png');
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'insane-abrasion-protection-small.png');
   }
 }
 
 .rip-and-tear-proof-tile {
-  @include background-file('rip-and-tear-proof-large.png');
+  @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'rip-and-tear-proof-large.png');
   @include at-query(null, $postSmall, $large) {
-    @include background-file('rip-and-tear-proof-large.png');
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'rip-and-tear-proof-large.png');
   }
   @include at-query($max, $small) {
-    @include background-file('rip-and-tear-proof-small.png');
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'rip-and-tear-proof-small.png');
   }
 }
 
 .eerily-cold-tile {
-  @include background-file('eerily-cold-large.png');
+  @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'eerily-cold-large.png');
   @include at-query(null, $postSmall, $large) {
-    @include background-file('eerily-cold-large.png');
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'eerily-cold-large.png');
   }
   @include at-query($max, $small) {
-    @include background-file('eerily-cold-small.png');
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'eerily-cold-small.png');
   }
 }
 
 .perfectly-balanced-compression-tile {
-  @include background-file('perfectly-balanced-compression-large.png');
+  @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'perfectly-balanced-compression-large.png');
   @include at-query(null, $postSmall, $large) {
-    @include background-file('perfectly-balanced-compression-large.png');
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'perfectly-balanced-compression-large.png');
   }
   @include at-query($max, $small) {
-    @include background-file('perfectly-balanced-compression-small.png');
+    @include background-file(linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 1) 100%), 'perfectly-balanced-compression-small.png');
   }
 }
 
