@@ -170,6 +170,8 @@
 .dyneema-link {
   display: inline-block;
   background: transparent no-repeat;
+  background-position: 90% 45%;
+  background-size: contain;
   font-size: 1rem;
   font-family: 'PF DIN Text Pro Bold';
   text-transform: uppercase;
@@ -177,14 +179,21 @@
   line-height: 1;
   text-decoration: none;
   color: #fff;
-  padding: .5rem 3rem;
+  padding: .1rem 3rem;
   @include background-file('dyneema-link-arrow.png');
-  background-position: 90% 45%;
+
+  &:hover {
+    @include background-file('dyneema-link-arrow-blue.png');
+  }
+
   @include at-query($max, $small) {
     font-size: .9rem;
     padding: .5vw 3vw;
     margin-top: 2vw;
     background-position: 100% 24%;
+  }
+  @include at-query($min, $postSmall) {
+    margin: .5rem 3rem;
   }
 }
 
